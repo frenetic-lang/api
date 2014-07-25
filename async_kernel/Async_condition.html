@@ -1,0 +1,11 @@
+<div class="ocaml_top"><div class="ocaml_summary"><div class="info">Async's implementation of the standard notion of a &quot;condition&quot; variable.<p>This is analogous to OCaml's <code class="code">Condition</code> module. The main guarantee that a condition
+variable provides is that a call to <code class="code">signal</code> (or <code class="code">broadcast</code>) after a call to <code class="code">wait</code>
+will be seen by the waiter.</p><p>Unlike the use of condition variables in ordinary threaded programs, Async condition
+variables do not require a mutex, since Async programs are cooperatively threaded.</p></div></div>
+<div class="ocaml_content"><pre class="odoccode"><span class="TYPEt"><span class="keyword">type</span> <code class="type">'a </code>t</span></pre>
+<pre class="odoccode"><span class="VALcreate"><span class="keyword">val</span> create</span> : <code class="type">unit -&gt; 'a <a href="http://frenetic-lang.github.io/api//async_kernel/#Async_condition.t" class="ocaml_internal">t</a></code></pre>
+<pre class="odoccode"><span class="VALsignal"><span class="keyword">val</span> signal</span> : <code class="type">'a <a href="http://frenetic-lang.github.io/api//async_kernel/#Async_condition.t" class="ocaml_internal">t</a> -&gt; 'a -&gt; unit</code></pre>
+<pre class="odoccode"><span class="VALbroadcast"><span class="keyword">val</span> broadcast</span> : <code class="type">'a <a href="http://frenetic-lang.github.io/api//async_kernel/#Async_condition.t" class="ocaml_internal">t</a> -&gt; 'a -&gt; unit</code></pre>
+<pre class="odoccode"><span class="VALwait"><span class="keyword">val</span> wait</span> : <code class="type">'a <a href="http://frenetic-lang.github.io/api//async_kernel/#Async_condition.t" class="ocaml_internal">t</a> -&gt; 'a <a href="http://frenetic-lang.github.io/api//async_kernel/#Deferred.t">Deferred.t</a></code></pre>
+<pre class="odoccode"><span class="VALsexp_of_t"><span class="keyword">val</span> sexp_of_t</span> : <code class="type">('a -&gt; <a href="http://frenetic-lang.github.io/api//sexplib/#Sexp.t">Sexplib.Sexp.t</a>) -&gt; 'a <a href="http://frenetic-lang.github.io/api//async_kernel/#Async_condition.t" class="ocaml_internal">t</a> -&gt; <a href="http://frenetic-lang.github.io/api//sexplib/#Sexp.t">Sexplib.Sexp.t</a></code></pre>
+</div></div>

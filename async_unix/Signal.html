@@ -1,0 +1,21 @@
+<div class="ocaml_top"><div class="ocaml_summary"/>
+<div class="ocaml_content"><div class="ocaml_include" path="http://frenetic-lang.github.io/api//core/#Std.Signal" items="[&quot;Expert&quot;,&quot;Hash_queue&quot;,&quot;Hash_set&quot;,&quot;Pooled_hashtbl&quot;,&quot;Table&quot;,&quot;Hashable&quot;,&quot;Set&quot;,&quot;Map&quot;,&quot;Replace_polymorphic_compare&quot;]" types="[&quot;sigprocmask_command&quot;,&quot;pid_spec&quot;,&quot;sys_behavior&quot;,&quot;comparator_witness&quot;,&quot;t&quot;]"><pre class="ocaml_include_handle"><span class="keyword">include</span> <code class="type">module type of <code class="code"><a href="http://frenetic-lang.github.io/api//core/#Std.Signal">Core.Std.Signal</a></code> with type t = <a href="http://frenetic-lang.github.io/api//core/#Std.Signal.t">Core.Std.Signal.t</a></code></pre><div class="ocaml_summary"/></div>
+<pre class="odoccode"><span class="VALhandle_default"><span class="keyword">val</span> handle_default</span> : <code class="type">[ `Do_not_use_with_async ] -&gt; 'a</code></pre><div class="info">We override values from <code class="code">Core.Std.Signal</code> that we don't want people to use with
+Async.</div>
+<pre class="odoccode"><span class="VALignore"><span class="keyword">val</span> ignore</span> : <code class="type">[ `Do_not_use_with_async ] -&gt; 'a</code></pre>
+<pre class="odoccode"><span class="VALset"><span class="keyword">val</span> set</span> : <code class="type">[ `Do_not_use_with_async ] -&gt; 'a -&gt; 'b</code></pre>
+<pre class="odoccode"><span class="VALsignal"><span class="keyword">val</span> signal</span> : <code class="type">[ `Do_not_use_with_async ] -&gt; 'a -&gt; 'b</code></pre>
+<pre class="odoccode"><span class="VALhandle"><span class="keyword">val</span> handle</span> : <code class="type">?stop:unit <a href="http://frenetic-lang.github.io/api//async_unix/#Import.Deferred.t">Import.Deferred.t</a> -&gt; <a href="http://frenetic-lang.github.io/api//async_unix/#Signal.t" class="ocaml_internal">t</a> list -&gt; f:(<a href="http://frenetic-lang.github.io/api//async_unix/#Signal.t" class="ocaml_internal">t</a> -&gt; unit) -&gt; unit</code></pre><div class="info"><code class="code">handle ?stop signals ~f</code> arranges so that whenever a signal in <code class="code">signals</code> is
+delivered, <code class="code">f</code> is called on that signal. If <code class="code">f</code> raises, then an exception will be
+raised to the monitor in effect when <code class="code">handle</code> was called.<p>Multiple calls to <code class="code">handle</code> with the same signal will cause all the handlers to run
+when that signal is delivered, not just the last handler from the last call to
+<code class="code">handle</code>.</p><p>The first time <code class="code">handle</code> is called for a signal, it will install a C signal handler for
+that signal, which will replace the existing C signal handler for that signal.</p></div>
+<pre class="odoccode"><span class="VALterminating"><span class="keyword">val</span> terminating</span> : <code class="type"><a href="http://frenetic-lang.github.io/api//async_unix/#Signal.t" class="ocaml_internal">t</a> list</code></pre><div class="info"><code class="code">terminating</code> is a list of signals that can be supplied to <code class="code">handle</code> and whose default
+behavior is to terminate the program: alrm hup int term usr1 usr2.<p>Various signals whose <code class="code">default_sys_behavior</code> is <code class="code">`Terminate</code> are not included:</p><p>| kill | it's not allowed to be handled |
+| pipe | Async already ignores this signal, since it handles EPIPE |
+| prof | so that we can profile things with -p |
+| vtalrm | it already has a handler |</p></div>
+<pre class="odoccode"><span class="VALis_managed_by_async"><span class="keyword">val</span> is_managed_by_async</span> : <code class="type"><a href="http://frenetic-lang.github.io/api//async_unix/#Signal.t" class="ocaml_internal">t</a> -&gt; bool</code></pre><div class="info"><code class="code">is_managed_by_async signal</code> returns true iff <code class="code">signal</code> is being managed by Async, and
+hence its default behavior is no longer in effect.</div>
+</div></div>

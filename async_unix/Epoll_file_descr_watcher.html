@@ -1,0 +1,6 @@
+<div class="ocaml_top"><div class="ocaml_summary"/>
+<div class="ocaml_content"><div class="ocaml_include" path="http://frenetic-lang.github.io/api//async_unix/#File_descr_watcher_intf:S" items="[&quot;Check_result&quot;,&quot;Pre&quot;]" types="[&quot;t&quot;]"><pre class="ocaml_include_handle"><span class="keyword">include</span> <code class="type"><code class="code"><a href="http://frenetic-lang.github.io/api//async_unix/#File_descr_watcher_intf:S">File_descr_watcher_intf.S</a></code></code></pre><div class="ocaml_summary"/></div>
+<pre class="odoccode"><span class="VALcreate"><span class="keyword">val</span> create</span> : <code class="type">num_file_descrs:int -&gt; <a href="http://frenetic-lang.github.io/api//core/#Std.Linux_ext.Timerfd.t">Core.Std.Linux_ext.Timerfd.t</a> -&gt; <a href="http://frenetic-lang.github.io/api//async_unix/#Epoll_file_descr_watcher.t" class="ocaml_internal">t</a></code></pre><div class="info"><code class="code">create ~num_file_descrs timerfd</code> creates a new file-descr-watcher that is able to
+watch file descriptors in <pre class="code"><code>[0, num_file_descrs)</code></pre>, and is also watching
+<code class="code">timerfd</code>.</div>
+</div></div>

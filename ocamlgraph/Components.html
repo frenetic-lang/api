@@ -1,0 +1,26 @@
+<div class="ocaml_top"><div class="ocaml_summary"><div class="info">Strongly connected components.</div></div>
+<div class="ocaml_content"><div class="ocaml_modtype" name="G"><pre class="odoccode"><span class="keyword">module type</span> <a href="http://frenetic-lang.github.io/api//ocamlgraph/#Components:G" class="ocaml_internal">G</a> = <code class="type"><code class="code">sig</code> .. <code class="code">end</code></code></pre><div class="ocaml_summary"><div class="info">Minimal graph signature required by Make.
+Sub-signature of Sig.G.</div></div><div class="ocaml_content">
+<pre class="odoccode"><span class="TYPEt"><span class="keyword">type</span> t</span></pre>
+<div class="ocaml_module" name="V" path="http://frenetic-lang.github.io/api//ocamlgraph/#Sig:COMPARABLE"><pre class="odoccode"><span class="keyword">module</span> <a href="http://frenetic-lang.github.io/api//ocamlgraph/#Components:G.V" class="ocaml_internal">V</a> : <code class="type"><code class="code"><a href="http://frenetic-lang.github.io/api//ocamlgraph/#Sig:COMPARABLE">Sig.COMPARABLE</a></code></code></pre><div class="ocaml_summary"/></div>
+<pre class="odoccode"><span class="VALiter_vertex"><span class="keyword">val</span> iter_vertex</span> : <code class="type">(<a href="http://frenetic-lang.github.io/api//ocamlgraph/#Components:G.V.t" class="ocaml_internal">V.t</a> -&gt; unit) -&gt; <a href="http://frenetic-lang.github.io/api//ocamlgraph/#Components:G.t" class="ocaml_internal">t</a> -&gt; unit</code></pre>
+<pre class="odoccode"><span class="VALiter_succ"><span class="keyword">val</span> iter_succ</span> : <code class="type">(<a href="http://frenetic-lang.github.io/api//ocamlgraph/#Components:G.V.t" class="ocaml_internal">V.t</a> -&gt; unit) -&gt; <a href="http://frenetic-lang.github.io/api//ocamlgraph/#Components:G.t" class="ocaml_internal">t</a> -&gt; <a href="http://frenetic-lang.github.io/api//ocamlgraph/#Components:G.V.t" class="ocaml_internal">V.t</a> -&gt; unit</code></pre></div></div>
+<div class="ocaml_module" name="Make"><pre class="odoccode"><span class="keyword">module</span> <a href="http://frenetic-lang.github.io/api//ocamlgraph/#Components.Make" class="ocaml_internal">Make</a> : <code class="type"><div class="sig_block"><code class="code">functor (</code><code class="code">G</code><code class="code"> : </code><code class="code"><a href="http://frenetic-lang.github.io/api//ocamlgraph/#Components:G" class="ocaml_internal">G</a></code><code class="code">) -&gt; </code><code class="code">sig</code> .. <code class="code">end</code></div></code></pre><div class="ocaml_summary"><div class="info">Functor providing functions to compute strongly connected components of a
+graph.</div></div><div class="ocaml_content">
+<pre class="odoccode"><span class="VALscc"><span class="keyword">val</span> scc</span> : <code class="type">G.t -&gt; int * (G.V.t -&gt; int)</code></pre><div class="info"><code class="code">scc g</code> computes the strongly connected components of <code class="code">g</code>.
+The result is a pair <code class="code">(n,f)</code> where <code class="code">n</code> is the number of
+components. Components are numbered from <code class="code">0</code> to <code class="code">n-1</code>, and
+<code class="code">f</code> is a function mapping each vertex to its component
+number. In particular, <code class="code">f u = f v</code> if and only if <code class="code">u</code> and
+<code class="code">v</code> are in the same component. Another property of the
+numbering is that components are numbered in a topological
+order: if there is an arc from <code class="code">u</code> to <code class="code">v</code>, then <code class="code">f u &gt;= f u</code><p>Not tail-recursive.
+Complexity: O(V+E)
+The function returned has complexity O(1)</p></div>
+<pre class="odoccode"><span class="VALscc_array"><span class="keyword">val</span> scc_array</span> : <code class="type">G.t -&gt; G.V.t list array</code></pre><div class="info"><code class="code">scc_array g</code> computes the strongly connected components of <code class="code">g</code>.
+Components are stored in the resulting array, indexed with a
+numbering with the same properties as for <code class="code">scc</code> above.</div>
+<pre class="odoccode"><span class="VALscc_list"><span class="keyword">val</span> scc_list</span> : <code class="type">G.t -&gt; G.V.t list list</code></pre><div class="info"><code class="code">scc_list g</code> computes the strongly connected components of <code class="code">g</code>.
+The result is a partition of the set of the vertices of <code class="code">g</code>.
+The <code class="code">n</code>-th components is <code class="code">(scc_array g).(n-1)</code>.</div></div></div>
+</div></div>

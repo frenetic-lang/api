@@ -1,0 +1,10 @@
+<div class="ocaml_top"><div class="ocaml_summary"/>
+<div class="ocaml_content"><div class="info"><h2 id="2_TITLE">Semantics</h2><p><code class="code">eval pkt pol</code> raises <code class="code">Not_found</code> if it tests or updates a header that <code class="code">pkt</code>
+does not have. This behavior is different from OpenFlow, which fails silently
+in both cases.</p></div>
+<pre class="odoccode"><span class="VALeval"><span class="keyword">val</span> eval</span> : <code class="type"><a href="http://frenetic-lang.github.io/api//frenetic/#NetKAT_Types.packet">NetKAT_Types.packet</a> -&gt; <a href="http://frenetic-lang.github.io/api//frenetic/#NetKAT_Types.policy">NetKAT_Types.policy</a> -&gt; <a href="http://frenetic-lang.github.io/api//frenetic/#NetKAT_Types.PacketSet.t">NetKAT_Types.PacketSet.t</a></code></pre>
+<pre class="odoccode"><span class="VALeval_pipes"><span class="keyword">val</span> eval_pipes</span> : <code class="type"><a href="http://frenetic-lang.github.io/api//frenetic/#NetKAT_Types.packet">NetKAT_Types.packet</a> -&gt;
+<a href="http://frenetic-lang.github.io/api//frenetic/#NetKAT_Types.policy">NetKAT_Types.policy</a> -&gt;
+(string * <a href="http://frenetic-lang.github.io/api//frenetic/#NetKAT_Types.packet">NetKAT_Types.packet</a>) list * <a href="http://frenetic-lang.github.io/api//frenetic/#NetKAT_Types.packet">NetKAT_Types.packet</a> list</code></pre>
+<pre class="odoccode"><span class="VALsize"><span class="keyword">val</span> size</span> : <code class="type"><a href="http://frenetic-lang.github.io/api//frenetic/#NetKAT_Types.policy">NetKAT_Types.policy</a> -&gt; int</code></pre>
+</div></div>

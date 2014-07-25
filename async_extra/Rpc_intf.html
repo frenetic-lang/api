@@ -1,0 +1,80 @@
+<div class="ocaml_top"><div class="ocaml_summary"/>
+<div class="ocaml_content">
+<div class="ocaml_modtype" name="Connection"><pre class="odoccode"><span class="keyword">module type</span> <a href="http://frenetic-lang.github.io/api//async_extra/#Rpc_intf:Connection" class="ocaml_internal">Connection</a> = <code class="type"><code class="code">sig</code> .. <code class="code">end</code></code></pre><div class="ocaml_summary"/><div class="ocaml_content">
+<div class="ocaml_module" name="Implementations"><pre class="odoccode"><span class="keyword">module</span> <a href="http://frenetic-lang.github.io/api//async_extra/#Rpc_intf:Connection.Implementations" class="ocaml_internal">Implementations</a> : <code class="type"><code class="code">sig</code> .. <code class="code">end</code></code></pre><div class="ocaml_summary"/><div class="ocaml_content">
+<pre class="odoccode"><span class="TYPEt"><span class="keyword">type</span> <code class="type">'a </code>t</span></pre></div></div>
+<pre class="odoccode"><span class="TYPEt"><span class="keyword">type</span> t</span></pre>
+<pre class="odoccode"><span class="VALcreate"><span class="keyword">val</span> create</span> : <code class="type">?implementations:'s <a href="http://frenetic-lang.github.io/api//async_extra/#Rpc_intf:Connection.Implementations.t" class="ocaml_internal">Implementations.t</a> -&gt;
+connection_state:'s -&gt;
+?max_message_size:int -&gt;
+?handshake_timeout:<a href="http://frenetic-lang.github.io/api//core/#Std.Time.Span.t">Core.Std.Time.Span.t</a> -&gt;
+<a href="http://frenetic-lang.github.io/api//async_extra/#Import.Reader.t">Import.Reader.t</a> -&gt;
+<a href="http://frenetic-lang.github.io/api//async_extra/#Import.Writer.t">Import.Writer.t</a> -&gt; (<a href="http://frenetic-lang.github.io/api//async_extra/#Rpc_intf:Connection.t" class="ocaml_internal">t</a>, <a href="http://frenetic-lang.github.io/api//core/#Std.Exn.t">Core.Std.Exn.t</a>) <a href="http://frenetic-lang.github.io/api//core/#Std.Result.t">Core.Std.Result.t</a> <a href="http://frenetic-lang.github.io/api//async_extra/#Import.Deferred.t">Import.Deferred.t</a></code></pre><div class="info">Initiate an Rpc connection on the given reader/writer pair. <code class="code">server</code> should be the
+bag of implementations that the calling side implements; it defaults to
+<code class="code">Implementations.null</code> (i.e., &quot;I implement no RPCs&quot;).</div>
+<pre class="odoccode"><span class="VALclose"><span class="keyword">val</span> close</span> : <code class="type"><a href="http://frenetic-lang.github.io/api//async_extra/#Rpc_intf:Connection.t" class="ocaml_internal">t</a> -&gt; unit <a href="http://frenetic-lang.github.io/api//async_extra/#Import.Deferred.t">Import.Deferred.t</a></code></pre>
+<pre class="odoccode"><span class="VALclose_finished"><span class="keyword">val</span> close_finished</span> : <code class="type"><a href="http://frenetic-lang.github.io/api//async_extra/#Rpc_intf:Connection.t" class="ocaml_internal">t</a> -&gt; unit <a href="http://frenetic-lang.github.io/api//async_extra/#Import.Deferred.t">Import.Deferred.t</a></code></pre>
+<pre class="odoccode"><span class="VALis_closed"><span class="keyword">val</span> is_closed</span> : <code class="type"><a href="http://frenetic-lang.github.io/api//async_extra/#Rpc_intf:Connection.t" class="ocaml_internal">t</a> -&gt; bool</code></pre>
+<pre class="odoccode"><span class="VALbytes_to_write"><span class="keyword">val</span> bytes_to_write</span> : <code class="type"><a href="http://frenetic-lang.github.io/api//async_extra/#Rpc_intf:Connection.t" class="ocaml_internal">t</a> -&gt; int</code></pre>
+<pre class="odoccode"><span class="VALwith_close"><span class="keyword">val</span> with_close</span> : <code class="type">?implementations:'s <a href="http://frenetic-lang.github.io/api//async_extra/#Rpc_intf:Connection.Implementations.t" class="ocaml_internal">Implementations.t</a> -&gt;
+?max_message_size:int -&gt;
+?handshake_timeout:<a href="http://frenetic-lang.github.io/api//core/#Std.Time.Span.t">Core.Std.Time.Span.t</a> -&gt;
+connection_state:'s -&gt;
+<a href="http://frenetic-lang.github.io/api//async_extra/#Import.Reader.t">Import.Reader.t</a> -&gt;
+<a href="http://frenetic-lang.github.io/api//async_extra/#Import.Writer.t">Import.Writer.t</a> -&gt;
+dispatch_queries:(<a href="http://frenetic-lang.github.io/api//async_extra/#Rpc_intf:Connection.t" class="ocaml_internal">t</a> -&gt; 'a <a href="http://frenetic-lang.github.io/api//async_extra/#Import.Deferred.t">Import.Deferred.t</a>) -&gt;
+on_handshake_error:[ `Call of <a href="http://frenetic-lang.github.io/api//core/#Std.Exn.t">Core.Std.Exn.t</a> -&gt; 'a <a href="http://frenetic-lang.github.io/api//async_extra/#Import.Deferred.t">Import.Deferred.t</a> | `Raise ] -&gt;
+'a <a href="http://frenetic-lang.github.io/api//async_extra/#Import.Deferred.t">Import.Deferred.t</a></code></pre><div class="info"><code class="code">with_close</code> tries to create a <code class="code">t</code> using the given reader and writer. If a
+handshake error is the result, it calls <code class="code">on_handshake_error</code>, for which the default
+behavior is to raise an exception. If no error results, <code class="code">dispatch_queries</code> is
+called on <code class="code">t</code>.<p>After <code class="code">dispatch_queries</code> returns, if <code class="code">server</code> is None, the <code class="code">t</code> will be closed and
+the deferred returned by <code class="code">dispatch_queries</code> wil be determined immediately.
+Otherwise, we'll wait until the other side closes the connection and then close <code class="code">t</code>
+and determine the deferred returned by <code class="code">dispatch_queries</code>.</p><p>When the deferred returned by <code class="code">with_close</code> becomes determined, both <code class="code">Reader.close</code>
+and <code class="code">Writer.close</code> have finished.</p></div>
+<pre class="odoccode"><span class="VALserver_with_close"><span class="keyword">val</span> server_with_close</span> : <code class="type">?max_message_size:int -&gt;
+?handshake_timeout:<a href="http://frenetic-lang.github.io/api//core/#Std.Time.Span.t">Core.Std.Time.Span.t</a> -&gt;
+<a href="http://frenetic-lang.github.io/api//async_extra/#Import.Reader.t">Import.Reader.t</a> -&gt;
+<a href="http://frenetic-lang.github.io/api//async_extra/#Import.Writer.t">Import.Writer.t</a> -&gt;
+implementations:'s <a href="http://frenetic-lang.github.io/api//async_extra/#Rpc_intf:Connection.Implementations.t" class="ocaml_internal">Implementations.t</a> -&gt;
+connection_state:'s -&gt;
+on_handshake_error:[ `Call of <a href="http://frenetic-lang.github.io/api//core/#Std.Exn.t">Core.Std.Exn.t</a> -&gt; unit <a href="http://frenetic-lang.github.io/api//async_extra/#Import.Deferred.t">Import.Deferred.t</a>
+                   | `Ignore
+                   | `Raise ] -&gt;
+unit <a href="http://frenetic-lang.github.io/api//async_extra/#Import.Deferred.t">Import.Deferred.t</a></code></pre>
+<pre class="odoccode"><span class="VALserve"><span class="keyword">val</span> serve</span> : <code class="type">implementations:'s <a href="http://frenetic-lang.github.io/api//async_extra/#Rpc_intf:Connection.Implementations.t" class="ocaml_internal">Implementations.t</a> -&gt;
+initial_connection_state:(([&lt; <a href="http://frenetic-lang.github.io/api//async_extra/#Import.Socket.Address.t">Import.Socket.Address.t</a> ] as 'a) -&gt; 's) -&gt;
+where_to_listen:('a, 'listening_on) <a href="http://frenetic-lang.github.io/api//async_extra/#Tcp.Where_to_listen.t">Tcp.Where_to_listen.t</a> -&gt;
+?max_connections:int -&gt;
+?max_message_size:int -&gt;
+?handshake_timeout:<a href="http://frenetic-lang.github.io/api//core/#Std.Time.Span.t">Core.Std.Time.Span.t</a> -&gt;
+?auth:('a -&gt; bool) -&gt;
+?on_handshake_error:[ `Call of <a href="http://frenetic-lang.github.io/api//core/#Std.Exn.t">Core.Std.Exn.t</a> -&gt; unit | `Ignore | `Raise ] -&gt;
+unit -&gt; ('a, 'listening_on) <a href="http://frenetic-lang.github.io/api//async_extra/#Tcp.Server.t">Tcp.Server.t</a> <a href="http://frenetic-lang.github.io/api//async_extra/#Import.Deferred.t">Import.Deferred.t</a></code></pre><div class="info"><code class="code">serve implementations ~port ?on_handshake_error ()</code> starts a server with the given
+implementation on <code class="code">port</code>. The optional auth function will be called on all incoming
+connections with the address info of the client and will disconnect the client
+immediately if it returns false. This auth mechanism is generic and does nothing
+other than disconnect the client - any logging or record of the reasons is the
+responsibility of the auth function itself.</div>
+<div class="ocaml_module" name="Client_implementations"><pre class="odoccode"><span class="keyword">module</span> <a href="http://frenetic-lang.github.io/api//async_extra/#Rpc_intf:Connection.Client_implementations" class="ocaml_internal">Client_implementations</a> : <code class="type"><code class="code">sig</code> .. <code class="code">end</code></code></pre><div class="ocaml_summary"/><div class="ocaml_content">
+<pre class="odoccode"><code><span class="TYPEt"><span class="keyword">type</span> <code class="type">'s </code>t</span> = {</code></pre><table class="typetable">
+		    <tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="TYPEELTt.connection_state">connection_state</span> : <code class="type">'s</code>;</code></td></tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="TYPEELTt.implementations">implementations</span> : <code class="type">'s <a href="http://frenetic-lang.github.io/api//async_extra/#Rpc_intf:Connection.Implementations.t" class="ocaml_internal">Implementations.t</a></code>;</code></td></tr><tr><td>}</td></tr></table>
+<pre class="odoccode"><span class="VALnull"><span class="keyword">val</span> null</span> : <code class="type">unit -&gt; unit <a href="http://frenetic-lang.github.io/api//async_extra/#Rpc_intf:Connection.Client_implementations.t" class="ocaml_internal">t</a></code></pre></div></div>
+<pre class="odoccode"><span class="VALclient"><span class="keyword">val</span> client</span> : <code class="type">host:string -&gt;
+port:int -&gt;
+?implementations:'a <a href="http://frenetic-lang.github.io/api//async_extra/#Rpc_intf:Connection.Client_implementations.t" class="ocaml_internal">Client_implementations.t</a> -&gt;
+?max_message_size:int -&gt;
+?handshake_timeout:<a href="http://frenetic-lang.github.io/api//core/#Std.Time.Span.t">Core.Std.Time.Span.t</a> -&gt;
+unit -&gt; (<a href="http://frenetic-lang.github.io/api//async_extra/#Rpc_intf:Connection.t" class="ocaml_internal">t</a>, <a href="http://frenetic-lang.github.io/api//core/#Std.Exn.t">Core.Std.Exn.t</a>) <a href="http://frenetic-lang.github.io/api//core/#Std.Result.t">Core.Std.Result.t</a> <a href="http://frenetic-lang.github.io/api//async_extra/#Import.Deferred.t">Import.Deferred.t</a></code></pre><div class="info"><code class="code">client ~host ~port ()</code> connects to the server at (<code class="code">host</code>,<code class="code">port</code>) and returns the
+connection or an Error if a connection could not be made. It is the responsibility
+of the caller to eventually call close.</div>
+<pre class="odoccode"><span class="VALwith_client"><span class="keyword">val</span> with_client</span> : <code class="type">host:string -&gt;
+port:int -&gt;
+?implementations:'b <a href="http://frenetic-lang.github.io/api//async_extra/#Rpc_intf:Connection.Client_implementations.t" class="ocaml_internal">Client_implementations.t</a> -&gt;
+?max_message_size:int -&gt;
+?handshake_timeout:<a href="http://frenetic-lang.github.io/api//core/#Std.Time.Span.t">Core.Std.Time.Span.t</a> -&gt;
+(<a href="http://frenetic-lang.github.io/api//async_extra/#Rpc_intf:Connection.t" class="ocaml_internal">t</a> -&gt; 'a <a href="http://frenetic-lang.github.io/api//async_extra/#Import.Deferred.t">Import.Deferred.t</a>) -&gt;
+('a, <a href="http://frenetic-lang.github.io/api//core/#Std.Exn.t">Core.Std.Exn.t</a>) <a href="http://frenetic-lang.github.io/api//core/#Std.Result.t">Core.Std.Result.t</a> <a href="http://frenetic-lang.github.io/api//async_extra/#Import.Deferred.t">Import.Deferred.t</a></code></pre><div class="info"><code class="code">with_client ~host ~port f</code> connects to the server at (<code class="code">host</code>,<code class="code">port</code>) and runs f
+until an exception is thrown or until the returned Deferred is fulfilled.</div></div></div>
+
+</div></div>

@@ -1,0 +1,20 @@
+<div class="ocaml_top"><div class="ocaml_summary"><div class="info">OpenFlow 1.0: Helps determine valid modification compositions.<p>OpenFlow modification actions are imperative, which makes it difficult to
+calculate the parallel composition of two action sequences. For example,
+the following parallel composition is not realizable in OpenFlow 1.0:</p><p><code class="code">[SetDlSrc 10, Output 5] + [Output 1]</code></p><p>We need to flatten the composition into a sequence. The sequence needs to
+undo the effect of <code class="code">SetDlSrc 10</code> before executing <code class="code">Output 1</code>, but that is
+not possible to do.</p></div></div>
+<div class="ocaml_content"><pre class="odoccode"><span class="TYPEt"><span class="keyword">type</span> t</span></pre><div class="info">A bit-vector that represents which files are modified by an action
+sequence.</div>
+<pre class="odoccode"><span class="VALnone"><span class="keyword">val</span> none</span> : <code class="type"><a href="http://frenetic-lang.github.io/api//openflow/#ModComposition.t" class="ocaml_internal">t</a></code></pre><div class="info">No modifications</div>
+<pre class="odoccode"><span class="VALdlSrc"><span class="keyword">val</span> dlSrc</span> : <code class="type"><a href="http://frenetic-lang.github.io/api//openflow/#ModComposition.t" class="ocaml_internal">t</a></code></pre>
+<pre class="odoccode"><span class="VALdlDst"><span class="keyword">val</span> dlDst</span> : <code class="type"><a href="http://frenetic-lang.github.io/api//openflow/#ModComposition.t" class="ocaml_internal">t</a></code></pre>
+<pre class="odoccode"><span class="VALdlVlan"><span class="keyword">val</span> dlVlan</span> : <code class="type"><a href="http://frenetic-lang.github.io/api//openflow/#ModComposition.t" class="ocaml_internal">t</a></code></pre>
+<pre class="odoccode"><span class="VALdlVlanPcp"><span class="keyword">val</span> dlVlanPcp</span> : <code class="type"><a href="http://frenetic-lang.github.io/api//openflow/#ModComposition.t" class="ocaml_internal">t</a></code></pre>
+<pre class="odoccode"><span class="VALnwSrc"><span class="keyword">val</span> nwSrc</span> : <code class="type"><a href="http://frenetic-lang.github.io/api//openflow/#ModComposition.t" class="ocaml_internal">t</a></code></pre>
+<pre class="odoccode"><span class="VALnwDst"><span class="keyword">val</span> nwDst</span> : <code class="type"><a href="http://frenetic-lang.github.io/api//openflow/#ModComposition.t" class="ocaml_internal">t</a></code></pre>
+<pre class="odoccode"><span class="VALtpSrc"><span class="keyword">val</span> tpSrc</span> : <code class="type"><a href="http://frenetic-lang.github.io/api//openflow/#ModComposition.t" class="ocaml_internal">t</a></code></pre>
+<pre class="odoccode"><span class="VALtpDst"><span class="keyword">val</span> tpDst</span> : <code class="type"><a href="http://frenetic-lang.github.io/api//openflow/#ModComposition.t" class="ocaml_internal">t</a></code></pre>
+<pre class="odoccode"><span class="VALseq"><span class="keyword">val</span> seq</span> : <code class="type"><a href="http://frenetic-lang.github.io/api//openflow/#ModComposition.t" class="ocaml_internal">t</a> -&gt; <a href="http://frenetic-lang.github.io/api//openflow/#ModComposition.t" class="ocaml_internal">t</a> -&gt; <a href="http://frenetic-lang.github.io/api//openflow/#ModComposition.t" class="ocaml_internal">t</a></code></pre>
+<pre class="odoccode"><span class="VALpar"><span class="keyword">val</span> par</span> : <code class="type"><a href="http://frenetic-lang.github.io/api//openflow/#ModComposition.t" class="ocaml_internal">t</a> -&gt; <a href="http://frenetic-lang.github.io/api//openflow/#ModComposition.t" class="ocaml_internal">t</a> -&gt; <a href="http://frenetic-lang.github.io/api//openflow/#ModComposition.t" class="ocaml_internal">t</a></code></pre><div class="info"><code class="code">par m1 m2</code> may fail with
+<code class="code">Invalid_argument &quot;unrealizable parallel composition&quot;</code></div>
+</div></div>

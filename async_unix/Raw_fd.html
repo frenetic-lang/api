@@ -1,0 +1,353 @@
+<div class="ocaml_top"><div class="ocaml_summary"/>
+<div class="ocaml_content">
+<pre class="odoccode"><span class="VALdebug"><span class="keyword">val</span> debug</span> : <code class="type">bool</code></pre>
+<div class="ocaml_module" name="File_descr" path="http://frenetic-lang.github.io/api//core/#Std.Unix.File_descr"><pre class="odoccode"><span class="keyword">module</span> <a href="http://frenetic-lang.github.io/api//async_unix/#Raw_fd.File_descr" class="ocaml_internal">File_descr</a> : <code class="type"><code class="code"><a href="http://frenetic-lang.github.io/api//core/#Std.Unix.File_descr">Core.Std.Unix.File_descr</a></code></code></pre><div class="ocaml_summary"/></div>
+<div class="ocaml_module" name="Kind"><pre class="odoccode"><span class="keyword">module</span> <a href="http://frenetic-lang.github.io/api//async_unix/#Raw_fd.Kind" class="ocaml_internal">Kind</a> : <code class="type"><code class="code">sig</code> .. <code class="code">end</code></code></pre><div class="ocaml_summary"/><div class="ocaml_content">
+<pre class="odoccode"><code><span class="TYPEt"><span class="keyword">type</span> t</span> = </code></pre><table class="typetable">
+		    <tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span class="TYPEELTt.Char"><span class="constructor">Char</span></span></code></td></tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span class="TYPEELTt.Fifo"><span class="constructor">Fifo</span></span></code></td></tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span class="TYPEELTt.File"><span class="constructor">File</span></span></code></td></tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span class="TYPEELTt.Socket"><span class="constructor">Socket</span></span> <span class="keyword">of</span> <code class="type">[ `Active | `Bound | `Passive | `Unconnected ]</code></code></td></tr></table>
+
+<pre class="odoccode"><span class="VALsexp_of_t"><span class="keyword">val</span> sexp_of_t</span> : <code class="type"><a href="http://frenetic-lang.github.io/api//async_unix/#Raw_fd.Kind.t" class="ocaml_internal">t</a> -&gt; <a href="http://frenetic-lang.github.io/api//sexplib/#Sexp.t">Sexplib.Sexp.t</a></code></pre>
+</div></div>
+<div class="ocaml_module" name="State"><pre class="odoccode"><span class="keyword">module</span> <a href="http://frenetic-lang.github.io/api//async_unix/#Raw_fd.State" class="ocaml_internal">State</a> : <code class="type"><code class="code">sig</code> .. <code class="code">end</code></code></pre><div class="ocaml_summary"/><div class="ocaml_content">
+<pre class="odoccode"><code><span class="TYPEt"><span class="keyword">type</span> t</span> = </code></pre><table class="typetable">
+		    <tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span class="TYPEELTt.Close_requested"><span class="constructor">Close_requested</span></span> <span class="keyword">of</span> <code class="type">unit -&gt; unit <a href="http://frenetic-lang.github.io/api//async_unix/#Import.Deferred.t">Import.Deferred.t</a></code></code></td></tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span class="TYPEELTt.Closed"><span class="constructor">Closed</span></span></code></td></tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span class="TYPEELTt.Open"><span class="constructor">Open</span></span> <span class="keyword">of</span> <code class="type">unit <a href="http://frenetic-lang.github.io/api//async_unix/#Import.Ivar.t">Import.Ivar.t</a></code></code></td></tr></table>
+
+<pre class="odoccode"><span class="VALsexp_of_t"><span class="keyword">val</span> sexp_of_t</span> : <code class="type"><a href="http://frenetic-lang.github.io/api//async_unix/#Raw_fd.State.t" class="ocaml_internal">t</a> -&gt; <a href="http://frenetic-lang.github.io/api//sexplib/#Sexp.t">Sexplib.Sexp.t</a></code></pre>
+
+<pre class="odoccode"><span class="VALtransition_is_allowed"><span class="keyword">val</span> transition_is_allowed</span> : <code class="type"><a href="http://frenetic-lang.github.io/api//async_unix/#Raw_fd.State.t" class="ocaml_internal">t</a> -&gt; <a href="http://frenetic-lang.github.io/api//async_unix/#Raw_fd.State.t" class="ocaml_internal">t</a> -&gt; bool</code></pre>
+<pre class="odoccode"><span class="VALis_open"><span class="keyword">val</span> is_open</span> : <code class="type"><a href="http://frenetic-lang.github.io/api//async_unix/#Raw_fd.State.t" class="ocaml_internal">t</a> -&gt; bool</code></pre></div></div>
+<pre class="odoccode"><span class="TYPEready_to_result"><span class="keyword">type</span> ready_to_result</span> = <code class="type">[ `Bad_fd | `Closed | `Interrupted | `Ready ]</code></pre>
+
+<pre class="odoccode"><span class="VALsexp_of_ready_to_result"><span class="keyword">val</span> sexp_of_ready_to_result</span> : <code class="type"><a href="http://frenetic-lang.github.io/api//async_unix/#Raw_fd.ready_to_result" class="ocaml_internal">ready_to_result</a> -&gt; <a href="http://frenetic-lang.github.io/api//sexplib/#Sexp.t">Sexplib.Sexp.t</a></code></pre>
+
+<div class="ocaml_module" name="Watching"><pre class="odoccode"><span class="keyword">module</span> <a href="http://frenetic-lang.github.io/api//async_unix/#Raw_fd.Watching" class="ocaml_internal">Watching</a> : <code class="type"><code class="code">sig</code> .. <code class="code">end</code></code></pre><div class="ocaml_summary"/><div class="ocaml_content">
+<pre class="odoccode"><code><span class="TYPEt"><span class="keyword">type</span> t</span> = </code></pre><table class="typetable">
+		    <tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span class="TYPEELTt.Not_watching"><span class="constructor">Not_watching</span></span></code></td></tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span class="TYPEELTt.Watch_once"><span class="constructor">Watch_once</span></span> <span class="keyword">of</span> <code class="type"><a href="http://frenetic-lang.github.io/api//async_unix/#Raw_fd.ready_to_result" class="ocaml_internal">ready_to_result</a> <a href="http://frenetic-lang.github.io/api//async_unix/#Import.Ivar.t">Import.Ivar.t</a></code></code></td></tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span class="TYPEELTt.Watch_repeatedly"><span class="constructor">Watch_repeatedly</span></span> <span class="keyword">of</span> <code class="type"><a href="http://frenetic-lang.github.io/api//async_kernel/#Jobs.Job.t">Async_kernel.Jobs.Job.t</a> * [ `Bad_fd | `Closed | `Interrupted ] <a href="http://frenetic-lang.github.io/api//async_unix/#Import.Ivar.t">Import.Ivar.t</a></code></code></td></tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span class="TYPEELTt.Stop_requested"><span class="constructor">Stop_requested</span></span></code></td></tr></table>
+
+<pre class="odoccode"><span class="VALsexp_of_t"><span class="keyword">val</span> sexp_of_t</span> : <code class="type"><a href="http://frenetic-lang.github.io/api//async_unix/#Raw_fd.Watching.t" class="ocaml_internal">t</a> -&gt; <a href="http://frenetic-lang.github.io/api//sexplib/#Sexp.t">Sexplib.Sexp.t</a></code></pre>
+
+<pre class="odoccode"><span class="VALinvariant"><span class="keyword">val</span> invariant</span> : <code class="type"><a href="http://frenetic-lang.github.io/api//async_unix/#Raw_fd.Watching.t" class="ocaml_internal">t</a> -&gt; unit</code></pre></div></div>
+<div class="ocaml_module" name="T"><pre class="odoccode"><span class="keyword">module</span> <a href="http://frenetic-lang.github.io/api//async_unix/#Raw_fd.T" class="ocaml_internal">T</a> : <code class="type"><code class="code">sig</code> .. <code class="code">end</code></code></pre><div class="ocaml_summary"/><div class="ocaml_content">
+<pre class="odoccode"><code><span class="TYPEt"><span class="keyword">type</span> t</span> = {</code></pre><table class="typetable">
+		    <tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="TYPEELTt.file_descr">file_descr</span> : <code class="type"><a href="http://frenetic-lang.github.io/api//async_unix/#Raw_fd.File_descr.t" class="ocaml_internal">File_descr.t</a></code>;</code></td></tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="keyword">mutable</span> <span class="TYPEELTt.info">info</span> : <code class="type"><a href="http://frenetic-lang.github.io/api//core/#Std.Info.t">Core.Std.Info.t</a></code>;</code></td></tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="keyword">mutable</span> <span class="TYPEELTt.kind">kind</span> : <code class="type"><a href="http://frenetic-lang.github.io/api//async_unix/#Raw_fd.Kind.t" class="ocaml_internal">Kind.t</a></code>;</code></td></tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="keyword">mutable</span> <span class="TYPEELTt.supports_nonblock">supports_nonblock</span> : <code class="type">bool</code>;</code></td></tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="keyword">mutable</span> <span class="TYPEELTt.have_set_nonblock">have_set_nonblock</span> : <code class="type">bool</code>;</code></td></tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="keyword">mutable</span> <span class="TYPEELTt.state">state</span> : <code class="type"><a href="http://frenetic-lang.github.io/api//async_unix/#Raw_fd.State.t" class="ocaml_internal">State.t</a></code>;</code></td></tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="TYPEELTt.watching">watching</span> : <code class="type"><a href="http://frenetic-lang.github.io/api//async_unix/#Raw_fd.Watching.t" class="ocaml_internal">Watching.t</a> <a href="http://frenetic-lang.github.io/api//async_unix/#Read_write.Mutable.t">Read_write.Mutable.t</a></code>;</code></td></tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="keyword">mutable</span> <span class="TYPEELTt.watching_has_changed">watching_has_changed</span> : <code class="type">bool</code>;</code></td></tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="keyword">mutable</span> <span class="TYPEELTt.num_active_syscalls">num_active_syscalls</span> : <code class="type">int</code>;</code></td></tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="TYPEELTt.close_finished">close_finished</span> : <code class="type">unit <a href="http://frenetic-lang.github.io/api//async_unix/#Import.Ivar.t">Import.Ivar.t</a></code>;</code></td></tr><tr><td>}</td></tr></table>
+
+<pre class="odoccode"><span class="VALsexp_of_t"><span class="keyword">val</span> sexp_of_t</span> : <code class="type"><a href="http://frenetic-lang.github.io/api//async_unix/#Raw_fd.T.t" class="ocaml_internal">t</a> -&gt; <a href="http://frenetic-lang.github.io/api//sexplib/#Sexp.t">Sexplib.Sexp.t</a></code></pre>
+
+<pre class="odoccode"><span class="VALclose_finished"><span class="keyword">val</span> close_finished</span> : <code class="type"><a href="http://frenetic-lang.github.io/api//async_unix/#Raw_fd.T.t" class="ocaml_internal">t</a> -&gt; unit <a href="http://frenetic-lang.github.io/api//async_unix/#Import.Ivar.t">Import.Ivar.t</a></code></pre>
+
+<pre class="odoccode"><span class="VALnum_active_syscalls"><span class="keyword">val</span> num_active_syscalls</span> : <code class="type"><a href="http://frenetic-lang.github.io/api//async_unix/#Raw_fd.T.t" class="ocaml_internal">t</a> -&gt; int</code></pre>
+
+<pre class="odoccode"><span class="VALset_num_active_syscalls"><span class="keyword">val</span> set_num_active_syscalls</span> : <code class="type"><a href="http://frenetic-lang.github.io/api//async_unix/#Raw_fd.T.t" class="ocaml_internal">t</a> -&gt; int -&gt; unit</code></pre>
+
+<pre class="odoccode"><span class="VALwatching_has_changed"><span class="keyword">val</span> watching_has_changed</span> : <code class="type"><a href="http://frenetic-lang.github.io/api//async_unix/#Raw_fd.T.t" class="ocaml_internal">t</a> -&gt; bool</code></pre>
+
+<pre class="odoccode"><span class="VALset_watching_has_changed"><span class="keyword">val</span> set_watching_has_changed</span> : <code class="type"><a href="http://frenetic-lang.github.io/api//async_unix/#Raw_fd.T.t" class="ocaml_internal">t</a> -&gt; bool -&gt; unit</code></pre>
+
+<pre class="odoccode"><span class="VALwatching"><span class="keyword">val</span> watching</span> : <code class="type"><a href="http://frenetic-lang.github.io/api//async_unix/#Raw_fd.T.t" class="ocaml_internal">t</a> -&gt; <a href="http://frenetic-lang.github.io/api//async_unix/#Raw_fd.Watching.t" class="ocaml_internal">Watching.t</a> <a href="http://frenetic-lang.github.io/api//async_unix/#Read_write.Mutable.t">Read_write.Mutable.t</a></code></pre>
+
+<pre class="odoccode"><span class="VALstate"><span class="keyword">val</span> state</span> : <code class="type"><a href="http://frenetic-lang.github.io/api//async_unix/#Raw_fd.T.t" class="ocaml_internal">t</a> -&gt; <a href="http://frenetic-lang.github.io/api//async_unix/#Raw_fd.State.t" class="ocaml_internal">State.t</a></code></pre>
+
+<pre class="odoccode"><span class="VALset_state"><span class="keyword">val</span> set_state</span> : <code class="type"><a href="http://frenetic-lang.github.io/api//async_unix/#Raw_fd.T.t" class="ocaml_internal">t</a> -&gt; <a href="http://frenetic-lang.github.io/api//async_unix/#Raw_fd.State.t" class="ocaml_internal">State.t</a> -&gt; unit</code></pre>
+
+<pre class="odoccode"><span class="VALhave_set_nonblock"><span class="keyword">val</span> have_set_nonblock</span> : <code class="type"><a href="http://frenetic-lang.github.io/api//async_unix/#Raw_fd.T.t" class="ocaml_internal">t</a> -&gt; bool</code></pre>
+
+<pre class="odoccode"><span class="VALset_have_set_nonblock"><span class="keyword">val</span> set_have_set_nonblock</span> : <code class="type"><a href="http://frenetic-lang.github.io/api//async_unix/#Raw_fd.T.t" class="ocaml_internal">t</a> -&gt; bool -&gt; unit</code></pre>
+
+<pre class="odoccode"><span class="VALsupports_nonblock"><span class="keyword">val</span> supports_nonblock</span> : <code class="type"><a href="http://frenetic-lang.github.io/api//async_unix/#Raw_fd.T.t" class="ocaml_internal">t</a> -&gt; bool</code></pre>
+
+<pre class="odoccode"><span class="VALset_supports_nonblock"><span class="keyword">val</span> set_supports_nonblock</span> : <code class="type"><a href="http://frenetic-lang.github.io/api//async_unix/#Raw_fd.T.t" class="ocaml_internal">t</a> -&gt; bool -&gt; unit</code></pre>
+
+<pre class="odoccode"><span class="VALkind"><span class="keyword">val</span> kind</span> : <code class="type"><a href="http://frenetic-lang.github.io/api//async_unix/#Raw_fd.T.t" class="ocaml_internal">t</a> -&gt; <a href="http://frenetic-lang.github.io/api//async_unix/#Raw_fd.Kind.t" class="ocaml_internal">Kind.t</a></code></pre>
+
+<pre class="odoccode"><span class="VALset_kind"><span class="keyword">val</span> set_kind</span> : <code class="type"><a href="http://frenetic-lang.github.io/api//async_unix/#Raw_fd.T.t" class="ocaml_internal">t</a> -&gt; <a href="http://frenetic-lang.github.io/api//async_unix/#Raw_fd.Kind.t" class="ocaml_internal">Kind.t</a> -&gt; unit</code></pre>
+
+<pre class="odoccode"><span class="VALinfo"><span class="keyword">val</span> info</span> : <code class="type"><a href="http://frenetic-lang.github.io/api//async_unix/#Raw_fd.T.t" class="ocaml_internal">t</a> -&gt; <a href="http://frenetic-lang.github.io/api//core/#Std.Info.t">Core.Std.Info.t</a></code></pre>
+
+<pre class="odoccode"><span class="VALset_info"><span class="keyword">val</span> set_info</span> : <code class="type"><a href="http://frenetic-lang.github.io/api//async_unix/#Raw_fd.T.t" class="ocaml_internal">t</a> -&gt; <a href="http://frenetic-lang.github.io/api//core/#Std.Info.t">Core.Std.Info.t</a> -&gt; unit</code></pre>
+
+<pre class="odoccode"><span class="VALfile_descr"><span class="keyword">val</span> file_descr</span> : <code class="type"><a href="http://frenetic-lang.github.io/api//async_unix/#Raw_fd.T.t" class="ocaml_internal">t</a> -&gt; <a href="http://frenetic-lang.github.io/api//async_unix/#Raw_fd.File_descr.t" class="ocaml_internal">File_descr.t</a></code></pre>
+
+<div class="ocaml_module" name="Fields"><pre class="odoccode"><span class="keyword">module</span> <a href="http://frenetic-lang.github.io/api//async_unix/#Raw_fd.T.Fields" class="ocaml_internal">Fields</a> : <code class="type"><code class="code">sig</code> .. <code class="code">end</code></code></pre><div class="ocaml_summary"/><div class="ocaml_content">
+<pre class="odoccode"><span class="VALnames"><span class="keyword">val</span> names</span> : <code class="type">string list</code></pre>
+
+<pre class="odoccode"><span class="VALclose_finished"><span class="keyword">val</span> close_finished</span> : <code class="type">([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_unix/#Raw_fd.T.t" class="ocaml_internal">t</a>, unit <a href="http://frenetic-lang.github.io/api//async_unix/#Import.Ivar.t">Import.Ivar.t</a>)
+<a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a></code></pre>
+
+<pre class="odoccode"><span class="VALnum_active_syscalls"><span class="keyword">val</span> num_active_syscalls</span> : <code class="type">([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_unix/#Raw_fd.T.t" class="ocaml_internal">t</a>, int) <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a></code></pre>
+
+<pre class="odoccode"><span class="VALwatching_has_changed"><span class="keyword">val</span> watching_has_changed</span> : <code class="type">([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_unix/#Raw_fd.T.t" class="ocaml_internal">t</a>, bool) <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a></code></pre>
+
+<pre class="odoccode"><span class="VALwatching"><span class="keyword">val</span> watching</span> : <code class="type">([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_unix/#Raw_fd.T.t" class="ocaml_internal">t</a>, <a href="http://frenetic-lang.github.io/api//async_unix/#Raw_fd.Watching.t" class="ocaml_internal">Watching.t</a> <a href="http://frenetic-lang.github.io/api//async_unix/#Read_write.Mutable.t">Read_write.Mutable.t</a>)
+<a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a></code></pre>
+
+<pre class="odoccode"><span class="VALstate"><span class="keyword">val</span> state</span> : <code class="type">([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_unix/#Raw_fd.T.t" class="ocaml_internal">t</a>, <a href="http://frenetic-lang.github.io/api//async_unix/#Raw_fd.State.t" class="ocaml_internal">State.t</a>) <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a></code></pre>
+
+<pre class="odoccode"><span class="VALhave_set_nonblock"><span class="keyword">val</span> have_set_nonblock</span> : <code class="type">([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_unix/#Raw_fd.T.t" class="ocaml_internal">t</a>, bool) <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a></code></pre>
+
+<pre class="odoccode"><span class="VALsupports_nonblock"><span class="keyword">val</span> supports_nonblock</span> : <code class="type">([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_unix/#Raw_fd.T.t" class="ocaml_internal">t</a>, bool) <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a></code></pre>
+
+<pre class="odoccode"><span class="VALkind"><span class="keyword">val</span> kind</span> : <code class="type">([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_unix/#Raw_fd.T.t" class="ocaml_internal">t</a>, <a href="http://frenetic-lang.github.io/api//async_unix/#Raw_fd.Kind.t" class="ocaml_internal">Kind.t</a>) <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a></code></pre>
+
+<pre class="odoccode"><span class="VALinfo"><span class="keyword">val</span> info</span> : <code class="type">([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_unix/#Raw_fd.T.t" class="ocaml_internal">t</a>, <a href="http://frenetic-lang.github.io/api//core/#Std.Info.t">Core.Std.Info.t</a>)
+<a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a></code></pre>
+
+<pre class="odoccode"><span class="VALfile_descr"><span class="keyword">val</span> file_descr</span> : <code class="type">([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_unix/#Raw_fd.T.t" class="ocaml_internal">t</a>, <a href="http://frenetic-lang.github.io/api//async_unix/#Raw_fd.File_descr.t" class="ocaml_internal">File_descr.t</a>) <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a></code></pre>
+
+<pre class="odoccode"><span class="VALmake_creator"><span class="keyword">val</span> make_creator</span> : <code class="type">file_descr:(([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_unix/#Raw_fd.T.t" class="ocaml_internal">t</a>, <a href="http://frenetic-lang.github.io/api//async_unix/#Raw_fd.File_descr.t" class="ocaml_internal">File_descr.t</a>)
+            <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; 'a -&gt; ('b -&gt; <a href="http://frenetic-lang.github.io/api//async_unix/#Raw_fd.File_descr.t" class="ocaml_internal">File_descr.t</a>) * 'c) -&gt;
+info:(([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_unix/#Raw_fd.T.t" class="ocaml_internal">t</a>, <a href="http://frenetic-lang.github.io/api//core/#Std.Info.t">Core.Std.Info.t</a>)
+      <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; 'c -&gt; ('b -&gt; <a href="http://frenetic-lang.github.io/api//core/#Std.Info.t">Core.Std.Info.t</a>) * 'd) -&gt;
+kind:(([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_unix/#Raw_fd.T.t" class="ocaml_internal">t</a>, <a href="http://frenetic-lang.github.io/api//async_unix/#Raw_fd.Kind.t" class="ocaml_internal">Kind.t</a>) <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt;
+      'd -&gt; ('b -&gt; <a href="http://frenetic-lang.github.io/api//async_unix/#Raw_fd.Kind.t" class="ocaml_internal">Kind.t</a>) * 'e) -&gt;
+supports_nonblock:(([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_unix/#Raw_fd.T.t" class="ocaml_internal">t</a>, bool)
+                   <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; 'e -&gt; ('b -&gt; bool) * 'f) -&gt;
+have_set_nonblock:(([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_unix/#Raw_fd.T.t" class="ocaml_internal">t</a>, bool)
+                   <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; 'f -&gt; ('b -&gt; bool) * 'g) -&gt;
+state:(([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_unix/#Raw_fd.T.t" class="ocaml_internal">t</a>, <a href="http://frenetic-lang.github.io/api//async_unix/#Raw_fd.State.t" class="ocaml_internal">State.t</a>) <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt;
+       'g -&gt; ('b -&gt; <a href="http://frenetic-lang.github.io/api//async_unix/#Raw_fd.State.t" class="ocaml_internal">State.t</a>) * 'h) -&gt;
+watching:(([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_unix/#Raw_fd.T.t" class="ocaml_internal">t</a>, <a href="http://frenetic-lang.github.io/api//async_unix/#Raw_fd.Watching.t" class="ocaml_internal">Watching.t</a> <a href="http://frenetic-lang.github.io/api//async_unix/#Read_write.Mutable.t">Read_write.Mutable.t</a>)
+          <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt;
+          'h -&gt; ('b -&gt; <a href="http://frenetic-lang.github.io/api//async_unix/#Raw_fd.Watching.t" class="ocaml_internal">Watching.t</a> <a href="http://frenetic-lang.github.io/api//async_unix/#Read_write.Mutable.t">Read_write.Mutable.t</a>) * 'i) -&gt;
+watching_has_changed:(([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_unix/#Raw_fd.T.t" class="ocaml_internal">t</a>, bool)
+                      <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; 'i -&gt; ('b -&gt; bool) * 'j) -&gt;
+num_active_syscalls:(([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_unix/#Raw_fd.T.t" class="ocaml_internal">t</a>, int)
+                     <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; 'j -&gt; ('b -&gt; int) * 'k) -&gt;
+close_finished:(([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_unix/#Raw_fd.T.t" class="ocaml_internal">t</a>, unit <a href="http://frenetic-lang.github.io/api//async_unix/#Import.Ivar.t">Import.Ivar.t</a>)
+                <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt;
+                'k -&gt; ('b -&gt; unit <a href="http://frenetic-lang.github.io/api//async_unix/#Import.Ivar.t">Import.Ivar.t</a>) * 'l) -&gt;
+'a -&gt; ('b -&gt; <a href="http://frenetic-lang.github.io/api//async_unix/#Raw_fd.T.t" class="ocaml_internal">t</a>) * 'l</code></pre>
+
+<pre class="odoccode"><span class="VALcreate"><span class="keyword">val</span> create</span> : <code class="type">file_descr:<a href="http://frenetic-lang.github.io/api//async_unix/#Raw_fd.File_descr.t" class="ocaml_internal">File_descr.t</a> -&gt;
+info:<a href="http://frenetic-lang.github.io/api//core/#Std.Info.t">Core.Std.Info.t</a> -&gt;
+kind:<a href="http://frenetic-lang.github.io/api//async_unix/#Raw_fd.Kind.t" class="ocaml_internal">Kind.t</a> -&gt;
+supports_nonblock:bool -&gt;
+have_set_nonblock:bool -&gt;
+state:<a href="http://frenetic-lang.github.io/api//async_unix/#Raw_fd.State.t" class="ocaml_internal">State.t</a> -&gt;
+watching:<a href="http://frenetic-lang.github.io/api//async_unix/#Raw_fd.Watching.t" class="ocaml_internal">Watching.t</a> <a href="http://frenetic-lang.github.io/api//async_unix/#Read_write.Mutable.t">Read_write.Mutable.t</a> -&gt;
+watching_has_changed:bool -&gt;
+num_active_syscalls:int -&gt; close_finished:unit <a href="http://frenetic-lang.github.io/api//async_unix/#Import.Ivar.t">Import.Ivar.t</a> -&gt; <a href="http://frenetic-lang.github.io/api//async_unix/#Raw_fd.T.t" class="ocaml_internal">t</a></code></pre>
+
+<pre class="odoccode"><span class="VALmap"><span class="keyword">val</span> map</span> : <code class="type">file_descr:(([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_unix/#Raw_fd.T.t" class="ocaml_internal">t</a>, <a href="http://frenetic-lang.github.io/api//async_unix/#Raw_fd.File_descr.t" class="ocaml_internal">File_descr.t</a>)
+            <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; <a href="http://frenetic-lang.github.io/api//async_unix/#Raw_fd.File_descr.t" class="ocaml_internal">File_descr.t</a>) -&gt;
+info:(([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_unix/#Raw_fd.T.t" class="ocaml_internal">t</a>, <a href="http://frenetic-lang.github.io/api//core/#Std.Info.t">Core.Std.Info.t</a>)
+      <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; <a href="http://frenetic-lang.github.io/api//core/#Std.Info.t">Core.Std.Info.t</a>) -&gt;
+kind:(([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_unix/#Raw_fd.T.t" class="ocaml_internal">t</a>, <a href="http://frenetic-lang.github.io/api//async_unix/#Raw_fd.Kind.t" class="ocaml_internal">Kind.t</a>) <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt;
+      <a href="http://frenetic-lang.github.io/api//async_unix/#Raw_fd.Kind.t" class="ocaml_internal">Kind.t</a>) -&gt;
+supports_nonblock:(([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_unix/#Raw_fd.T.t" class="ocaml_internal">t</a>, bool)
+                   <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; bool) -&gt;
+have_set_nonblock:(([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_unix/#Raw_fd.T.t" class="ocaml_internal">t</a>, bool)
+                   <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; bool) -&gt;
+state:(([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_unix/#Raw_fd.T.t" class="ocaml_internal">t</a>, <a href="http://frenetic-lang.github.io/api//async_unix/#Raw_fd.State.t" class="ocaml_internal">State.t</a>) <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt;
+       <a href="http://frenetic-lang.github.io/api//async_unix/#Raw_fd.State.t" class="ocaml_internal">State.t</a>) -&gt;
+watching:(([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_unix/#Raw_fd.T.t" class="ocaml_internal">t</a>, <a href="http://frenetic-lang.github.io/api//async_unix/#Raw_fd.Watching.t" class="ocaml_internal">Watching.t</a> <a href="http://frenetic-lang.github.io/api//async_unix/#Read_write.Mutable.t">Read_write.Mutable.t</a>)
+          <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; <a href="http://frenetic-lang.github.io/api//async_unix/#Raw_fd.Watching.t" class="ocaml_internal">Watching.t</a> <a href="http://frenetic-lang.github.io/api//async_unix/#Read_write.Mutable.t">Read_write.Mutable.t</a>) -&gt;
+watching_has_changed:(([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_unix/#Raw_fd.T.t" class="ocaml_internal">t</a>, bool)
+                      <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; bool) -&gt;
+num_active_syscalls:(([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_unix/#Raw_fd.T.t" class="ocaml_internal">t</a>, int)
+                     <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; int) -&gt;
+close_finished:(([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_unix/#Raw_fd.T.t" class="ocaml_internal">t</a>, unit <a href="http://frenetic-lang.github.io/api//async_unix/#Import.Ivar.t">Import.Ivar.t</a>)
+                <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; unit <a href="http://frenetic-lang.github.io/api//async_unix/#Import.Ivar.t">Import.Ivar.t</a>) -&gt;
+<a href="http://frenetic-lang.github.io/api//async_unix/#Raw_fd.T.t" class="ocaml_internal">t</a></code></pre>
+
+<pre class="odoccode"><span class="VALiter"><span class="keyword">val</span> iter</span> : <code class="type">file_descr:(([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_unix/#Raw_fd.T.t" class="ocaml_internal">t</a>, <a href="http://frenetic-lang.github.io/api//async_unix/#Raw_fd.File_descr.t" class="ocaml_internal">File_descr.t</a>)
+            <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; 'a) -&gt;
+info:(([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_unix/#Raw_fd.T.t" class="ocaml_internal">t</a>, <a href="http://frenetic-lang.github.io/api//core/#Std.Info.t">Core.Std.Info.t</a>)
+      <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; 'b) -&gt;
+kind:(([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_unix/#Raw_fd.T.t" class="ocaml_internal">t</a>, <a href="http://frenetic-lang.github.io/api//async_unix/#Raw_fd.Kind.t" class="ocaml_internal">Kind.t</a>) <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt;
+      'c) -&gt;
+supports_nonblock:(([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_unix/#Raw_fd.T.t" class="ocaml_internal">t</a>, bool)
+                   <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; 'd) -&gt;
+have_set_nonblock:(([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_unix/#Raw_fd.T.t" class="ocaml_internal">t</a>, bool)
+                   <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; 'e) -&gt;
+state:(([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_unix/#Raw_fd.T.t" class="ocaml_internal">t</a>, <a href="http://frenetic-lang.github.io/api//async_unix/#Raw_fd.State.t" class="ocaml_internal">State.t</a>) <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt;
+       'f) -&gt;
+watching:(([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_unix/#Raw_fd.T.t" class="ocaml_internal">t</a>, <a href="http://frenetic-lang.github.io/api//async_unix/#Raw_fd.Watching.t" class="ocaml_internal">Watching.t</a> <a href="http://frenetic-lang.github.io/api//async_unix/#Read_write.Mutable.t">Read_write.Mutable.t</a>)
+          <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; 'g) -&gt;
+watching_has_changed:(([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_unix/#Raw_fd.T.t" class="ocaml_internal">t</a>, bool)
+                      <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; 'h) -&gt;
+num_active_syscalls:(([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_unix/#Raw_fd.T.t" class="ocaml_internal">t</a>, int)
+                     <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; 'i) -&gt;
+close_finished:(([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_unix/#Raw_fd.T.t" class="ocaml_internal">t</a>, unit <a href="http://frenetic-lang.github.io/api//async_unix/#Import.Ivar.t">Import.Ivar.t</a>)
+                <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; 'j) -&gt;
+'j</code></pre>
+
+<pre class="odoccode"><span class="VALfold"><span class="keyword">val</span> fold</span> : <code class="type">init:'a -&gt;
+file_descr:('a -&gt;
+            ([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_unix/#Raw_fd.T.t" class="ocaml_internal">t</a>, <a href="http://frenetic-lang.github.io/api//async_unix/#Raw_fd.File_descr.t" class="ocaml_internal">File_descr.t</a>)
+            <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; 'b) -&gt;
+info:('b -&gt;
+      ([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_unix/#Raw_fd.T.t" class="ocaml_internal">t</a>, <a href="http://frenetic-lang.github.io/api//core/#Std.Info.t">Core.Std.Info.t</a>)
+      <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; 'c) -&gt;
+kind:('c -&gt;
+      ([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_unix/#Raw_fd.T.t" class="ocaml_internal">t</a>, <a href="http://frenetic-lang.github.io/api//async_unix/#Raw_fd.Kind.t" class="ocaml_internal">Kind.t</a>) <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt;
+      'd) -&gt;
+supports_nonblock:('d -&gt;
+                   ([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_unix/#Raw_fd.T.t" class="ocaml_internal">t</a>, bool)
+                   <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; 'e) -&gt;
+have_set_nonblock:('e -&gt;
+                   ([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_unix/#Raw_fd.T.t" class="ocaml_internal">t</a>, bool)
+                   <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; 'f) -&gt;
+state:('f -&gt;
+       ([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_unix/#Raw_fd.T.t" class="ocaml_internal">t</a>, <a href="http://frenetic-lang.github.io/api//async_unix/#Raw_fd.State.t" class="ocaml_internal">State.t</a>) <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt;
+       'g) -&gt;
+watching:('g -&gt;
+          ([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_unix/#Raw_fd.T.t" class="ocaml_internal">t</a>, <a href="http://frenetic-lang.github.io/api//async_unix/#Raw_fd.Watching.t" class="ocaml_internal">Watching.t</a> <a href="http://frenetic-lang.github.io/api//async_unix/#Read_write.Mutable.t">Read_write.Mutable.t</a>)
+          <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; 'h) -&gt;
+watching_has_changed:('h -&gt;
+                      ([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_unix/#Raw_fd.T.t" class="ocaml_internal">t</a>, bool)
+                      <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; 'i) -&gt;
+num_active_syscalls:('i -&gt;
+                     ([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_unix/#Raw_fd.T.t" class="ocaml_internal">t</a>, int)
+                     <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; 'j) -&gt;
+close_finished:('j -&gt;
+                ([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_unix/#Raw_fd.T.t" class="ocaml_internal">t</a>, unit <a href="http://frenetic-lang.github.io/api//async_unix/#Import.Ivar.t">Import.Ivar.t</a>)
+                <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; 'k) -&gt;
+'k</code></pre>
+
+<pre class="odoccode"><span class="VALmap_poly"><span class="keyword">val</span> map_poly</span> : <code class="type">([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_unix/#Raw_fd.T.t" class="ocaml_internal">t</a>, 'a) <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.user">Fieldslib.Field.user</a> -&gt; 'a list</code></pre>
+
+<pre class="odoccode"><span class="VALfor_all"><span class="keyword">val</span> for_all</span> : <code class="type">file_descr:(([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_unix/#Raw_fd.T.t" class="ocaml_internal">t</a>, <a href="http://frenetic-lang.github.io/api//async_unix/#Raw_fd.File_descr.t" class="ocaml_internal">File_descr.t</a>)
+            <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; bool) -&gt;
+info:(([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_unix/#Raw_fd.T.t" class="ocaml_internal">t</a>, <a href="http://frenetic-lang.github.io/api//core/#Std.Info.t">Core.Std.Info.t</a>)
+      <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; bool) -&gt;
+kind:(([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_unix/#Raw_fd.T.t" class="ocaml_internal">t</a>, <a href="http://frenetic-lang.github.io/api//async_unix/#Raw_fd.Kind.t" class="ocaml_internal">Kind.t</a>) <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt;
+      bool) -&gt;
+supports_nonblock:(([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_unix/#Raw_fd.T.t" class="ocaml_internal">t</a>, bool)
+                   <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; bool) -&gt;
+have_set_nonblock:(([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_unix/#Raw_fd.T.t" class="ocaml_internal">t</a>, bool)
+                   <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; bool) -&gt;
+state:(([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_unix/#Raw_fd.T.t" class="ocaml_internal">t</a>, <a href="http://frenetic-lang.github.io/api//async_unix/#Raw_fd.State.t" class="ocaml_internal">State.t</a>) <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt;
+       bool) -&gt;
+watching:(([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_unix/#Raw_fd.T.t" class="ocaml_internal">t</a>, <a href="http://frenetic-lang.github.io/api//async_unix/#Raw_fd.Watching.t" class="ocaml_internal">Watching.t</a> <a href="http://frenetic-lang.github.io/api//async_unix/#Read_write.Mutable.t">Read_write.Mutable.t</a>)
+          <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; bool) -&gt;
+watching_has_changed:(([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_unix/#Raw_fd.T.t" class="ocaml_internal">t</a>, bool)
+                      <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; bool) -&gt;
+num_active_syscalls:(([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_unix/#Raw_fd.T.t" class="ocaml_internal">t</a>, int)
+                     <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; bool) -&gt;
+close_finished:(([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_unix/#Raw_fd.T.t" class="ocaml_internal">t</a>, unit <a href="http://frenetic-lang.github.io/api//async_unix/#Import.Ivar.t">Import.Ivar.t</a>)
+                <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; bool) -&gt;
+bool</code></pre>
+
+<pre class="odoccode"><span class="VALexists"><span class="keyword">val</span> exists</span> : <code class="type">file_descr:(([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_unix/#Raw_fd.T.t" class="ocaml_internal">t</a>, <a href="http://frenetic-lang.github.io/api//async_unix/#Raw_fd.File_descr.t" class="ocaml_internal">File_descr.t</a>)
+            <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; bool) -&gt;
+info:(([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_unix/#Raw_fd.T.t" class="ocaml_internal">t</a>, <a href="http://frenetic-lang.github.io/api//core/#Std.Info.t">Core.Std.Info.t</a>)
+      <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; bool) -&gt;
+kind:(([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_unix/#Raw_fd.T.t" class="ocaml_internal">t</a>, <a href="http://frenetic-lang.github.io/api//async_unix/#Raw_fd.Kind.t" class="ocaml_internal">Kind.t</a>) <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt;
+      bool) -&gt;
+supports_nonblock:(([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_unix/#Raw_fd.T.t" class="ocaml_internal">t</a>, bool)
+                   <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; bool) -&gt;
+have_set_nonblock:(([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_unix/#Raw_fd.T.t" class="ocaml_internal">t</a>, bool)
+                   <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; bool) -&gt;
+state:(([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_unix/#Raw_fd.T.t" class="ocaml_internal">t</a>, <a href="http://frenetic-lang.github.io/api//async_unix/#Raw_fd.State.t" class="ocaml_internal">State.t</a>) <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt;
+       bool) -&gt;
+watching:(([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_unix/#Raw_fd.T.t" class="ocaml_internal">t</a>, <a href="http://frenetic-lang.github.io/api//async_unix/#Raw_fd.Watching.t" class="ocaml_internal">Watching.t</a> <a href="http://frenetic-lang.github.io/api//async_unix/#Read_write.Mutable.t">Read_write.Mutable.t</a>)
+          <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; bool) -&gt;
+watching_has_changed:(([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_unix/#Raw_fd.T.t" class="ocaml_internal">t</a>, bool)
+                      <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; bool) -&gt;
+num_active_syscalls:(([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_unix/#Raw_fd.T.t" class="ocaml_internal">t</a>, int)
+                     <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; bool) -&gt;
+close_finished:(([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_unix/#Raw_fd.T.t" class="ocaml_internal">t</a>, unit <a href="http://frenetic-lang.github.io/api//async_unix/#Import.Ivar.t">Import.Ivar.t</a>)
+                <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; bool) -&gt;
+bool</code></pre>
+
+<pre class="odoccode"><span class="VALto_list"><span class="keyword">val</span> to_list</span> : <code class="type">file_descr:(([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_unix/#Raw_fd.T.t" class="ocaml_internal">t</a>, <a href="http://frenetic-lang.github.io/api//async_unix/#Raw_fd.File_descr.t" class="ocaml_internal">File_descr.t</a>)
+            <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; 'a) -&gt;
+info:(([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_unix/#Raw_fd.T.t" class="ocaml_internal">t</a>, <a href="http://frenetic-lang.github.io/api//core/#Std.Info.t">Core.Std.Info.t</a>)
+      <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; 'a) -&gt;
+kind:(([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_unix/#Raw_fd.T.t" class="ocaml_internal">t</a>, <a href="http://frenetic-lang.github.io/api//async_unix/#Raw_fd.Kind.t" class="ocaml_internal">Kind.t</a>) <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt;
+      'a) -&gt;
+supports_nonblock:(([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_unix/#Raw_fd.T.t" class="ocaml_internal">t</a>, bool)
+                   <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; 'a) -&gt;
+have_set_nonblock:(([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_unix/#Raw_fd.T.t" class="ocaml_internal">t</a>, bool)
+                   <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; 'a) -&gt;
+state:(([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_unix/#Raw_fd.T.t" class="ocaml_internal">t</a>, <a href="http://frenetic-lang.github.io/api//async_unix/#Raw_fd.State.t" class="ocaml_internal">State.t</a>) <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt;
+       'a) -&gt;
+watching:(([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_unix/#Raw_fd.T.t" class="ocaml_internal">t</a>, <a href="http://frenetic-lang.github.io/api//async_unix/#Raw_fd.Watching.t" class="ocaml_internal">Watching.t</a> <a href="http://frenetic-lang.github.io/api//async_unix/#Read_write.Mutable.t">Read_write.Mutable.t</a>)
+          <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; 'a) -&gt;
+watching_has_changed:(([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_unix/#Raw_fd.T.t" class="ocaml_internal">t</a>, bool)
+                      <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; 'a) -&gt;
+num_active_syscalls:(([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_unix/#Raw_fd.T.t" class="ocaml_internal">t</a>, int)
+                     <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; 'a) -&gt;
+close_finished:(([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_unix/#Raw_fd.T.t" class="ocaml_internal">t</a>, unit <a href="http://frenetic-lang.github.io/api//async_unix/#Import.Ivar.t">Import.Ivar.t</a>)
+                <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; 'a) -&gt;
+'a list</code></pre>
+
+<div class="ocaml_module" name="Direct"><pre class="odoccode"><span class="keyword">module</span> <a href="http://frenetic-lang.github.io/api//async_unix/#Raw_fd.T.Fields.Direct" class="ocaml_internal">Direct</a> : <code class="type"><code class="code">sig</code> .. <code class="code">end</code></code></pre><div class="ocaml_summary"/><div class="ocaml_content">
+<pre class="odoccode"><span class="VALiter"><span class="keyword">val</span> iter</span> : <code class="type"><a href="http://frenetic-lang.github.io/api//async_unix/#Raw_fd.T.t" class="ocaml_internal">t</a> -&gt;
+file_descr:(([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_unix/#Raw_fd.T.t" class="ocaml_internal">t</a>, <a href="http://frenetic-lang.github.io/api//async_unix/#Raw_fd.File_descr.t" class="ocaml_internal">File_descr.t</a>)
+            <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; <a href="http://frenetic-lang.github.io/api//async_unix/#Raw_fd.T.t" class="ocaml_internal">t</a> -&gt; <a href="http://frenetic-lang.github.io/api//async_unix/#Raw_fd.File_descr.t" class="ocaml_internal">File_descr.t</a> -&gt; 'a) -&gt;
+info:(([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_unix/#Raw_fd.T.t" class="ocaml_internal">t</a>, <a href="http://frenetic-lang.github.io/api//core/#Std.Info.t">Core.Std.Info.t</a>)
+      <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; <a href="http://frenetic-lang.github.io/api//async_unix/#Raw_fd.T.t" class="ocaml_internal">t</a> -&gt; <a href="http://frenetic-lang.github.io/api//core/#Std.Info.t">Core.Std.Info.t</a> -&gt; 'b) -&gt;
+kind:(([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_unix/#Raw_fd.T.t" class="ocaml_internal">t</a>, <a href="http://frenetic-lang.github.io/api//async_unix/#Raw_fd.Kind.t" class="ocaml_internal">Kind.t</a>) <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt;
+      <a href="http://frenetic-lang.github.io/api//async_unix/#Raw_fd.T.t" class="ocaml_internal">t</a> -&gt; <a href="http://frenetic-lang.github.io/api//async_unix/#Raw_fd.Kind.t" class="ocaml_internal">Kind.t</a> -&gt; 'c) -&gt;
+supports_nonblock:(([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_unix/#Raw_fd.T.t" class="ocaml_internal">t</a>, bool)
+                   <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; <a href="http://frenetic-lang.github.io/api//async_unix/#Raw_fd.T.t" class="ocaml_internal">t</a> -&gt; bool -&gt; 'd) -&gt;
+have_set_nonblock:(([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_unix/#Raw_fd.T.t" class="ocaml_internal">t</a>, bool)
+                   <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; <a href="http://frenetic-lang.github.io/api//async_unix/#Raw_fd.T.t" class="ocaml_internal">t</a> -&gt; bool -&gt; 'e) -&gt;
+state:(([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_unix/#Raw_fd.T.t" class="ocaml_internal">t</a>, <a href="http://frenetic-lang.github.io/api//async_unix/#Raw_fd.State.t" class="ocaml_internal">State.t</a>) <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt;
+       <a href="http://frenetic-lang.github.io/api//async_unix/#Raw_fd.T.t" class="ocaml_internal">t</a> -&gt; <a href="http://frenetic-lang.github.io/api//async_unix/#Raw_fd.State.t" class="ocaml_internal">State.t</a> -&gt; 'f) -&gt;
+watching:(([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_unix/#Raw_fd.T.t" class="ocaml_internal">t</a>, <a href="http://frenetic-lang.github.io/api//async_unix/#Raw_fd.Watching.t" class="ocaml_internal">Watching.t</a> <a href="http://frenetic-lang.github.io/api//async_unix/#Read_write.Mutable.t">Read_write.Mutable.t</a>)
+          <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt;
+          <a href="http://frenetic-lang.github.io/api//async_unix/#Raw_fd.T.t" class="ocaml_internal">t</a> -&gt; <a href="http://frenetic-lang.github.io/api//async_unix/#Raw_fd.Watching.t" class="ocaml_internal">Watching.t</a> <a href="http://frenetic-lang.github.io/api//async_unix/#Read_write.Mutable.t">Read_write.Mutable.t</a> -&gt; 'g) -&gt;
+watching_has_changed:(([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_unix/#Raw_fd.T.t" class="ocaml_internal">t</a>, bool)
+                      <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; <a href="http://frenetic-lang.github.io/api//async_unix/#Raw_fd.T.t" class="ocaml_internal">t</a> -&gt; bool -&gt; 'h) -&gt;
+num_active_syscalls:(([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_unix/#Raw_fd.T.t" class="ocaml_internal">t</a>, int)
+                     <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; <a href="http://frenetic-lang.github.io/api//async_unix/#Raw_fd.T.t" class="ocaml_internal">t</a> -&gt; int -&gt; 'i) -&gt;
+close_finished:(([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_unix/#Raw_fd.T.t" class="ocaml_internal">t</a>, unit <a href="http://frenetic-lang.github.io/api//async_unix/#Import.Ivar.t">Import.Ivar.t</a>)
+                <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; <a href="http://frenetic-lang.github.io/api//async_unix/#Raw_fd.T.t" class="ocaml_internal">t</a> -&gt; unit <a href="http://frenetic-lang.github.io/api//async_unix/#Import.Ivar.t">Import.Ivar.t</a> -&gt; 'j) -&gt;
+'j</code></pre>
+
+<pre class="odoccode"><span class="VALfold"><span class="keyword">val</span> fold</span> : <code class="type"><a href="http://frenetic-lang.github.io/api//async_unix/#Raw_fd.T.t" class="ocaml_internal">t</a> -&gt;
+init:'a -&gt;
+file_descr:('a -&gt;
+            ([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_unix/#Raw_fd.T.t" class="ocaml_internal">t</a>, <a href="http://frenetic-lang.github.io/api//async_unix/#Raw_fd.File_descr.t" class="ocaml_internal">File_descr.t</a>)
+            <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; <a href="http://frenetic-lang.github.io/api//async_unix/#Raw_fd.T.t" class="ocaml_internal">t</a> -&gt; <a href="http://frenetic-lang.github.io/api//async_unix/#Raw_fd.File_descr.t" class="ocaml_internal">File_descr.t</a> -&gt; 'b) -&gt;
+info:('b -&gt;
+      ([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_unix/#Raw_fd.T.t" class="ocaml_internal">t</a>, <a href="http://frenetic-lang.github.io/api//core/#Std.Info.t">Core.Std.Info.t</a>)
+      <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; <a href="http://frenetic-lang.github.io/api//async_unix/#Raw_fd.T.t" class="ocaml_internal">t</a> -&gt; <a href="http://frenetic-lang.github.io/api//core/#Std.Info.t">Core.Std.Info.t</a> -&gt; 'c) -&gt;
+kind:('c -&gt;
+      ([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_unix/#Raw_fd.T.t" class="ocaml_internal">t</a>, <a href="http://frenetic-lang.github.io/api//async_unix/#Raw_fd.Kind.t" class="ocaml_internal">Kind.t</a>) <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt;
+      <a href="http://frenetic-lang.github.io/api//async_unix/#Raw_fd.T.t" class="ocaml_internal">t</a> -&gt; <a href="http://frenetic-lang.github.io/api//async_unix/#Raw_fd.Kind.t" class="ocaml_internal">Kind.t</a> -&gt; 'd) -&gt;
+supports_nonblock:('d -&gt;
+                   ([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_unix/#Raw_fd.T.t" class="ocaml_internal">t</a>, bool)
+                   <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; <a href="http://frenetic-lang.github.io/api//async_unix/#Raw_fd.T.t" class="ocaml_internal">t</a> -&gt; bool -&gt; 'e) -&gt;
+have_set_nonblock:('e -&gt;
+                   ([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_unix/#Raw_fd.T.t" class="ocaml_internal">t</a>, bool)
+                   <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; <a href="http://frenetic-lang.github.io/api//async_unix/#Raw_fd.T.t" class="ocaml_internal">t</a> -&gt; bool -&gt; 'f) -&gt;
+state:('f -&gt;
+       ([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_unix/#Raw_fd.T.t" class="ocaml_internal">t</a>, <a href="http://frenetic-lang.github.io/api//async_unix/#Raw_fd.State.t" class="ocaml_internal">State.t</a>) <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt;
+       <a href="http://frenetic-lang.github.io/api//async_unix/#Raw_fd.T.t" class="ocaml_internal">t</a> -&gt; <a href="http://frenetic-lang.github.io/api//async_unix/#Raw_fd.State.t" class="ocaml_internal">State.t</a> -&gt; 'g) -&gt;
+watching:('g -&gt;
+          ([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_unix/#Raw_fd.T.t" class="ocaml_internal">t</a>, <a href="http://frenetic-lang.github.io/api//async_unix/#Raw_fd.Watching.t" class="ocaml_internal">Watching.t</a> <a href="http://frenetic-lang.github.io/api//async_unix/#Read_write.Mutable.t">Read_write.Mutable.t</a>)
+          <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt;
+          <a href="http://frenetic-lang.github.io/api//async_unix/#Raw_fd.T.t" class="ocaml_internal">t</a> -&gt; <a href="http://frenetic-lang.github.io/api//async_unix/#Raw_fd.Watching.t" class="ocaml_internal">Watching.t</a> <a href="http://frenetic-lang.github.io/api//async_unix/#Read_write.Mutable.t">Read_write.Mutable.t</a> -&gt; 'h) -&gt;
+watching_has_changed:('h -&gt;
+                      ([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_unix/#Raw_fd.T.t" class="ocaml_internal">t</a>, bool)
+                      <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; <a href="http://frenetic-lang.github.io/api//async_unix/#Raw_fd.T.t" class="ocaml_internal">t</a> -&gt; bool -&gt; 'i) -&gt;
+num_active_syscalls:('i -&gt;
+                     ([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_unix/#Raw_fd.T.t" class="ocaml_internal">t</a>, int)
+                     <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; <a href="http://frenetic-lang.github.io/api//async_unix/#Raw_fd.T.t" class="ocaml_internal">t</a> -&gt; int -&gt; 'j) -&gt;
+close_finished:('j -&gt;
+                ([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_unix/#Raw_fd.T.t" class="ocaml_internal">t</a>, unit <a href="http://frenetic-lang.github.io/api//async_unix/#Import.Ivar.t">Import.Ivar.t</a>)
+                <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; <a href="http://frenetic-lang.github.io/api//async_unix/#Raw_fd.T.t" class="ocaml_internal">t</a> -&gt; unit <a href="http://frenetic-lang.github.io/api//async_unix/#Import.Ivar.t">Import.Ivar.t</a> -&gt; 'k) -&gt;
+'k</code></pre>
+</div></div></div></div></div></div>
+<div class="ocaml_include" path="http://frenetic-lang.github.io/api//async_unix/#Raw_fd.T" items="[&quot;Fields&quot;]" types="[&quot;t&quot;]"><pre class="ocaml_include_handle"><span class="keyword">include</span> <code class="type"><code class="code"><a href="http://frenetic-lang.github.io/api//async_unix/#Raw_fd.T" class="ocaml_internal">T</a></code></code></pre><div class="ocaml_summary"/></div>
+<pre class="odoccode"><span class="VALequal"><span class="keyword">val</span> equal</span> : <code class="type"><a href="http://frenetic-lang.github.io/api//async_unix/#Raw_fd.t" class="ocaml_internal">t</a> -&gt; <a href="http://frenetic-lang.github.io/api//async_unix/#Raw_fd.t" class="ocaml_internal">t</a> -&gt; bool</code></pre>
+<pre class="odoccode"><span class="VALinvariant"><span class="keyword">val</span> invariant</span> : <code class="type"><a href="http://frenetic-lang.github.io/api//async_unix/#Raw_fd.t" class="ocaml_internal">t</a> -&gt; unit</code></pre>
+<pre class="odoccode"><span class="VALto_int"><span class="keyword">val</span> to_int</span> : <code class="type"><a href="http://frenetic-lang.github.io/api//async_unix/#Raw_fd.t" class="ocaml_internal">t</a> -&gt; int</code></pre>
+<pre class="odoccode"><span class="VALcreate"><span class="keyword">val</span> create</span> : <code class="type">?avoid_nonblock_if_possible:bool -&gt;
+<a href="http://frenetic-lang.github.io/api//async_unix/#Raw_fd.Kind.t" class="ocaml_internal">Kind.t</a> -&gt; <a href="http://frenetic-lang.github.io/api//async_unix/#Raw_fd.File_descr.t" class="ocaml_internal">File_descr.t</a> -&gt; <a href="http://frenetic-lang.github.io/api//core/#Std.Info.t">Core.Std.Info.t</a> -&gt; <a href="http://frenetic-lang.github.io/api//async_unix/#Raw_fd.t" class="ocaml_internal">t</a></code></pre>
+<pre class="odoccode"><span class="VALinc_num_active_syscalls"><span class="keyword">val</span> inc_num_active_syscalls</span> : <code class="type"><a href="http://frenetic-lang.github.io/api//async_unix/#Raw_fd.t" class="ocaml_internal">t</a> -&gt; [&gt; `Already_closed | `Ok ]</code></pre>
+<pre class="odoccode"><span class="VALset_state"><span class="keyword">val</span> set_state</span> : <code class="type"><a href="http://frenetic-lang.github.io/api//async_unix/#Raw_fd.t" class="ocaml_internal">t</a> -&gt; <a href="http://frenetic-lang.github.io/api//async_unix/#Raw_fd.State.t" class="ocaml_internal">State.t</a> -&gt; unit</code></pre>
+<pre class="odoccode"><span class="VALis_open"><span class="keyword">val</span> is_open</span> : <code class="type"><a href="http://frenetic-lang.github.io/api//async_unix/#Raw_fd.t" class="ocaml_internal">t</a> -&gt; bool</code></pre>
+<pre class="odoccode"><span class="VALis_closed"><span class="keyword">val</span> is_closed</span> : <code class="type"><a href="http://frenetic-lang.github.io/api//async_unix/#Raw_fd.t" class="ocaml_internal">t</a> -&gt; bool</code></pre>
+<pre class="odoccode"><span class="VALset_nonblock_if_necessary"><span class="keyword">val</span> set_nonblock_if_necessary</span> : <code class="type">?nonblocking:bool -&gt; <a href="http://frenetic-lang.github.io/api//async_unix/#Raw_fd.t" class="ocaml_internal">t</a> -&gt; unit</code></pre>
+<pre class="odoccode"><span class="VALwith_file_descr_exn"><span class="keyword">val</span> with_file_descr_exn</span> : <code class="type">?nonblocking:bool -&gt; <a href="http://frenetic-lang.github.io/api//async_unix/#Raw_fd.t" class="ocaml_internal">t</a> -&gt; (<a href="http://frenetic-lang.github.io/api//async_unix/#Raw_fd.File_descr.t" class="ocaml_internal">File_descr.t</a> -&gt; 'a) -&gt; 'a</code></pre>
+<pre class="odoccode"><span class="VALwith_file_descr"><span class="keyword">val</span> with_file_descr</span> : <code class="type">?nonblocking:bool -&gt;
+<a href="http://frenetic-lang.github.io/api//async_unix/#Raw_fd.t" class="ocaml_internal">t</a> -&gt; (<a href="http://frenetic-lang.github.io/api//async_unix/#Raw_fd.File_descr.t" class="ocaml_internal">File_descr.t</a> -&gt; 'a) -&gt; [&gt; `Already_closed | `Error of exn | `Ok of 'a ]</code></pre>
+<pre class="odoccode"><span class="VALsyscall"><span class="keyword">val</span> syscall</span> : <code class="type">?nonblocking:bool -&gt;
+<a href="http://frenetic-lang.github.io/api//async_unix/#Raw_fd.t" class="ocaml_internal">t</a> -&gt; (<a href="http://frenetic-lang.github.io/api//async_unix/#Raw_fd.File_descr.t" class="ocaml_internal">File_descr.t</a> -&gt; 'a) -&gt; [&gt; `Already_closed | `Error of exn | `Ok of 'a ]</code></pre>
+<pre class="odoccode"><span class="VALsyscall_exn"><span class="keyword">val</span> syscall_exn</span> : <code class="type">?nonblocking:bool -&gt; <a href="http://frenetic-lang.github.io/api//async_unix/#Raw_fd.t" class="ocaml_internal">t</a> -&gt; (<a href="http://frenetic-lang.github.io/api//async_unix/#Raw_fd.File_descr.t" class="ocaml_internal">File_descr.t</a> -&gt; 'a) -&gt; 'a</code></pre>
+
+</div></div>
