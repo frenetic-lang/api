@@ -2,325 +2,325 @@
 <div class="ocaml_content">
 <pre class="odoccode"><span class="VALdebug"><span class="keyword">val</span> debug</span> : <code class="type">bool</code></pre>
 <pre class="odoccode"><code><span class="TYPEt"><span class="keyword">type</span> t</span> = {</code></pre><table class="typetable">
-		    <tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="TYPEELTt.name">name</span> : <code class="type"><a href="http://frenetic-lang.github.io/api//core/#Std.Info.t">Core.Std.Info.t</a></code>;</code></td></tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="TYPEELTt.here">here</span> : <code class="type"><a href="http://frenetic-lang.github.io/api//core/#Std.Source_code_position.t">Core.Std.Source_code_position.t</a> option</code>;</code></td></tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="TYPEELTt.id">id</span> : <code class="type">int</code>;</code></td></tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="TYPEELTt.parent">parent</span> : <code class="type"><a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_monitor.t" class="ocaml_internal">t</a> option</code>;</code></td></tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="keyword">mutable</span> <span class="TYPEELTt.handlers_for_next_error">handlers_for_next_error</span> : <code class="type">(exn -&gt; unit) list</code>;</code></td></tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="keyword">mutable</span> <span class="TYPEELTt.handlers_for_all_errors">handlers_for_all_errors</span> : <code class="type">(exn -&gt; unit) <a href="http://frenetic-lang.github.io/api//core/#Std.Bag.t">Core.Std.Bag.t</a></code>;</code></td></tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="keyword">mutable</span> <span class="TYPEELTt.has_seen_error">has_seen_error</span> : <code class="type">bool</code>;</code></td></tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="keyword">mutable</span> <span class="TYPEELTt.is_detached">is_detached</span> : <code class="type">bool</code>;</code></td></tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="keyword">mutable</span> <span class="TYPEELTt.kill_index">kill_index</span> : <code class="type"><a href="http://frenetic-lang.github.io/api//async_kernel/#Kill_index.t">Kill_index.t</a></code>;</code></td></tr><tr><td>}</td></tr></table>
+		    <tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="TYPEELTt.name">name</span> : <code class="type"><a href="http://127.0.0.1:8000/core/#Std.Info.t">Core.Std.Info.t</a></code>;</code></td></tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="TYPEELTt.here">here</span> : <code class="type"><a href="http://127.0.0.1:8000/core/#Std.Source_code_position.t">Core.Std.Source_code_position.t</a> option</code>;</code></td></tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="TYPEELTt.id">id</span> : <code class="type">int</code>;</code></td></tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="TYPEELTt.parent">parent</span> : <code class="type"><a href="http://127.0.0.1:8000/async_kernel/#Raw_monitor.t" class="ocaml_internal">t</a> option</code>;</code></td></tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="keyword">mutable</span> <span class="TYPEELTt.handlers_for_next_error">handlers_for_next_error</span> : <code class="type">(exn -&gt; unit) list</code>;</code></td></tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="keyword">mutable</span> <span class="TYPEELTt.handlers_for_all_errors">handlers_for_all_errors</span> : <code class="type">(exn -&gt; unit) <a href="http://127.0.0.1:8000/core/#Std.Bag.t">Core.Std.Bag.t</a></code>;</code></td></tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="keyword">mutable</span> <span class="TYPEELTt.has_seen_error">has_seen_error</span> : <code class="type">bool</code>;</code></td></tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="keyword">mutable</span> <span class="TYPEELTt.is_detached">is_detached</span> : <code class="type">bool</code>;</code></td></tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="keyword">mutable</span> <span class="TYPEELTt.kill_index">kill_index</span> : <code class="type"><a href="http://127.0.0.1:8000/async_kernel/#Kill_index.t">Kill_index.t</a></code>;</code></td></tr><tr><td>}</td></tr></table>
 
-<pre class="odoccode"><span class="VALkill_index"><span class="keyword">val</span> kill_index</span> : <code class="type"><a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_monitor.t" class="ocaml_internal">t</a> -&gt; <a href="http://frenetic-lang.github.io/api//async_kernel/#Kill_index.t">Kill_index.t</a></code></pre>
+<pre class="odoccode"><span class="VALkill_index"><span class="keyword">val</span> kill_index</span> : <code class="type"><a href="http://127.0.0.1:8000/async_kernel/#Raw_monitor.t" class="ocaml_internal">t</a> -&gt; <a href="http://127.0.0.1:8000/async_kernel/#Kill_index.t">Kill_index.t</a></code></pre>
 
-<pre class="odoccode"><span class="VALset_kill_index"><span class="keyword">val</span> set_kill_index</span> : <code class="type"><a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_monitor.t" class="ocaml_internal">t</a> -&gt; <a href="http://frenetic-lang.github.io/api//async_kernel/#Kill_index.t">Kill_index.t</a> -&gt; unit</code></pre>
+<pre class="odoccode"><span class="VALset_kill_index"><span class="keyword">val</span> set_kill_index</span> : <code class="type"><a href="http://127.0.0.1:8000/async_kernel/#Raw_monitor.t" class="ocaml_internal">t</a> -&gt; <a href="http://127.0.0.1:8000/async_kernel/#Kill_index.t">Kill_index.t</a> -&gt; unit</code></pre>
 
-<pre class="odoccode"><span class="VALis_detached"><span class="keyword">val</span> is_detached</span> : <code class="type"><a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_monitor.t" class="ocaml_internal">t</a> -&gt; bool</code></pre>
+<pre class="odoccode"><span class="VALis_detached"><span class="keyword">val</span> is_detached</span> : <code class="type"><a href="http://127.0.0.1:8000/async_kernel/#Raw_monitor.t" class="ocaml_internal">t</a> -&gt; bool</code></pre>
 
-<pre class="odoccode"><span class="VALset_is_detached"><span class="keyword">val</span> set_is_detached</span> : <code class="type"><a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_monitor.t" class="ocaml_internal">t</a> -&gt; bool -&gt; unit</code></pre>
+<pre class="odoccode"><span class="VALset_is_detached"><span class="keyword">val</span> set_is_detached</span> : <code class="type"><a href="http://127.0.0.1:8000/async_kernel/#Raw_monitor.t" class="ocaml_internal">t</a> -&gt; bool -&gt; unit</code></pre>
 
-<pre class="odoccode"><span class="VALhas_seen_error"><span class="keyword">val</span> has_seen_error</span> : <code class="type"><a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_monitor.t" class="ocaml_internal">t</a> -&gt; bool</code></pre>
+<pre class="odoccode"><span class="VALhas_seen_error"><span class="keyword">val</span> has_seen_error</span> : <code class="type"><a href="http://127.0.0.1:8000/async_kernel/#Raw_monitor.t" class="ocaml_internal">t</a> -&gt; bool</code></pre>
 
-<pre class="odoccode"><span class="VALset_has_seen_error"><span class="keyword">val</span> set_has_seen_error</span> : <code class="type"><a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_monitor.t" class="ocaml_internal">t</a> -&gt; bool -&gt; unit</code></pre>
+<pre class="odoccode"><span class="VALset_has_seen_error"><span class="keyword">val</span> set_has_seen_error</span> : <code class="type"><a href="http://127.0.0.1:8000/async_kernel/#Raw_monitor.t" class="ocaml_internal">t</a> -&gt; bool -&gt; unit</code></pre>
 
-<pre class="odoccode"><span class="VALhandlers_for_all_errors"><span class="keyword">val</span> handlers_for_all_errors</span> : <code class="type"><a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_monitor.t" class="ocaml_internal">t</a> -&gt; (exn -&gt; unit) <a href="http://frenetic-lang.github.io/api//core/#Std.Bag.t">Core.Std.Bag.t</a></code></pre>
+<pre class="odoccode"><span class="VALhandlers_for_all_errors"><span class="keyword">val</span> handlers_for_all_errors</span> : <code class="type"><a href="http://127.0.0.1:8000/async_kernel/#Raw_monitor.t" class="ocaml_internal">t</a> -&gt; (exn -&gt; unit) <a href="http://127.0.0.1:8000/core/#Std.Bag.t">Core.Std.Bag.t</a></code></pre>
 
-<pre class="odoccode"><span class="VALset_handlers_for_all_errors"><span class="keyword">val</span> set_handlers_for_all_errors</span> : <code class="type"><a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_monitor.t" class="ocaml_internal">t</a> -&gt; (exn -&gt; unit) <a href="http://frenetic-lang.github.io/api//core/#Std.Bag.t">Core.Std.Bag.t</a> -&gt; unit</code></pre>
+<pre class="odoccode"><span class="VALset_handlers_for_all_errors"><span class="keyword">val</span> set_handlers_for_all_errors</span> : <code class="type"><a href="http://127.0.0.1:8000/async_kernel/#Raw_monitor.t" class="ocaml_internal">t</a> -&gt; (exn -&gt; unit) <a href="http://127.0.0.1:8000/core/#Std.Bag.t">Core.Std.Bag.t</a> -&gt; unit</code></pre>
 
-<pre class="odoccode"><span class="VALhandlers_for_next_error"><span class="keyword">val</span> handlers_for_next_error</span> : <code class="type"><a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_monitor.t" class="ocaml_internal">t</a> -&gt; (exn -&gt; unit) list</code></pre>
+<pre class="odoccode"><span class="VALhandlers_for_next_error"><span class="keyword">val</span> handlers_for_next_error</span> : <code class="type"><a href="http://127.0.0.1:8000/async_kernel/#Raw_monitor.t" class="ocaml_internal">t</a> -&gt; (exn -&gt; unit) list</code></pre>
 
-<pre class="odoccode"><span class="VALset_handlers_for_next_error"><span class="keyword">val</span> set_handlers_for_next_error</span> : <code class="type"><a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_monitor.t" class="ocaml_internal">t</a> -&gt; (exn -&gt; unit) list -&gt; unit</code></pre>
+<pre class="odoccode"><span class="VALset_handlers_for_next_error"><span class="keyword">val</span> set_handlers_for_next_error</span> : <code class="type"><a href="http://127.0.0.1:8000/async_kernel/#Raw_monitor.t" class="ocaml_internal">t</a> -&gt; (exn -&gt; unit) list -&gt; unit</code></pre>
 
-<pre class="odoccode"><span class="VALparent"><span class="keyword">val</span> parent</span> : <code class="type"><a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_monitor.t" class="ocaml_internal">t</a> -&gt; <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_monitor.t" class="ocaml_internal">t</a> option</code></pre>
+<pre class="odoccode"><span class="VALparent"><span class="keyword">val</span> parent</span> : <code class="type"><a href="http://127.0.0.1:8000/async_kernel/#Raw_monitor.t" class="ocaml_internal">t</a> -&gt; <a href="http://127.0.0.1:8000/async_kernel/#Raw_monitor.t" class="ocaml_internal">t</a> option</code></pre>
 
-<pre class="odoccode"><span class="VALid"><span class="keyword">val</span> id</span> : <code class="type"><a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_monitor.t" class="ocaml_internal">t</a> -&gt; int</code></pre>
+<pre class="odoccode"><span class="VALid"><span class="keyword">val</span> id</span> : <code class="type"><a href="http://127.0.0.1:8000/async_kernel/#Raw_monitor.t" class="ocaml_internal">t</a> -&gt; int</code></pre>
 
-<pre class="odoccode"><span class="VALhere"><span class="keyword">val</span> here</span> : <code class="type"><a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_monitor.t" class="ocaml_internal">t</a> -&gt; <a href="http://frenetic-lang.github.io/api//core/#Std.Source_code_position.t">Core.Std.Source_code_position.t</a> option</code></pre>
+<pre class="odoccode"><span class="VALhere"><span class="keyword">val</span> here</span> : <code class="type"><a href="http://127.0.0.1:8000/async_kernel/#Raw_monitor.t" class="ocaml_internal">t</a> -&gt; <a href="http://127.0.0.1:8000/core/#Std.Source_code_position.t">Core.Std.Source_code_position.t</a> option</code></pre>
 
-<pre class="odoccode"><span class="VALname"><span class="keyword">val</span> name</span> : <code class="type"><a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_monitor.t" class="ocaml_internal">t</a> -&gt; <a href="http://frenetic-lang.github.io/api//core/#Std.Info.t">Core.Std.Info.t</a></code></pre>
+<pre class="odoccode"><span class="VALname"><span class="keyword">val</span> name</span> : <code class="type"><a href="http://127.0.0.1:8000/async_kernel/#Raw_monitor.t" class="ocaml_internal">t</a> -&gt; <a href="http://127.0.0.1:8000/core/#Std.Info.t">Core.Std.Info.t</a></code></pre>
 
-<div class="ocaml_module" name="Fields"><pre class="odoccode"><span class="keyword">module</span> <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_monitor.Fields" class="ocaml_internal">Fields</a> : <code class="type"><code class="code">sig</code> .. <code class="code">end</code></code></pre><div class="ocaml_summary"/><div class="ocaml_content">
+<div class="ocaml_module" name="Fields"><pre class="odoccode"><span class="keyword">module</span> <a href="http://127.0.0.1:8000/async_kernel/#Raw_monitor.Fields" class="ocaml_internal">Fields</a> : <code class="type"><code class="code">sig</code> .. <code class="code">end</code></code></pre><div class="ocaml_summary"/><div class="ocaml_content">
 <pre class="odoccode"><span class="VALnames"><span class="keyword">val</span> names</span> : <code class="type">string list</code></pre>
 
-<pre class="odoccode"><span class="VALkill_index"><span class="keyword">val</span> kill_index</span> : <code class="type">([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_monitor.t" class="ocaml_internal">t</a>, <a href="http://frenetic-lang.github.io/api//async_kernel/#Kill_index.t">Kill_index.t</a>) <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a></code></pre>
+<pre class="odoccode"><span class="VALkill_index"><span class="keyword">val</span> kill_index</span> : <code class="type">([&lt; `Read | `Set_and_create ], <a href="http://127.0.0.1:8000/async_kernel/#Raw_monitor.t" class="ocaml_internal">t</a>, <a href="http://127.0.0.1:8000/async_kernel/#Kill_index.t">Kill_index.t</a>) <a href="http://127.0.0.1:8000/fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a></code></pre>
 
-<pre class="odoccode"><span class="VALis_detached"><span class="keyword">val</span> is_detached</span> : <code class="type">([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_monitor.t" class="ocaml_internal">t</a>, bool) <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a></code></pre>
+<pre class="odoccode"><span class="VALis_detached"><span class="keyword">val</span> is_detached</span> : <code class="type">([&lt; `Read | `Set_and_create ], <a href="http://127.0.0.1:8000/async_kernel/#Raw_monitor.t" class="ocaml_internal">t</a>, bool) <a href="http://127.0.0.1:8000/fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a></code></pre>
 
-<pre class="odoccode"><span class="VALhas_seen_error"><span class="keyword">val</span> has_seen_error</span> : <code class="type">([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_monitor.t" class="ocaml_internal">t</a>, bool) <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a></code></pre>
+<pre class="odoccode"><span class="VALhas_seen_error"><span class="keyword">val</span> has_seen_error</span> : <code class="type">([&lt; `Read | `Set_and_create ], <a href="http://127.0.0.1:8000/async_kernel/#Raw_monitor.t" class="ocaml_internal">t</a>, bool) <a href="http://127.0.0.1:8000/fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a></code></pre>
 
-<pre class="odoccode"><span class="VALhandlers_for_all_errors"><span class="keyword">val</span> handlers_for_all_errors</span> : <code class="type">([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_monitor.t" class="ocaml_internal">t</a>, (exn -&gt; unit) <a href="http://frenetic-lang.github.io/api//core/#Std.Bag.t">Core.Std.Bag.t</a>)
-<a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a></code></pre>
+<pre class="odoccode"><span class="VALhandlers_for_all_errors"><span class="keyword">val</span> handlers_for_all_errors</span> : <code class="type">([&lt; `Read | `Set_and_create ], <a href="http://127.0.0.1:8000/async_kernel/#Raw_monitor.t" class="ocaml_internal">t</a>, (exn -&gt; unit) <a href="http://127.0.0.1:8000/core/#Std.Bag.t">Core.Std.Bag.t</a>)
+<a href="http://127.0.0.1:8000/fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a></code></pre>
 
-<pre class="odoccode"><span class="VALhandlers_for_next_error"><span class="keyword">val</span> handlers_for_next_error</span> : <code class="type">([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_monitor.t" class="ocaml_internal">t</a>, (exn -&gt; unit) list)
-<a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a></code></pre>
+<pre class="odoccode"><span class="VALhandlers_for_next_error"><span class="keyword">val</span> handlers_for_next_error</span> : <code class="type">([&lt; `Read | `Set_and_create ], <a href="http://127.0.0.1:8000/async_kernel/#Raw_monitor.t" class="ocaml_internal">t</a>, (exn -&gt; unit) list)
+<a href="http://127.0.0.1:8000/fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a></code></pre>
 
-<pre class="odoccode"><span class="VALparent"><span class="keyword">val</span> parent</span> : <code class="type">([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_monitor.t" class="ocaml_internal">t</a>, <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_monitor.t" class="ocaml_internal">t</a> option) <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a></code></pre>
+<pre class="odoccode"><span class="VALparent"><span class="keyword">val</span> parent</span> : <code class="type">([&lt; `Read | `Set_and_create ], <a href="http://127.0.0.1:8000/async_kernel/#Raw_monitor.t" class="ocaml_internal">t</a>, <a href="http://127.0.0.1:8000/async_kernel/#Raw_monitor.t" class="ocaml_internal">t</a> option) <a href="http://127.0.0.1:8000/fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a></code></pre>
 
-<pre class="odoccode"><span class="VALid"><span class="keyword">val</span> id</span> : <code class="type">([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_monitor.t" class="ocaml_internal">t</a>, int) <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a></code></pre>
+<pre class="odoccode"><span class="VALid"><span class="keyword">val</span> id</span> : <code class="type">([&lt; `Read | `Set_and_create ], <a href="http://127.0.0.1:8000/async_kernel/#Raw_monitor.t" class="ocaml_internal">t</a>, int) <a href="http://127.0.0.1:8000/fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a></code></pre>
 
-<pre class="odoccode"><span class="VALhere"><span class="keyword">val</span> here</span> : <code class="type">([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_monitor.t" class="ocaml_internal">t</a>, <a href="http://frenetic-lang.github.io/api//core/#Std.Source_code_position.t">Core.Std.Source_code_position.t</a> option)
-<a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a></code></pre>
+<pre class="odoccode"><span class="VALhere"><span class="keyword">val</span> here</span> : <code class="type">([&lt; `Read | `Set_and_create ], <a href="http://127.0.0.1:8000/async_kernel/#Raw_monitor.t" class="ocaml_internal">t</a>, <a href="http://127.0.0.1:8000/core/#Std.Source_code_position.t">Core.Std.Source_code_position.t</a> option)
+<a href="http://127.0.0.1:8000/fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a></code></pre>
 
-<pre class="odoccode"><span class="VALname"><span class="keyword">val</span> name</span> : <code class="type">([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_monitor.t" class="ocaml_internal">t</a>, <a href="http://frenetic-lang.github.io/api//core/#Std.Info.t">Core.Std.Info.t</a>)
-<a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a></code></pre>
+<pre class="odoccode"><span class="VALname"><span class="keyword">val</span> name</span> : <code class="type">([&lt; `Read | `Set_and_create ], <a href="http://127.0.0.1:8000/async_kernel/#Raw_monitor.t" class="ocaml_internal">t</a>, <a href="http://127.0.0.1:8000/core/#Std.Info.t">Core.Std.Info.t</a>)
+<a href="http://127.0.0.1:8000/fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a></code></pre>
 
-<pre class="odoccode"><span class="VALmake_creator"><span class="keyword">val</span> make_creator</span> : <code class="type">name:(([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_monitor.t" class="ocaml_internal">t</a>, <a href="http://frenetic-lang.github.io/api//core/#Std.Info.t">Core.Std.Info.t</a>)
-      <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; 'a -&gt; ('b -&gt; <a href="http://frenetic-lang.github.io/api//core/#Std.Info.t">Core.Std.Info.t</a>) * 'c) -&gt;
-here:(([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_monitor.t" class="ocaml_internal">t</a>,
-       <a href="http://frenetic-lang.github.io/api//core/#Std.Source_code_position.t">Core.Std.Source_code_position.t</a> option)
-      <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt;
-      'c -&gt; ('b -&gt; <a href="http://frenetic-lang.github.io/api//core/#Std.Source_code_position.t">Core.Std.Source_code_position.t</a> option) * 'd) -&gt;
-id:(([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_monitor.t" class="ocaml_internal">t</a>, int) <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt;
+<pre class="odoccode"><span class="VALmake_creator"><span class="keyword">val</span> make_creator</span> : <code class="type">name:(([&lt; `Read | `Set_and_create ], <a href="http://127.0.0.1:8000/async_kernel/#Raw_monitor.t" class="ocaml_internal">t</a>, <a href="http://127.0.0.1:8000/core/#Std.Info.t">Core.Std.Info.t</a>)
+      <a href="http://127.0.0.1:8000/fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; 'a -&gt; ('b -&gt; <a href="http://127.0.0.1:8000/core/#Std.Info.t">Core.Std.Info.t</a>) * 'c) -&gt;
+here:(([&lt; `Read | `Set_and_create ], <a href="http://127.0.0.1:8000/async_kernel/#Raw_monitor.t" class="ocaml_internal">t</a>,
+       <a href="http://127.0.0.1:8000/core/#Std.Source_code_position.t">Core.Std.Source_code_position.t</a> option)
+      <a href="http://127.0.0.1:8000/fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt;
+      'c -&gt; ('b -&gt; <a href="http://127.0.0.1:8000/core/#Std.Source_code_position.t">Core.Std.Source_code_position.t</a> option) * 'd) -&gt;
+id:(([&lt; `Read | `Set_and_create ], <a href="http://127.0.0.1:8000/async_kernel/#Raw_monitor.t" class="ocaml_internal">t</a>, int) <a href="http://127.0.0.1:8000/fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt;
     'd -&gt; ('b -&gt; int) * 'e) -&gt;
-parent:(([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_monitor.t" class="ocaml_internal">t</a>, <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_monitor.t" class="ocaml_internal">t</a> option)
-        <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; 'e -&gt; ('b -&gt; <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_monitor.t" class="ocaml_internal">t</a> option) * 'f) -&gt;
-handlers_for_next_error:(([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_monitor.t" class="ocaml_internal">t</a>,
+parent:(([&lt; `Read | `Set_and_create ], <a href="http://127.0.0.1:8000/async_kernel/#Raw_monitor.t" class="ocaml_internal">t</a>, <a href="http://127.0.0.1:8000/async_kernel/#Raw_monitor.t" class="ocaml_internal">t</a> option)
+        <a href="http://127.0.0.1:8000/fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; 'e -&gt; ('b -&gt; <a href="http://127.0.0.1:8000/async_kernel/#Raw_monitor.t" class="ocaml_internal">t</a> option) * 'f) -&gt;
+handlers_for_next_error:(([&lt; `Read | `Set_and_create ], <a href="http://127.0.0.1:8000/async_kernel/#Raw_monitor.t" class="ocaml_internal">t</a>,
                           (exn -&gt; unit) list)
-                         <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt;
+                         <a href="http://127.0.0.1:8000/fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt;
                          'f -&gt; ('b -&gt; (exn -&gt; unit) list) * 'g) -&gt;
-handlers_for_all_errors:(([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_monitor.t" class="ocaml_internal">t</a>,
-                          (exn -&gt; unit) <a href="http://frenetic-lang.github.io/api//core/#Std.Bag.t">Core.Std.Bag.t</a>)
-                         <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt;
-                         'g -&gt; ('b -&gt; (exn -&gt; unit) <a href="http://frenetic-lang.github.io/api//core/#Std.Bag.t">Core.Std.Bag.t</a>) * 'h) -&gt;
-has_seen_error:(([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_monitor.t" class="ocaml_internal">t</a>, bool)
-                <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; 'h -&gt; ('b -&gt; bool) * 'i) -&gt;
-is_detached:(([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_monitor.t" class="ocaml_internal">t</a>, bool)
-             <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; 'i -&gt; ('b -&gt; bool) * 'j) -&gt;
-kill_index:(([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_monitor.t" class="ocaml_internal">t</a>, <a href="http://frenetic-lang.github.io/api//async_kernel/#Kill_index.t">Kill_index.t</a>)
-            <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; 'j -&gt; ('b -&gt; <a href="http://frenetic-lang.github.io/api//async_kernel/#Kill_index.t">Kill_index.t</a>) * 'k) -&gt;
-'a -&gt; ('b -&gt; <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_monitor.t" class="ocaml_internal">t</a>) * 'k</code></pre>
+handlers_for_all_errors:(([&lt; `Read | `Set_and_create ], <a href="http://127.0.0.1:8000/async_kernel/#Raw_monitor.t" class="ocaml_internal">t</a>,
+                          (exn -&gt; unit) <a href="http://127.0.0.1:8000/core/#Std.Bag.t">Core.Std.Bag.t</a>)
+                         <a href="http://127.0.0.1:8000/fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt;
+                         'g -&gt; ('b -&gt; (exn -&gt; unit) <a href="http://127.0.0.1:8000/core/#Std.Bag.t">Core.Std.Bag.t</a>) * 'h) -&gt;
+has_seen_error:(([&lt; `Read | `Set_and_create ], <a href="http://127.0.0.1:8000/async_kernel/#Raw_monitor.t" class="ocaml_internal">t</a>, bool)
+                <a href="http://127.0.0.1:8000/fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; 'h -&gt; ('b -&gt; bool) * 'i) -&gt;
+is_detached:(([&lt; `Read | `Set_and_create ], <a href="http://127.0.0.1:8000/async_kernel/#Raw_monitor.t" class="ocaml_internal">t</a>, bool)
+             <a href="http://127.0.0.1:8000/fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; 'i -&gt; ('b -&gt; bool) * 'j) -&gt;
+kill_index:(([&lt; `Read | `Set_and_create ], <a href="http://127.0.0.1:8000/async_kernel/#Raw_monitor.t" class="ocaml_internal">t</a>, <a href="http://127.0.0.1:8000/async_kernel/#Kill_index.t">Kill_index.t</a>)
+            <a href="http://127.0.0.1:8000/fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; 'j -&gt; ('b -&gt; <a href="http://127.0.0.1:8000/async_kernel/#Kill_index.t">Kill_index.t</a>) * 'k) -&gt;
+'a -&gt; ('b -&gt; <a href="http://127.0.0.1:8000/async_kernel/#Raw_monitor.t" class="ocaml_internal">t</a>) * 'k</code></pre>
 
-<pre class="odoccode"><span class="VALcreate"><span class="keyword">val</span> create</span> : <code class="type">name:<a href="http://frenetic-lang.github.io/api//core/#Std.Info.t">Core.Std.Info.t</a> -&gt;
-here:<a href="http://frenetic-lang.github.io/api//core/#Std.Source_code_position.t">Core.Std.Source_code_position.t</a> option -&gt;
+<pre class="odoccode"><span class="VALcreate"><span class="keyword">val</span> create</span> : <code class="type">name:<a href="http://127.0.0.1:8000/core/#Std.Info.t">Core.Std.Info.t</a> -&gt;
+here:<a href="http://127.0.0.1:8000/core/#Std.Source_code_position.t">Core.Std.Source_code_position.t</a> option -&gt;
 id:int -&gt;
-parent:<a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_monitor.t" class="ocaml_internal">t</a> option -&gt;
+parent:<a href="http://127.0.0.1:8000/async_kernel/#Raw_monitor.t" class="ocaml_internal">t</a> option -&gt;
 handlers_for_next_error:(exn -&gt; unit) list -&gt;
-handlers_for_all_errors:(exn -&gt; unit) <a href="http://frenetic-lang.github.io/api//core/#Std.Bag.t">Core.Std.Bag.t</a> -&gt;
-has_seen_error:bool -&gt; is_detached:bool -&gt; kill_index:<a href="http://frenetic-lang.github.io/api//async_kernel/#Kill_index.t">Kill_index.t</a> -&gt; <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_monitor.t" class="ocaml_internal">t</a></code></pre>
+handlers_for_all_errors:(exn -&gt; unit) <a href="http://127.0.0.1:8000/core/#Std.Bag.t">Core.Std.Bag.t</a> -&gt;
+has_seen_error:bool -&gt; is_detached:bool -&gt; kill_index:<a href="http://127.0.0.1:8000/async_kernel/#Kill_index.t">Kill_index.t</a> -&gt; <a href="http://127.0.0.1:8000/async_kernel/#Raw_monitor.t" class="ocaml_internal">t</a></code></pre>
 
-<pre class="odoccode"><span class="VALmap"><span class="keyword">val</span> map</span> : <code class="type">name:(([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_monitor.t" class="ocaml_internal">t</a>, <a href="http://frenetic-lang.github.io/api//core/#Std.Info.t">Core.Std.Info.t</a>)
-      <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; <a href="http://frenetic-lang.github.io/api//core/#Std.Info.t">Core.Std.Info.t</a>) -&gt;
-here:(([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_monitor.t" class="ocaml_internal">t</a>,
-       <a href="http://frenetic-lang.github.io/api//core/#Std.Source_code_position.t">Core.Std.Source_code_position.t</a> option)
-      <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; <a href="http://frenetic-lang.github.io/api//core/#Std.Source_code_position.t">Core.Std.Source_code_position.t</a> option) -&gt;
-id:(([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_monitor.t" class="ocaml_internal">t</a>, int) <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; int) -&gt;
-parent:(([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_monitor.t" class="ocaml_internal">t</a>, <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_monitor.t" class="ocaml_internal">t</a> option)
-        <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_monitor.t" class="ocaml_internal">t</a> option) -&gt;
-handlers_for_next_error:(([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_monitor.t" class="ocaml_internal">t</a>,
+<pre class="odoccode"><span class="VALmap"><span class="keyword">val</span> map</span> : <code class="type">name:(([&lt; `Read | `Set_and_create ], <a href="http://127.0.0.1:8000/async_kernel/#Raw_monitor.t" class="ocaml_internal">t</a>, <a href="http://127.0.0.1:8000/core/#Std.Info.t">Core.Std.Info.t</a>)
+      <a href="http://127.0.0.1:8000/fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; <a href="http://127.0.0.1:8000/core/#Std.Info.t">Core.Std.Info.t</a>) -&gt;
+here:(([&lt; `Read | `Set_and_create ], <a href="http://127.0.0.1:8000/async_kernel/#Raw_monitor.t" class="ocaml_internal">t</a>,
+       <a href="http://127.0.0.1:8000/core/#Std.Source_code_position.t">Core.Std.Source_code_position.t</a> option)
+      <a href="http://127.0.0.1:8000/fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; <a href="http://127.0.0.1:8000/core/#Std.Source_code_position.t">Core.Std.Source_code_position.t</a> option) -&gt;
+id:(([&lt; `Read | `Set_and_create ], <a href="http://127.0.0.1:8000/async_kernel/#Raw_monitor.t" class="ocaml_internal">t</a>, int) <a href="http://127.0.0.1:8000/fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; int) -&gt;
+parent:(([&lt; `Read | `Set_and_create ], <a href="http://127.0.0.1:8000/async_kernel/#Raw_monitor.t" class="ocaml_internal">t</a>, <a href="http://127.0.0.1:8000/async_kernel/#Raw_monitor.t" class="ocaml_internal">t</a> option)
+        <a href="http://127.0.0.1:8000/fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; <a href="http://127.0.0.1:8000/async_kernel/#Raw_monitor.t" class="ocaml_internal">t</a> option) -&gt;
+handlers_for_next_error:(([&lt; `Read | `Set_and_create ], <a href="http://127.0.0.1:8000/async_kernel/#Raw_monitor.t" class="ocaml_internal">t</a>,
                           (exn -&gt; unit) list)
-                         <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; (exn -&gt; unit) list) -&gt;
-handlers_for_all_errors:(([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_monitor.t" class="ocaml_internal">t</a>,
-                          (exn -&gt; unit) <a href="http://frenetic-lang.github.io/api//core/#Std.Bag.t">Core.Std.Bag.t</a>)
-                         <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt;
-                         (exn -&gt; unit) <a href="http://frenetic-lang.github.io/api//core/#Std.Bag.t">Core.Std.Bag.t</a>) -&gt;
-has_seen_error:(([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_monitor.t" class="ocaml_internal">t</a>, bool)
-                <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; bool) -&gt;
-is_detached:(([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_monitor.t" class="ocaml_internal">t</a>, bool)
-             <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; bool) -&gt;
-kill_index:(([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_monitor.t" class="ocaml_internal">t</a>, <a href="http://frenetic-lang.github.io/api//async_kernel/#Kill_index.t">Kill_index.t</a>)
-            <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; <a href="http://frenetic-lang.github.io/api//async_kernel/#Kill_index.t">Kill_index.t</a>) -&gt;
-<a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_monitor.t" class="ocaml_internal">t</a></code></pre>
+                         <a href="http://127.0.0.1:8000/fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; (exn -&gt; unit) list) -&gt;
+handlers_for_all_errors:(([&lt; `Read | `Set_and_create ], <a href="http://127.0.0.1:8000/async_kernel/#Raw_monitor.t" class="ocaml_internal">t</a>,
+                          (exn -&gt; unit) <a href="http://127.0.0.1:8000/core/#Std.Bag.t">Core.Std.Bag.t</a>)
+                         <a href="http://127.0.0.1:8000/fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt;
+                         (exn -&gt; unit) <a href="http://127.0.0.1:8000/core/#Std.Bag.t">Core.Std.Bag.t</a>) -&gt;
+has_seen_error:(([&lt; `Read | `Set_and_create ], <a href="http://127.0.0.1:8000/async_kernel/#Raw_monitor.t" class="ocaml_internal">t</a>, bool)
+                <a href="http://127.0.0.1:8000/fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; bool) -&gt;
+is_detached:(([&lt; `Read | `Set_and_create ], <a href="http://127.0.0.1:8000/async_kernel/#Raw_monitor.t" class="ocaml_internal">t</a>, bool)
+             <a href="http://127.0.0.1:8000/fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; bool) -&gt;
+kill_index:(([&lt; `Read | `Set_and_create ], <a href="http://127.0.0.1:8000/async_kernel/#Raw_monitor.t" class="ocaml_internal">t</a>, <a href="http://127.0.0.1:8000/async_kernel/#Kill_index.t">Kill_index.t</a>)
+            <a href="http://127.0.0.1:8000/fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; <a href="http://127.0.0.1:8000/async_kernel/#Kill_index.t">Kill_index.t</a>) -&gt;
+<a href="http://127.0.0.1:8000/async_kernel/#Raw_monitor.t" class="ocaml_internal">t</a></code></pre>
 
-<pre class="odoccode"><span class="VALiter"><span class="keyword">val</span> iter</span> : <code class="type">name:(([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_monitor.t" class="ocaml_internal">t</a>, <a href="http://frenetic-lang.github.io/api//core/#Std.Info.t">Core.Std.Info.t</a>)
-      <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; 'a) -&gt;
-here:(([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_monitor.t" class="ocaml_internal">t</a>,
-       <a href="http://frenetic-lang.github.io/api//core/#Std.Source_code_position.t">Core.Std.Source_code_position.t</a> option)
-      <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; 'b) -&gt;
-id:(([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_monitor.t" class="ocaml_internal">t</a>, int) <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; 'c) -&gt;
-parent:(([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_monitor.t" class="ocaml_internal">t</a>, <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_monitor.t" class="ocaml_internal">t</a> option)
-        <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; 'd) -&gt;
-handlers_for_next_error:(([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_monitor.t" class="ocaml_internal">t</a>,
+<pre class="odoccode"><span class="VALiter"><span class="keyword">val</span> iter</span> : <code class="type">name:(([&lt; `Read | `Set_and_create ], <a href="http://127.0.0.1:8000/async_kernel/#Raw_monitor.t" class="ocaml_internal">t</a>, <a href="http://127.0.0.1:8000/core/#Std.Info.t">Core.Std.Info.t</a>)
+      <a href="http://127.0.0.1:8000/fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; 'a) -&gt;
+here:(([&lt; `Read | `Set_and_create ], <a href="http://127.0.0.1:8000/async_kernel/#Raw_monitor.t" class="ocaml_internal">t</a>,
+       <a href="http://127.0.0.1:8000/core/#Std.Source_code_position.t">Core.Std.Source_code_position.t</a> option)
+      <a href="http://127.0.0.1:8000/fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; 'b) -&gt;
+id:(([&lt; `Read | `Set_and_create ], <a href="http://127.0.0.1:8000/async_kernel/#Raw_monitor.t" class="ocaml_internal">t</a>, int) <a href="http://127.0.0.1:8000/fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; 'c) -&gt;
+parent:(([&lt; `Read | `Set_and_create ], <a href="http://127.0.0.1:8000/async_kernel/#Raw_monitor.t" class="ocaml_internal">t</a>, <a href="http://127.0.0.1:8000/async_kernel/#Raw_monitor.t" class="ocaml_internal">t</a> option)
+        <a href="http://127.0.0.1:8000/fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; 'd) -&gt;
+handlers_for_next_error:(([&lt; `Read | `Set_and_create ], <a href="http://127.0.0.1:8000/async_kernel/#Raw_monitor.t" class="ocaml_internal">t</a>,
                           (exn -&gt; unit) list)
-                         <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; 'e) -&gt;
-handlers_for_all_errors:(([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_monitor.t" class="ocaml_internal">t</a>,
-                          (exn -&gt; unit) <a href="http://frenetic-lang.github.io/api//core/#Std.Bag.t">Core.Std.Bag.t</a>)
-                         <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; 'f) -&gt;
-has_seen_error:(([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_monitor.t" class="ocaml_internal">t</a>, bool)
-                <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; 'g) -&gt;
-is_detached:(([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_monitor.t" class="ocaml_internal">t</a>, bool)
-             <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; 'h) -&gt;
-kill_index:(([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_monitor.t" class="ocaml_internal">t</a>, <a href="http://frenetic-lang.github.io/api//async_kernel/#Kill_index.t">Kill_index.t</a>)
-            <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; 'i) -&gt;
+                         <a href="http://127.0.0.1:8000/fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; 'e) -&gt;
+handlers_for_all_errors:(([&lt; `Read | `Set_and_create ], <a href="http://127.0.0.1:8000/async_kernel/#Raw_monitor.t" class="ocaml_internal">t</a>,
+                          (exn -&gt; unit) <a href="http://127.0.0.1:8000/core/#Std.Bag.t">Core.Std.Bag.t</a>)
+                         <a href="http://127.0.0.1:8000/fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; 'f) -&gt;
+has_seen_error:(([&lt; `Read | `Set_and_create ], <a href="http://127.0.0.1:8000/async_kernel/#Raw_monitor.t" class="ocaml_internal">t</a>, bool)
+                <a href="http://127.0.0.1:8000/fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; 'g) -&gt;
+is_detached:(([&lt; `Read | `Set_and_create ], <a href="http://127.0.0.1:8000/async_kernel/#Raw_monitor.t" class="ocaml_internal">t</a>, bool)
+             <a href="http://127.0.0.1:8000/fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; 'h) -&gt;
+kill_index:(([&lt; `Read | `Set_and_create ], <a href="http://127.0.0.1:8000/async_kernel/#Raw_monitor.t" class="ocaml_internal">t</a>, <a href="http://127.0.0.1:8000/async_kernel/#Kill_index.t">Kill_index.t</a>)
+            <a href="http://127.0.0.1:8000/fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; 'i) -&gt;
 'i</code></pre>
 
 <pre class="odoccode"><span class="VALfold"><span class="keyword">val</span> fold</span> : <code class="type">init:'a -&gt;
 name:('a -&gt;
-      ([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_monitor.t" class="ocaml_internal">t</a>, <a href="http://frenetic-lang.github.io/api//core/#Std.Info.t">Core.Std.Info.t</a>)
-      <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; 'b) -&gt;
+      ([&lt; `Read | `Set_and_create ], <a href="http://127.0.0.1:8000/async_kernel/#Raw_monitor.t" class="ocaml_internal">t</a>, <a href="http://127.0.0.1:8000/core/#Std.Info.t">Core.Std.Info.t</a>)
+      <a href="http://127.0.0.1:8000/fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; 'b) -&gt;
 here:('b -&gt;
-      ([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_monitor.t" class="ocaml_internal">t</a>,
-       <a href="http://frenetic-lang.github.io/api//core/#Std.Source_code_position.t">Core.Std.Source_code_position.t</a> option)
-      <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; 'c) -&gt;
+      ([&lt; `Read | `Set_and_create ], <a href="http://127.0.0.1:8000/async_kernel/#Raw_monitor.t" class="ocaml_internal">t</a>,
+       <a href="http://127.0.0.1:8000/core/#Std.Source_code_position.t">Core.Std.Source_code_position.t</a> option)
+      <a href="http://127.0.0.1:8000/fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; 'c) -&gt;
 id:('c -&gt;
-    ([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_monitor.t" class="ocaml_internal">t</a>, int) <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; 'd) -&gt;
+    ([&lt; `Read | `Set_and_create ], <a href="http://127.0.0.1:8000/async_kernel/#Raw_monitor.t" class="ocaml_internal">t</a>, int) <a href="http://127.0.0.1:8000/fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; 'd) -&gt;
 parent:('d -&gt;
-        ([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_monitor.t" class="ocaml_internal">t</a>, <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_monitor.t" class="ocaml_internal">t</a> option)
-        <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; 'e) -&gt;
+        ([&lt; `Read | `Set_and_create ], <a href="http://127.0.0.1:8000/async_kernel/#Raw_monitor.t" class="ocaml_internal">t</a>, <a href="http://127.0.0.1:8000/async_kernel/#Raw_monitor.t" class="ocaml_internal">t</a> option)
+        <a href="http://127.0.0.1:8000/fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; 'e) -&gt;
 handlers_for_next_error:('e -&gt;
-                         ([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_monitor.t" class="ocaml_internal">t</a>,
+                         ([&lt; `Read | `Set_and_create ], <a href="http://127.0.0.1:8000/async_kernel/#Raw_monitor.t" class="ocaml_internal">t</a>,
                           (exn -&gt; unit) list)
-                         <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; 'f) -&gt;
+                         <a href="http://127.0.0.1:8000/fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; 'f) -&gt;
 handlers_for_all_errors:('f -&gt;
-                         ([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_monitor.t" class="ocaml_internal">t</a>,
-                          (exn -&gt; unit) <a href="http://frenetic-lang.github.io/api//core/#Std.Bag.t">Core.Std.Bag.t</a>)
-                         <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; 'g) -&gt;
+                         ([&lt; `Read | `Set_and_create ], <a href="http://127.0.0.1:8000/async_kernel/#Raw_monitor.t" class="ocaml_internal">t</a>,
+                          (exn -&gt; unit) <a href="http://127.0.0.1:8000/core/#Std.Bag.t">Core.Std.Bag.t</a>)
+                         <a href="http://127.0.0.1:8000/fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; 'g) -&gt;
 has_seen_error:('g -&gt;
-                ([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_monitor.t" class="ocaml_internal">t</a>, bool)
-                <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; 'h) -&gt;
+                ([&lt; `Read | `Set_and_create ], <a href="http://127.0.0.1:8000/async_kernel/#Raw_monitor.t" class="ocaml_internal">t</a>, bool)
+                <a href="http://127.0.0.1:8000/fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; 'h) -&gt;
 is_detached:('h -&gt;
-             ([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_monitor.t" class="ocaml_internal">t</a>, bool)
-             <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; 'i) -&gt;
+             ([&lt; `Read | `Set_and_create ], <a href="http://127.0.0.1:8000/async_kernel/#Raw_monitor.t" class="ocaml_internal">t</a>, bool)
+             <a href="http://127.0.0.1:8000/fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; 'i) -&gt;
 kill_index:('i -&gt;
-            ([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_monitor.t" class="ocaml_internal">t</a>, <a href="http://frenetic-lang.github.io/api//async_kernel/#Kill_index.t">Kill_index.t</a>)
-            <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; 'j) -&gt;
+            ([&lt; `Read | `Set_and_create ], <a href="http://127.0.0.1:8000/async_kernel/#Raw_monitor.t" class="ocaml_internal">t</a>, <a href="http://127.0.0.1:8000/async_kernel/#Kill_index.t">Kill_index.t</a>)
+            <a href="http://127.0.0.1:8000/fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; 'j) -&gt;
 'j</code></pre>
 
-<pre class="odoccode"><span class="VALmap_poly"><span class="keyword">val</span> map_poly</span> : <code class="type">([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_monitor.t" class="ocaml_internal">t</a>, 'a) <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.user">Fieldslib.Field.user</a> -&gt; 'a list</code></pre>
+<pre class="odoccode"><span class="VALmap_poly"><span class="keyword">val</span> map_poly</span> : <code class="type">([&lt; `Read | `Set_and_create ], <a href="http://127.0.0.1:8000/async_kernel/#Raw_monitor.t" class="ocaml_internal">t</a>, 'a) <a href="http://127.0.0.1:8000/fieldslib/#Field.user">Fieldslib.Field.user</a> -&gt; 'a list</code></pre>
 
-<pre class="odoccode"><span class="VALfor_all"><span class="keyword">val</span> for_all</span> : <code class="type">name:(([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_monitor.t" class="ocaml_internal">t</a>, <a href="http://frenetic-lang.github.io/api//core/#Std.Info.t">Core.Std.Info.t</a>)
-      <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; bool) -&gt;
-here:(([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_monitor.t" class="ocaml_internal">t</a>,
-       <a href="http://frenetic-lang.github.io/api//core/#Std.Source_code_position.t">Core.Std.Source_code_position.t</a> option)
-      <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; bool) -&gt;
-id:(([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_monitor.t" class="ocaml_internal">t</a>, int) <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt;
+<pre class="odoccode"><span class="VALfor_all"><span class="keyword">val</span> for_all</span> : <code class="type">name:(([&lt; `Read | `Set_and_create ], <a href="http://127.0.0.1:8000/async_kernel/#Raw_monitor.t" class="ocaml_internal">t</a>, <a href="http://127.0.0.1:8000/core/#Std.Info.t">Core.Std.Info.t</a>)
+      <a href="http://127.0.0.1:8000/fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; bool) -&gt;
+here:(([&lt; `Read | `Set_and_create ], <a href="http://127.0.0.1:8000/async_kernel/#Raw_monitor.t" class="ocaml_internal">t</a>,
+       <a href="http://127.0.0.1:8000/core/#Std.Source_code_position.t">Core.Std.Source_code_position.t</a> option)
+      <a href="http://127.0.0.1:8000/fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; bool) -&gt;
+id:(([&lt; `Read | `Set_and_create ], <a href="http://127.0.0.1:8000/async_kernel/#Raw_monitor.t" class="ocaml_internal">t</a>, int) <a href="http://127.0.0.1:8000/fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt;
     bool) -&gt;
-parent:(([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_monitor.t" class="ocaml_internal">t</a>, <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_monitor.t" class="ocaml_internal">t</a> option)
-        <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; bool) -&gt;
-handlers_for_next_error:(([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_monitor.t" class="ocaml_internal">t</a>,
+parent:(([&lt; `Read | `Set_and_create ], <a href="http://127.0.0.1:8000/async_kernel/#Raw_monitor.t" class="ocaml_internal">t</a>, <a href="http://127.0.0.1:8000/async_kernel/#Raw_monitor.t" class="ocaml_internal">t</a> option)
+        <a href="http://127.0.0.1:8000/fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; bool) -&gt;
+handlers_for_next_error:(([&lt; `Read | `Set_and_create ], <a href="http://127.0.0.1:8000/async_kernel/#Raw_monitor.t" class="ocaml_internal">t</a>,
                           (exn -&gt; unit) list)
-                         <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; bool) -&gt;
-handlers_for_all_errors:(([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_monitor.t" class="ocaml_internal">t</a>,
-                          (exn -&gt; unit) <a href="http://frenetic-lang.github.io/api//core/#Std.Bag.t">Core.Std.Bag.t</a>)
-                         <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; bool) -&gt;
-has_seen_error:(([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_monitor.t" class="ocaml_internal">t</a>, bool)
-                <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; bool) -&gt;
-is_detached:(([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_monitor.t" class="ocaml_internal">t</a>, bool)
-             <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; bool) -&gt;
-kill_index:(([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_monitor.t" class="ocaml_internal">t</a>, <a href="http://frenetic-lang.github.io/api//async_kernel/#Kill_index.t">Kill_index.t</a>)
-            <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; bool) -&gt;
+                         <a href="http://127.0.0.1:8000/fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; bool) -&gt;
+handlers_for_all_errors:(([&lt; `Read | `Set_and_create ], <a href="http://127.0.0.1:8000/async_kernel/#Raw_monitor.t" class="ocaml_internal">t</a>,
+                          (exn -&gt; unit) <a href="http://127.0.0.1:8000/core/#Std.Bag.t">Core.Std.Bag.t</a>)
+                         <a href="http://127.0.0.1:8000/fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; bool) -&gt;
+has_seen_error:(([&lt; `Read | `Set_and_create ], <a href="http://127.0.0.1:8000/async_kernel/#Raw_monitor.t" class="ocaml_internal">t</a>, bool)
+                <a href="http://127.0.0.1:8000/fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; bool) -&gt;
+is_detached:(([&lt; `Read | `Set_and_create ], <a href="http://127.0.0.1:8000/async_kernel/#Raw_monitor.t" class="ocaml_internal">t</a>, bool)
+             <a href="http://127.0.0.1:8000/fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; bool) -&gt;
+kill_index:(([&lt; `Read | `Set_and_create ], <a href="http://127.0.0.1:8000/async_kernel/#Raw_monitor.t" class="ocaml_internal">t</a>, <a href="http://127.0.0.1:8000/async_kernel/#Kill_index.t">Kill_index.t</a>)
+            <a href="http://127.0.0.1:8000/fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; bool) -&gt;
 bool</code></pre>
 
-<pre class="odoccode"><span class="VALexists"><span class="keyword">val</span> exists</span> : <code class="type">name:(([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_monitor.t" class="ocaml_internal">t</a>, <a href="http://frenetic-lang.github.io/api//core/#Std.Info.t">Core.Std.Info.t</a>)
-      <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; bool) -&gt;
-here:(([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_monitor.t" class="ocaml_internal">t</a>,
-       <a href="http://frenetic-lang.github.io/api//core/#Std.Source_code_position.t">Core.Std.Source_code_position.t</a> option)
-      <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; bool) -&gt;
-id:(([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_monitor.t" class="ocaml_internal">t</a>, int) <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt;
+<pre class="odoccode"><span class="VALexists"><span class="keyword">val</span> exists</span> : <code class="type">name:(([&lt; `Read | `Set_and_create ], <a href="http://127.0.0.1:8000/async_kernel/#Raw_monitor.t" class="ocaml_internal">t</a>, <a href="http://127.0.0.1:8000/core/#Std.Info.t">Core.Std.Info.t</a>)
+      <a href="http://127.0.0.1:8000/fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; bool) -&gt;
+here:(([&lt; `Read | `Set_and_create ], <a href="http://127.0.0.1:8000/async_kernel/#Raw_monitor.t" class="ocaml_internal">t</a>,
+       <a href="http://127.0.0.1:8000/core/#Std.Source_code_position.t">Core.Std.Source_code_position.t</a> option)
+      <a href="http://127.0.0.1:8000/fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; bool) -&gt;
+id:(([&lt; `Read | `Set_and_create ], <a href="http://127.0.0.1:8000/async_kernel/#Raw_monitor.t" class="ocaml_internal">t</a>, int) <a href="http://127.0.0.1:8000/fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt;
     bool) -&gt;
-parent:(([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_monitor.t" class="ocaml_internal">t</a>, <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_monitor.t" class="ocaml_internal">t</a> option)
-        <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; bool) -&gt;
-handlers_for_next_error:(([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_monitor.t" class="ocaml_internal">t</a>,
+parent:(([&lt; `Read | `Set_and_create ], <a href="http://127.0.0.1:8000/async_kernel/#Raw_monitor.t" class="ocaml_internal">t</a>, <a href="http://127.0.0.1:8000/async_kernel/#Raw_monitor.t" class="ocaml_internal">t</a> option)
+        <a href="http://127.0.0.1:8000/fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; bool) -&gt;
+handlers_for_next_error:(([&lt; `Read | `Set_and_create ], <a href="http://127.0.0.1:8000/async_kernel/#Raw_monitor.t" class="ocaml_internal">t</a>,
                           (exn -&gt; unit) list)
-                         <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; bool) -&gt;
-handlers_for_all_errors:(([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_monitor.t" class="ocaml_internal">t</a>,
-                          (exn -&gt; unit) <a href="http://frenetic-lang.github.io/api//core/#Std.Bag.t">Core.Std.Bag.t</a>)
-                         <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; bool) -&gt;
-has_seen_error:(([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_monitor.t" class="ocaml_internal">t</a>, bool)
-                <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; bool) -&gt;
-is_detached:(([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_monitor.t" class="ocaml_internal">t</a>, bool)
-             <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; bool) -&gt;
-kill_index:(([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_monitor.t" class="ocaml_internal">t</a>, <a href="http://frenetic-lang.github.io/api//async_kernel/#Kill_index.t">Kill_index.t</a>)
-            <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; bool) -&gt;
+                         <a href="http://127.0.0.1:8000/fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; bool) -&gt;
+handlers_for_all_errors:(([&lt; `Read | `Set_and_create ], <a href="http://127.0.0.1:8000/async_kernel/#Raw_monitor.t" class="ocaml_internal">t</a>,
+                          (exn -&gt; unit) <a href="http://127.0.0.1:8000/core/#Std.Bag.t">Core.Std.Bag.t</a>)
+                         <a href="http://127.0.0.1:8000/fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; bool) -&gt;
+has_seen_error:(([&lt; `Read | `Set_and_create ], <a href="http://127.0.0.1:8000/async_kernel/#Raw_monitor.t" class="ocaml_internal">t</a>, bool)
+                <a href="http://127.0.0.1:8000/fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; bool) -&gt;
+is_detached:(([&lt; `Read | `Set_and_create ], <a href="http://127.0.0.1:8000/async_kernel/#Raw_monitor.t" class="ocaml_internal">t</a>, bool)
+             <a href="http://127.0.0.1:8000/fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; bool) -&gt;
+kill_index:(([&lt; `Read | `Set_and_create ], <a href="http://127.0.0.1:8000/async_kernel/#Raw_monitor.t" class="ocaml_internal">t</a>, <a href="http://127.0.0.1:8000/async_kernel/#Kill_index.t">Kill_index.t</a>)
+            <a href="http://127.0.0.1:8000/fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; bool) -&gt;
 bool</code></pre>
 
-<pre class="odoccode"><span class="VALto_list"><span class="keyword">val</span> to_list</span> : <code class="type">name:(([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_monitor.t" class="ocaml_internal">t</a>, <a href="http://frenetic-lang.github.io/api//core/#Std.Info.t">Core.Std.Info.t</a>)
-      <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; 'a) -&gt;
-here:(([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_monitor.t" class="ocaml_internal">t</a>,
-       <a href="http://frenetic-lang.github.io/api//core/#Std.Source_code_position.t">Core.Std.Source_code_position.t</a> option)
-      <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; 'a) -&gt;
-id:(([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_monitor.t" class="ocaml_internal">t</a>, int) <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; 'a) -&gt;
-parent:(([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_monitor.t" class="ocaml_internal">t</a>, <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_monitor.t" class="ocaml_internal">t</a> option)
-        <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; 'a) -&gt;
-handlers_for_next_error:(([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_monitor.t" class="ocaml_internal">t</a>,
+<pre class="odoccode"><span class="VALto_list"><span class="keyword">val</span> to_list</span> : <code class="type">name:(([&lt; `Read | `Set_and_create ], <a href="http://127.0.0.1:8000/async_kernel/#Raw_monitor.t" class="ocaml_internal">t</a>, <a href="http://127.0.0.1:8000/core/#Std.Info.t">Core.Std.Info.t</a>)
+      <a href="http://127.0.0.1:8000/fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; 'a) -&gt;
+here:(([&lt; `Read | `Set_and_create ], <a href="http://127.0.0.1:8000/async_kernel/#Raw_monitor.t" class="ocaml_internal">t</a>,
+       <a href="http://127.0.0.1:8000/core/#Std.Source_code_position.t">Core.Std.Source_code_position.t</a> option)
+      <a href="http://127.0.0.1:8000/fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; 'a) -&gt;
+id:(([&lt; `Read | `Set_and_create ], <a href="http://127.0.0.1:8000/async_kernel/#Raw_monitor.t" class="ocaml_internal">t</a>, int) <a href="http://127.0.0.1:8000/fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; 'a) -&gt;
+parent:(([&lt; `Read | `Set_and_create ], <a href="http://127.0.0.1:8000/async_kernel/#Raw_monitor.t" class="ocaml_internal">t</a>, <a href="http://127.0.0.1:8000/async_kernel/#Raw_monitor.t" class="ocaml_internal">t</a> option)
+        <a href="http://127.0.0.1:8000/fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; 'a) -&gt;
+handlers_for_next_error:(([&lt; `Read | `Set_and_create ], <a href="http://127.0.0.1:8000/async_kernel/#Raw_monitor.t" class="ocaml_internal">t</a>,
                           (exn -&gt; unit) list)
-                         <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; 'a) -&gt;
-handlers_for_all_errors:(([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_monitor.t" class="ocaml_internal">t</a>,
-                          (exn -&gt; unit) <a href="http://frenetic-lang.github.io/api//core/#Std.Bag.t">Core.Std.Bag.t</a>)
-                         <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; 'a) -&gt;
-has_seen_error:(([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_monitor.t" class="ocaml_internal">t</a>, bool)
-                <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; 'a) -&gt;
-is_detached:(([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_monitor.t" class="ocaml_internal">t</a>, bool)
-             <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; 'a) -&gt;
-kill_index:(([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_monitor.t" class="ocaml_internal">t</a>, <a href="http://frenetic-lang.github.io/api//async_kernel/#Kill_index.t">Kill_index.t</a>)
-            <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; 'a) -&gt;
+                         <a href="http://127.0.0.1:8000/fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; 'a) -&gt;
+handlers_for_all_errors:(([&lt; `Read | `Set_and_create ], <a href="http://127.0.0.1:8000/async_kernel/#Raw_monitor.t" class="ocaml_internal">t</a>,
+                          (exn -&gt; unit) <a href="http://127.0.0.1:8000/core/#Std.Bag.t">Core.Std.Bag.t</a>)
+                         <a href="http://127.0.0.1:8000/fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; 'a) -&gt;
+has_seen_error:(([&lt; `Read | `Set_and_create ], <a href="http://127.0.0.1:8000/async_kernel/#Raw_monitor.t" class="ocaml_internal">t</a>, bool)
+                <a href="http://127.0.0.1:8000/fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; 'a) -&gt;
+is_detached:(([&lt; `Read | `Set_and_create ], <a href="http://127.0.0.1:8000/async_kernel/#Raw_monitor.t" class="ocaml_internal">t</a>, bool)
+             <a href="http://127.0.0.1:8000/fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; 'a) -&gt;
+kill_index:(([&lt; `Read | `Set_and_create ], <a href="http://127.0.0.1:8000/async_kernel/#Raw_monitor.t" class="ocaml_internal">t</a>, <a href="http://127.0.0.1:8000/async_kernel/#Kill_index.t">Kill_index.t</a>)
+            <a href="http://127.0.0.1:8000/fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; 'a) -&gt;
 'a list</code></pre>
 
-<div class="ocaml_module" name="Direct"><pre class="odoccode"><span class="keyword">module</span> <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_monitor.Fields.Direct" class="ocaml_internal">Direct</a> : <code class="type"><code class="code">sig</code> .. <code class="code">end</code></code></pre><div class="ocaml_summary"/><div class="ocaml_content">
-<pre class="odoccode"><span class="VALiter"><span class="keyword">val</span> iter</span> : <code class="type"><a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_monitor.t" class="ocaml_internal">t</a> -&gt;
-name:(([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_monitor.t" class="ocaml_internal">t</a>, <a href="http://frenetic-lang.github.io/api//core/#Std.Info.t">Core.Std.Info.t</a>)
-      <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_monitor.t" class="ocaml_internal">t</a> -&gt; <a href="http://frenetic-lang.github.io/api//core/#Std.Info.t">Core.Std.Info.t</a> -&gt; 'a) -&gt;
-here:(([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_monitor.t" class="ocaml_internal">t</a>,
-       <a href="http://frenetic-lang.github.io/api//core/#Std.Source_code_position.t">Core.Std.Source_code_position.t</a> option)
-      <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt;
-      <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_monitor.t" class="ocaml_internal">t</a> -&gt; <a href="http://frenetic-lang.github.io/api//core/#Std.Source_code_position.t">Core.Std.Source_code_position.t</a> option -&gt; 'b) -&gt;
-id:(([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_monitor.t" class="ocaml_internal">t</a>, int) <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt;
-    <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_monitor.t" class="ocaml_internal">t</a> -&gt; int -&gt; 'c) -&gt;
-parent:(([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_monitor.t" class="ocaml_internal">t</a>, <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_monitor.t" class="ocaml_internal">t</a> option)
-        <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_monitor.t" class="ocaml_internal">t</a> -&gt; <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_monitor.t" class="ocaml_internal">t</a> option -&gt; 'd) -&gt;
-handlers_for_next_error:(([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_monitor.t" class="ocaml_internal">t</a>,
+<div class="ocaml_module" name="Direct"><pre class="odoccode"><span class="keyword">module</span> <a href="http://127.0.0.1:8000/async_kernel/#Raw_monitor.Fields.Direct" class="ocaml_internal">Direct</a> : <code class="type"><code class="code">sig</code> .. <code class="code">end</code></code></pre><div class="ocaml_summary"/><div class="ocaml_content">
+<pre class="odoccode"><span class="VALiter"><span class="keyword">val</span> iter</span> : <code class="type"><a href="http://127.0.0.1:8000/async_kernel/#Raw_monitor.t" class="ocaml_internal">t</a> -&gt;
+name:(([&lt; `Read | `Set_and_create ], <a href="http://127.0.0.1:8000/async_kernel/#Raw_monitor.t" class="ocaml_internal">t</a>, <a href="http://127.0.0.1:8000/core/#Std.Info.t">Core.Std.Info.t</a>)
+      <a href="http://127.0.0.1:8000/fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; <a href="http://127.0.0.1:8000/async_kernel/#Raw_monitor.t" class="ocaml_internal">t</a> -&gt; <a href="http://127.0.0.1:8000/core/#Std.Info.t">Core.Std.Info.t</a> -&gt; 'a) -&gt;
+here:(([&lt; `Read | `Set_and_create ], <a href="http://127.0.0.1:8000/async_kernel/#Raw_monitor.t" class="ocaml_internal">t</a>,
+       <a href="http://127.0.0.1:8000/core/#Std.Source_code_position.t">Core.Std.Source_code_position.t</a> option)
+      <a href="http://127.0.0.1:8000/fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt;
+      <a href="http://127.0.0.1:8000/async_kernel/#Raw_monitor.t" class="ocaml_internal">t</a> -&gt; <a href="http://127.0.0.1:8000/core/#Std.Source_code_position.t">Core.Std.Source_code_position.t</a> option -&gt; 'b) -&gt;
+id:(([&lt; `Read | `Set_and_create ], <a href="http://127.0.0.1:8000/async_kernel/#Raw_monitor.t" class="ocaml_internal">t</a>, int) <a href="http://127.0.0.1:8000/fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt;
+    <a href="http://127.0.0.1:8000/async_kernel/#Raw_monitor.t" class="ocaml_internal">t</a> -&gt; int -&gt; 'c) -&gt;
+parent:(([&lt; `Read | `Set_and_create ], <a href="http://127.0.0.1:8000/async_kernel/#Raw_monitor.t" class="ocaml_internal">t</a>, <a href="http://127.0.0.1:8000/async_kernel/#Raw_monitor.t" class="ocaml_internal">t</a> option)
+        <a href="http://127.0.0.1:8000/fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; <a href="http://127.0.0.1:8000/async_kernel/#Raw_monitor.t" class="ocaml_internal">t</a> -&gt; <a href="http://127.0.0.1:8000/async_kernel/#Raw_monitor.t" class="ocaml_internal">t</a> option -&gt; 'd) -&gt;
+handlers_for_next_error:(([&lt; `Read | `Set_and_create ], <a href="http://127.0.0.1:8000/async_kernel/#Raw_monitor.t" class="ocaml_internal">t</a>,
                           (exn -&gt; unit) list)
-                         <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt;
-                         <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_monitor.t" class="ocaml_internal">t</a> -&gt; (exn -&gt; unit) list -&gt; 'e) -&gt;
-handlers_for_all_errors:(([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_monitor.t" class="ocaml_internal">t</a>,
-                          (exn -&gt; unit) <a href="http://frenetic-lang.github.io/api//core/#Std.Bag.t">Core.Std.Bag.t</a>)
-                         <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt;
-                         <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_monitor.t" class="ocaml_internal">t</a> -&gt; (exn -&gt; unit) <a href="http://frenetic-lang.github.io/api//core/#Std.Bag.t">Core.Std.Bag.t</a> -&gt; 'f) -&gt;
-has_seen_error:(([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_monitor.t" class="ocaml_internal">t</a>, bool)
-                <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_monitor.t" class="ocaml_internal">t</a> -&gt; bool -&gt; 'g) -&gt;
-is_detached:(([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_monitor.t" class="ocaml_internal">t</a>, bool)
-             <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_monitor.t" class="ocaml_internal">t</a> -&gt; bool -&gt; 'h) -&gt;
-kill_index:(([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_monitor.t" class="ocaml_internal">t</a>, <a href="http://frenetic-lang.github.io/api//async_kernel/#Kill_index.t">Kill_index.t</a>)
-            <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_monitor.t" class="ocaml_internal">t</a> -&gt; <a href="http://frenetic-lang.github.io/api//async_kernel/#Kill_index.t">Kill_index.t</a> -&gt; 'i) -&gt;
+                         <a href="http://127.0.0.1:8000/fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt;
+                         <a href="http://127.0.0.1:8000/async_kernel/#Raw_monitor.t" class="ocaml_internal">t</a> -&gt; (exn -&gt; unit) list -&gt; 'e) -&gt;
+handlers_for_all_errors:(([&lt; `Read | `Set_and_create ], <a href="http://127.0.0.1:8000/async_kernel/#Raw_monitor.t" class="ocaml_internal">t</a>,
+                          (exn -&gt; unit) <a href="http://127.0.0.1:8000/core/#Std.Bag.t">Core.Std.Bag.t</a>)
+                         <a href="http://127.0.0.1:8000/fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt;
+                         <a href="http://127.0.0.1:8000/async_kernel/#Raw_monitor.t" class="ocaml_internal">t</a> -&gt; (exn -&gt; unit) <a href="http://127.0.0.1:8000/core/#Std.Bag.t">Core.Std.Bag.t</a> -&gt; 'f) -&gt;
+has_seen_error:(([&lt; `Read | `Set_and_create ], <a href="http://127.0.0.1:8000/async_kernel/#Raw_monitor.t" class="ocaml_internal">t</a>, bool)
+                <a href="http://127.0.0.1:8000/fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; <a href="http://127.0.0.1:8000/async_kernel/#Raw_monitor.t" class="ocaml_internal">t</a> -&gt; bool -&gt; 'g) -&gt;
+is_detached:(([&lt; `Read | `Set_and_create ], <a href="http://127.0.0.1:8000/async_kernel/#Raw_monitor.t" class="ocaml_internal">t</a>, bool)
+             <a href="http://127.0.0.1:8000/fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; <a href="http://127.0.0.1:8000/async_kernel/#Raw_monitor.t" class="ocaml_internal">t</a> -&gt; bool -&gt; 'h) -&gt;
+kill_index:(([&lt; `Read | `Set_and_create ], <a href="http://127.0.0.1:8000/async_kernel/#Raw_monitor.t" class="ocaml_internal">t</a>, <a href="http://127.0.0.1:8000/async_kernel/#Kill_index.t">Kill_index.t</a>)
+            <a href="http://127.0.0.1:8000/fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; <a href="http://127.0.0.1:8000/async_kernel/#Raw_monitor.t" class="ocaml_internal">t</a> -&gt; <a href="http://127.0.0.1:8000/async_kernel/#Kill_index.t">Kill_index.t</a> -&gt; 'i) -&gt;
 'i</code></pre>
 
-<pre class="odoccode"><span class="VALfold"><span class="keyword">val</span> fold</span> : <code class="type"><a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_monitor.t" class="ocaml_internal">t</a> -&gt;
+<pre class="odoccode"><span class="VALfold"><span class="keyword">val</span> fold</span> : <code class="type"><a href="http://127.0.0.1:8000/async_kernel/#Raw_monitor.t" class="ocaml_internal">t</a> -&gt;
 init:'a -&gt;
 name:('a -&gt;
-      ([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_monitor.t" class="ocaml_internal">t</a>, <a href="http://frenetic-lang.github.io/api//core/#Std.Info.t">Core.Std.Info.t</a>)
-      <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_monitor.t" class="ocaml_internal">t</a> -&gt; <a href="http://frenetic-lang.github.io/api//core/#Std.Info.t">Core.Std.Info.t</a> -&gt; 'b) -&gt;
+      ([&lt; `Read | `Set_and_create ], <a href="http://127.0.0.1:8000/async_kernel/#Raw_monitor.t" class="ocaml_internal">t</a>, <a href="http://127.0.0.1:8000/core/#Std.Info.t">Core.Std.Info.t</a>)
+      <a href="http://127.0.0.1:8000/fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; <a href="http://127.0.0.1:8000/async_kernel/#Raw_monitor.t" class="ocaml_internal">t</a> -&gt; <a href="http://127.0.0.1:8000/core/#Std.Info.t">Core.Std.Info.t</a> -&gt; 'b) -&gt;
 here:('b -&gt;
-      ([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_monitor.t" class="ocaml_internal">t</a>,
-       <a href="http://frenetic-lang.github.io/api//core/#Std.Source_code_position.t">Core.Std.Source_code_position.t</a> option)
-      <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt;
-      <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_monitor.t" class="ocaml_internal">t</a> -&gt; <a href="http://frenetic-lang.github.io/api//core/#Std.Source_code_position.t">Core.Std.Source_code_position.t</a> option -&gt; 'c) -&gt;
+      ([&lt; `Read | `Set_and_create ], <a href="http://127.0.0.1:8000/async_kernel/#Raw_monitor.t" class="ocaml_internal">t</a>,
+       <a href="http://127.0.0.1:8000/core/#Std.Source_code_position.t">Core.Std.Source_code_position.t</a> option)
+      <a href="http://127.0.0.1:8000/fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt;
+      <a href="http://127.0.0.1:8000/async_kernel/#Raw_monitor.t" class="ocaml_internal">t</a> -&gt; <a href="http://127.0.0.1:8000/core/#Std.Source_code_position.t">Core.Std.Source_code_position.t</a> option -&gt; 'c) -&gt;
 id:('c -&gt;
-    ([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_monitor.t" class="ocaml_internal">t</a>, int) <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt;
-    <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_monitor.t" class="ocaml_internal">t</a> -&gt; int -&gt; 'd) -&gt;
+    ([&lt; `Read | `Set_and_create ], <a href="http://127.0.0.1:8000/async_kernel/#Raw_monitor.t" class="ocaml_internal">t</a>, int) <a href="http://127.0.0.1:8000/fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt;
+    <a href="http://127.0.0.1:8000/async_kernel/#Raw_monitor.t" class="ocaml_internal">t</a> -&gt; int -&gt; 'd) -&gt;
 parent:('d -&gt;
-        ([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_monitor.t" class="ocaml_internal">t</a>, <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_monitor.t" class="ocaml_internal">t</a> option)
-        <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_monitor.t" class="ocaml_internal">t</a> -&gt; <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_monitor.t" class="ocaml_internal">t</a> option -&gt; 'e) -&gt;
+        ([&lt; `Read | `Set_and_create ], <a href="http://127.0.0.1:8000/async_kernel/#Raw_monitor.t" class="ocaml_internal">t</a>, <a href="http://127.0.0.1:8000/async_kernel/#Raw_monitor.t" class="ocaml_internal">t</a> option)
+        <a href="http://127.0.0.1:8000/fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; <a href="http://127.0.0.1:8000/async_kernel/#Raw_monitor.t" class="ocaml_internal">t</a> -&gt; <a href="http://127.0.0.1:8000/async_kernel/#Raw_monitor.t" class="ocaml_internal">t</a> option -&gt; 'e) -&gt;
 handlers_for_next_error:('e -&gt;
-                         ([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_monitor.t" class="ocaml_internal">t</a>,
+                         ([&lt; `Read | `Set_and_create ], <a href="http://127.0.0.1:8000/async_kernel/#Raw_monitor.t" class="ocaml_internal">t</a>,
                           (exn -&gt; unit) list)
-                         <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt;
-                         <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_monitor.t" class="ocaml_internal">t</a> -&gt; (exn -&gt; unit) list -&gt; 'f) -&gt;
+                         <a href="http://127.0.0.1:8000/fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt;
+                         <a href="http://127.0.0.1:8000/async_kernel/#Raw_monitor.t" class="ocaml_internal">t</a> -&gt; (exn -&gt; unit) list -&gt; 'f) -&gt;
 handlers_for_all_errors:('f -&gt;
-                         ([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_monitor.t" class="ocaml_internal">t</a>,
-                          (exn -&gt; unit) <a href="http://frenetic-lang.github.io/api//core/#Std.Bag.t">Core.Std.Bag.t</a>)
-                         <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt;
-                         <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_monitor.t" class="ocaml_internal">t</a> -&gt; (exn -&gt; unit) <a href="http://frenetic-lang.github.io/api//core/#Std.Bag.t">Core.Std.Bag.t</a> -&gt; 'g) -&gt;
+                         ([&lt; `Read | `Set_and_create ], <a href="http://127.0.0.1:8000/async_kernel/#Raw_monitor.t" class="ocaml_internal">t</a>,
+                          (exn -&gt; unit) <a href="http://127.0.0.1:8000/core/#Std.Bag.t">Core.Std.Bag.t</a>)
+                         <a href="http://127.0.0.1:8000/fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt;
+                         <a href="http://127.0.0.1:8000/async_kernel/#Raw_monitor.t" class="ocaml_internal">t</a> -&gt; (exn -&gt; unit) <a href="http://127.0.0.1:8000/core/#Std.Bag.t">Core.Std.Bag.t</a> -&gt; 'g) -&gt;
 has_seen_error:('g -&gt;
-                ([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_monitor.t" class="ocaml_internal">t</a>, bool)
-                <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_monitor.t" class="ocaml_internal">t</a> -&gt; bool -&gt; 'h) -&gt;
+                ([&lt; `Read | `Set_and_create ], <a href="http://127.0.0.1:8000/async_kernel/#Raw_monitor.t" class="ocaml_internal">t</a>, bool)
+                <a href="http://127.0.0.1:8000/fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; <a href="http://127.0.0.1:8000/async_kernel/#Raw_monitor.t" class="ocaml_internal">t</a> -&gt; bool -&gt; 'h) -&gt;
 is_detached:('h -&gt;
-             ([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_monitor.t" class="ocaml_internal">t</a>, bool)
-             <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_monitor.t" class="ocaml_internal">t</a> -&gt; bool -&gt; 'i) -&gt;
+             ([&lt; `Read | `Set_and_create ], <a href="http://127.0.0.1:8000/async_kernel/#Raw_monitor.t" class="ocaml_internal">t</a>, bool)
+             <a href="http://127.0.0.1:8000/fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; <a href="http://127.0.0.1:8000/async_kernel/#Raw_monitor.t" class="ocaml_internal">t</a> -&gt; bool -&gt; 'i) -&gt;
 kill_index:('i -&gt;
-            ([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_monitor.t" class="ocaml_internal">t</a>, <a href="http://frenetic-lang.github.io/api//async_kernel/#Kill_index.t">Kill_index.t</a>)
-            <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_monitor.t" class="ocaml_internal">t</a> -&gt; <a href="http://frenetic-lang.github.io/api//async_kernel/#Kill_index.t">Kill_index.t</a> -&gt; 'j) -&gt;
+            ([&lt; `Read | `Set_and_create ], <a href="http://127.0.0.1:8000/async_kernel/#Raw_monitor.t" class="ocaml_internal">t</a>, <a href="http://127.0.0.1:8000/async_kernel/#Kill_index.t">Kill_index.t</a>)
+            <a href="http://127.0.0.1:8000/fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; <a href="http://127.0.0.1:8000/async_kernel/#Raw_monitor.t" class="ocaml_internal">t</a> -&gt; <a href="http://127.0.0.1:8000/async_kernel/#Kill_index.t">Kill_index.t</a> -&gt; 'j) -&gt;
 'j</code></pre>
 </div></div></div></div>
-<div class="ocaml_module" name="Pretty"><pre class="odoccode"><span class="keyword">module</span> <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_monitor.Pretty" class="ocaml_internal">Pretty</a> : <code class="type"><code class="code">sig</code> .. <code class="code">end</code></code></pre><div class="ocaml_summary"/><div class="ocaml_content">
+<div class="ocaml_module" name="Pretty"><pre class="odoccode"><span class="keyword">module</span> <a href="http://127.0.0.1:8000/async_kernel/#Raw_monitor.Pretty" class="ocaml_internal">Pretty</a> : <code class="type"><code class="code">sig</code> .. <code class="code">end</code></code></pre><div class="ocaml_summary"/><div class="ocaml_content">
 <pre class="odoccode"><code><span class="TYPEone"><span class="keyword">type</span> one</span> = {</code></pre><table class="typetable">
-		    <tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="TYPEELTone.name">name</span> : <code class="type"><a href="http://frenetic-lang.github.io/api//core/#Std.Info.t">Core.Std.Info.t</a></code>;</code></td></tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="TYPEELTone.here">here</span> : <code class="type"><a href="http://frenetic-lang.github.io/api//core/#Std.Source_code_position.t">Core.Std.Source_code_position.t</a> option</code>;</code></td></tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="TYPEELTone.id">id</span> : <code class="type">int</code>;</code></td></tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="TYPEELTone.has_seen_error">has_seen_error</span> : <code class="type">bool</code>;</code></td></tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="TYPEELTone.is_detached">is_detached</span> : <code class="type">bool</code>;</code></td></tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="TYPEELTone.kill_index">kill_index</span> : <code class="type"><a href="http://frenetic-lang.github.io/api//async_kernel/#Kill_index.t">Kill_index.t</a></code>;</code></td></tr><tr><td>}</td></tr></table>
+		    <tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="TYPEELTone.name">name</span> : <code class="type"><a href="http://127.0.0.1:8000/core/#Std.Info.t">Core.Std.Info.t</a></code>;</code></td></tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="TYPEELTone.here">here</span> : <code class="type"><a href="http://127.0.0.1:8000/core/#Std.Source_code_position.t">Core.Std.Source_code_position.t</a> option</code>;</code></td></tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="TYPEELTone.id">id</span> : <code class="type">int</code>;</code></td></tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="TYPEELTone.has_seen_error">has_seen_error</span> : <code class="type">bool</code>;</code></td></tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="TYPEELTone.is_detached">is_detached</span> : <code class="type">bool</code>;</code></td></tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="TYPEELTone.kill_index">kill_index</span> : <code class="type"><a href="http://127.0.0.1:8000/async_kernel/#Kill_index.t">Kill_index.t</a></code>;</code></td></tr><tr><td>}</td></tr></table>
 
-<pre class="odoccode"><span class="VALsexp_of_one"><span class="keyword">val</span> sexp_of_one</span> : <code class="type"><a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_monitor.Pretty.one" class="ocaml_internal">one</a> -&gt; <a href="http://frenetic-lang.github.io/api//sexplib/#Sexp.t">Sexplib.Sexp.t</a></code></pre>
+<pre class="odoccode"><span class="VALsexp_of_one"><span class="keyword">val</span> sexp_of_one</span> : <code class="type"><a href="http://127.0.0.1:8000/async_kernel/#Raw_monitor.Pretty.one" class="ocaml_internal">one</a> -&gt; <a href="http://127.0.0.1:8000/sexplib/#Sexp.t">Sexplib.Sexp.t</a></code></pre>
 
-<pre class="odoccode"><span class="TYPEt"><span class="keyword">type</span> t</span> = <code class="type"><a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_monitor.Pretty.one" class="ocaml_internal">one</a> list</code></pre>
+<pre class="odoccode"><span class="TYPEt"><span class="keyword">type</span> t</span> = <code class="type"><a href="http://127.0.0.1:8000/async_kernel/#Raw_monitor.Pretty.one" class="ocaml_internal">one</a> list</code></pre>
 
-<pre class="odoccode"><span class="VALsexp_of_t"><span class="keyword">val</span> sexp_of_t</span> : <code class="type"><a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_monitor.Pretty.t" class="ocaml_internal">t</a> -&gt; <a href="http://frenetic-lang.github.io/api//sexplib/#Sexp.t">Sexplib.Sexp.t</a></code></pre>
+<pre class="odoccode"><span class="VALsexp_of_t"><span class="keyword">val</span> sexp_of_t</span> : <code class="type"><a href="http://127.0.0.1:8000/async_kernel/#Raw_monitor.Pretty.t" class="ocaml_internal">t</a> -&gt; <a href="http://127.0.0.1:8000/sexplib/#Sexp.t">Sexplib.Sexp.t</a></code></pre>
 </div></div>
-<pre class="odoccode"><span class="VALto_pretty"><span class="keyword">val</span> to_pretty</span> : <code class="type"><a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_monitor.t" class="ocaml_internal">t</a> -&gt; <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_monitor.Pretty.one" class="ocaml_internal">Pretty.one</a> <a href="http://frenetic-lang.github.io/api//core/#Std.List.t">Core.Std.List.t</a></code></pre>
-<pre class="odoccode"><span class="VALsexp_of_t"><span class="keyword">val</span> sexp_of_t</span> : <code class="type"><a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_monitor.t" class="ocaml_internal">t</a> -&gt; <a href="http://frenetic-lang.github.io/api//sexplib/#Sexp.t">Sexplib.Sexp.t</a></code></pre>
+<pre class="odoccode"><span class="VALto_pretty"><span class="keyword">val</span> to_pretty</span> : <code class="type"><a href="http://127.0.0.1:8000/async_kernel/#Raw_monitor.t" class="ocaml_internal">t</a> -&gt; <a href="http://127.0.0.1:8000/async_kernel/#Raw_monitor.Pretty.one" class="ocaml_internal">Pretty.one</a> <a href="http://127.0.0.1:8000/core/#Std.List.t">Core.Std.List.t</a></code></pre>
+<pre class="odoccode"><span class="VALsexp_of_t"><span class="keyword">val</span> sexp_of_t</span> : <code class="type"><a href="http://127.0.0.1:8000/async_kernel/#Raw_monitor.t" class="ocaml_internal">t</a> -&gt; <a href="http://127.0.0.1:8000/sexplib/#Sexp.t">Sexplib.Sexp.t</a></code></pre>
 <pre class="odoccode"><span class="VALnext_id"><span class="keyword">val</span> next_id</span> : <code class="type">unit -&gt; int</code></pre>
-<pre class="odoccode"><span class="VALcreate_with_parent"><span class="keyword">val</span> create_with_parent</span> : <code class="type">?here:<a href="http://frenetic-lang.github.io/api//core/#Std.Source_code_position.t">Core.Std.Source_code_position.t</a> -&gt;
-?info:<a href="http://frenetic-lang.github.io/api//core/#Std.Info.t">Core.Std.Info.t</a> -&gt; ?name:string -&gt; <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_monitor.t" class="ocaml_internal">t</a> option -&gt; <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_monitor.t" class="ocaml_internal">t</a></code></pre>
-<pre class="odoccode"><span class="VALmain"><span class="keyword">val</span> main</span> : <code class="type"><a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_monitor.t" class="ocaml_internal">t</a></code></pre>
+<pre class="odoccode"><span class="VALcreate_with_parent"><span class="keyword">val</span> create_with_parent</span> : <code class="type">?here:<a href="http://127.0.0.1:8000/core/#Std.Source_code_position.t">Core.Std.Source_code_position.t</a> -&gt;
+?info:<a href="http://127.0.0.1:8000/core/#Std.Info.t">Core.Std.Info.t</a> -&gt; ?name:string -&gt; <a href="http://127.0.0.1:8000/async_kernel/#Raw_monitor.t" class="ocaml_internal">t</a> option -&gt; <a href="http://127.0.0.1:8000/async_kernel/#Raw_monitor.t" class="ocaml_internal">t</a></code></pre>
+<pre class="odoccode"><span class="VALmain"><span class="keyword">val</span> main</span> : <code class="type"><a href="http://127.0.0.1:8000/async_kernel/#Raw_monitor.t" class="ocaml_internal">t</a></code></pre>
 <pre class="odoccode"><span class="EXCEPTIONShutdown"><span class="keyword">exception</span> Shutdown</span></pre>
-<pre class="odoccode"><span class="VALupdate_kill_index"><span class="keyword">val</span> update_kill_index</span> : <code class="type"><a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_monitor.t" class="ocaml_internal">t</a> -&gt; global_kill_index:<a href="http://frenetic-lang.github.io/api//async_kernel/#Kill_index.t">Kill_index.t</a> -&gt; unit</code></pre>
-<pre class="odoccode"><span class="VALis_alive"><span class="keyword">val</span> is_alive</span> : <code class="type"><a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_monitor.t" class="ocaml_internal">t</a> -&gt; global_kill_index:<a href="http://frenetic-lang.github.io/api//async_kernel/#Kill_index.t">Kill_index.t</a> -&gt; bool</code></pre>
+<pre class="odoccode"><span class="VALupdate_kill_index"><span class="keyword">val</span> update_kill_index</span> : <code class="type"><a href="http://127.0.0.1:8000/async_kernel/#Raw_monitor.t" class="ocaml_internal">t</a> -&gt; global_kill_index:<a href="http://127.0.0.1:8000/async_kernel/#Kill_index.t">Kill_index.t</a> -&gt; unit</code></pre>
+<pre class="odoccode"><span class="VALis_alive"><span class="keyword">val</span> is_alive</span> : <code class="type"><a href="http://127.0.0.1:8000/async_kernel/#Raw_monitor.t" class="ocaml_internal">t</a> -&gt; global_kill_index:<a href="http://127.0.0.1:8000/async_kernel/#Kill_index.t">Kill_index.t</a> -&gt; bool</code></pre>
 
 </div></div>

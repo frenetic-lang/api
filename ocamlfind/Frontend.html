@@ -19,7 +19,7 @@
 <pre class="odoccode"><code><span class="TYPEverbosity"><span class="keyword">type</span> verbosity</span> = </code></pre><table class="typetable">
 		    <tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span class="TYPEELTverbosity.Normal"><span class="constructor">Normal</span></span></code></td></tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span class="TYPEELTverbosity.Verbose"><span class="constructor">Verbose</span></span></code></td></tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span class="TYPEELTverbosity.Only_show"><span class="constructor">Only_show</span></span></code></td></tr></table>
 <pre class="odoccode"><span class="VALrun_command"><span class="keyword">val</span> run_command</span> : <code class="type">?filter:(string -&gt; string option) -&gt;
-<a href="http://frenetic-lang.github.io/api//ocamlfind/#Frontend.verbosity" class="ocaml_internal">verbosity</a> -&gt; string -&gt; string list -&gt; unit</code></pre>
+<a href="http://127.0.0.1:8000/ocamlfind/#Frontend.verbosity" class="ocaml_internal">verbosity</a> -&gt; string -&gt; string list -&gt; unit</code></pre>
 <pre class="odoccode"><span class="VALmerge_native_arguments"><span class="keyword">val</span> merge_native_arguments</span> : <code class="type">('a * bool * 'b) list -&gt;
 ('a -&gt; 'c) -&gt; ('a -&gt; 'c) -&gt; ('a * 'c) list -&gt; ('a * 'c * 'b) list</code></pre>
 <pre class="odoccode"><span class="VALparse_args"><span class="keyword">val</span> parse_args</span> : <code class="type">?current:int ref -&gt;
@@ -43,12 +43,12 @@
 <pre class="odoccode"><span class="VALinstall_create_directory"><span class="keyword">val</span> install_create_directory</span> : <code class="type">'a -&gt; string -&gt; unit</code></pre>
 <pre class="odoccode"><span class="VALcreate_owner_file"><span class="keyword">val</span> create_owner_file</span> : <code class="type">string -&gt; string -&gt; unit</code></pre>
 <pre class="odoccode"><span class="VALfind_owned_files"><span class="keyword">val</span> find_owned_files</span> : <code class="type">string -&gt; string -&gt; string list</code></pre>
-<pre class="odoccode"><span class="EXCEPTIONMissing_archives"><span class="keyword">exception</span> Missing_archives</span> <span class="keyword">of</span> <code class="type"><a href="http://frenetic-lang.github.io/api//ocamlfind/#Fl_metascanner.pkg_expr">Fl_metascanner.pkg_expr</a></code></pre>
-<pre class="odoccode"><span class="VALpatch_archives"><span class="keyword">val</span> patch_archives</span> : <code class="type">string -&gt; <a href="http://frenetic-lang.github.io/api//ocamlfind/#Fl_metascanner.pkg_expr">Fl_metascanner.pkg_expr</a> -&gt; <a href="http://frenetic-lang.github.io/api//ocamlfind/#Fl_metascanner.pkg_expr">Fl_metascanner.pkg_expr</a></code></pre>
+<pre class="odoccode"><span class="EXCEPTIONMissing_archives"><span class="keyword">exception</span> Missing_archives</span> <span class="keyword">of</span> <code class="type"><a href="http://127.0.0.1:8000/ocamlfind/#Fl_metascanner.pkg_expr">Fl_metascanner.pkg_expr</a></code></pre>
+<pre class="odoccode"><span class="VALpatch_archives"><span class="keyword">val</span> patch_archives</span> : <code class="type">string -&gt; <a href="http://127.0.0.1:8000/ocamlfind/#Fl_metascanner.pkg_expr">Fl_metascanner.pkg_expr</a> -&gt; <a href="http://127.0.0.1:8000/ocamlfind/#Fl_metascanner.pkg_expr">Fl_metascanner.pkg_expr</a></code></pre>
 <pre class="odoccode"><span class="VALpatch_pkg"><span class="keyword">val</span> patch_pkg</span> : <code class="type">string -&gt;
-<a href="http://frenetic-lang.github.io/api//ocamlfind/#Fl_metascanner.pkg_expr">Fl_metascanner.pkg_expr</a> -&gt;
+<a href="http://127.0.0.1:8000/ocamlfind/#Fl_metascanner.pkg_expr">Fl_metascanner.pkg_expr</a> -&gt;
 [&lt; `Archives | `Rmpkg of string | `Version of string ] list -&gt;
-<a href="http://frenetic-lang.github.io/api//ocamlfind/#Fl_metascanner.pkg_expr">Fl_metascanner.pkg_expr</a></code></pre>
+<a href="http://127.0.0.1:8000/ocamlfind/#Fl_metascanner.pkg_expr">Fl_metascanner.pkg_expr</a></code></pre>
 <pre class="odoccode"><span class="EXCEPTIONSkip_file"><span class="keyword">exception</span> Skip_file</span></pre>
 <pre class="odoccode"><code><span class="TYPEwhich"><span class="keyword">type</span> which</span> = </code></pre><table class="typetable">
 		    <tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span class="TYPEELTwhich.Auto"><span class="constructor">Auto</span></span></code></td></tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span class="TYPEELTwhich.Dll"><span class="constructor">Dll</span></span></code></td></tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span class="TYPEELTwhich.No_dll"><span class="constructor">No_dll</span></span></code></td></tr></table>
@@ -58,7 +58,7 @@
 <pre class="odoccode"><span class="VALlist_packages"><span class="keyword">val</span> list_packages</span> : <code class="type">unit -&gt; unit</code></pre>
 <pre class="odoccode"><span class="VALprint_configuration"><span class="keyword">val</span> print_configuration</span> : <code class="type">unit -&gt; unit</code></pre>
 <pre class="odoccode"><span class="VALocamlcall"><span class="keyword">val</span> ocamlcall</span> : <code class="type">string -&gt; string -&gt; unit</code></pre>
-<pre class="odoccode"><span class="VALselect_mode"><span class="keyword">val</span> select_mode</span> : <code class="type">unit -&gt; <a href="http://frenetic-lang.github.io/api//ocamlfind/#Frontend.mode" class="ocaml_internal">mode</a></code></pre>
+<pre class="odoccode"><span class="VALselect_mode"><span class="keyword">val</span> select_mode</span> : <code class="type">unit -&gt; <a href="http://127.0.0.1:8000/ocamlfind/#Frontend.mode" class="ocaml_internal">mode</a></code></pre>
 <pre class="odoccode"><span class="VALmain"><span class="keyword">val</span> main</span> : <code class="type">unit -&gt; unit</code></pre>
 
 </div></div>

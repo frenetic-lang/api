@@ -4,7 +4,7 @@
 <pre class="odoccode"><span class="VALassert_failure"><span class="keyword">val</span> assert_failure</span> : <code class="type">string -&gt; 'a</code></pre>
 <pre class="odoccode"><span class="VALassert_bool"><span class="keyword">val</span> assert_bool</span> : <code class="type">string -&gt; bool -&gt; unit</code></pre>
 <pre class="odoccode"><span class="VALassert_string"><span class="keyword">val</span> assert_string</span> : <code class="type">string -&gt; unit</code></pre>
-<pre class="odoccode"><span class="VALassert_equal"><span class="keyword">val</span> assert_equal</span> : <code class="type">?ctxt:<a href="http://frenetic-lang.github.io/api//ounit/#OUnitTest.ctxt">OUnitTest.ctxt</a> -&gt;
+<pre class="odoccode"><span class="VALassert_equal"><span class="keyword">val</span> assert_equal</span> : <code class="type">?ctxt:<a href="http://127.0.0.1:8000/ounit/#OUnitTest.ctxt">OUnitTest.ctxt</a> -&gt;
 ?cmp:('a -&gt; 'a -&gt; bool) -&gt;
 ?printer:('a -&gt; string) -&gt;
 ?pp_diff:(Format.formatter -&gt; 'a * 'a -&gt; unit) -&gt;
@@ -15,7 +15,7 @@
 ?use_stderr:bool -&gt;
 ?backtrace:bool -&gt;
 ?chdir:string -&gt;
-?env:string array -&gt; ctxt:<a href="http://frenetic-lang.github.io/api//ounit/#OUnitTest.ctxt">OUnitTest.ctxt</a> -&gt; string -&gt; string list -&gt; unit</code></pre>
+?env:string array -&gt; ctxt:<a href="http://127.0.0.1:8000/ounit/#OUnitTest.ctxt">OUnitTest.ctxt</a> -&gt; string -&gt; string list -&gt; unit</code></pre>
 <pre class="odoccode"><span class="VALraises"><span class="keyword">val</span> raises</span> : <code class="type">(unit -&gt; 'a) -&gt; exn option</code></pre>
 <pre class="odoccode"><span class="VALassert_raises"><span class="keyword">val</span> assert_raises</span> : <code class="type">?msg:string -&gt; exn -&gt; (unit -&gt; 'a) -&gt; unit</code></pre>
 </div></div>

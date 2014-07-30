@@ -1,6 +1,6 @@
 <div class="ocaml_top"><div class="ocaml_summary"/>
 <div class="ocaml_content"><div class="info">Memoization code -- not re-entrant!</div>
-<pre class="odoccode"><span class="VALgeneral"><span class="keyword">val</span> general</span> : <code class="type">?hashable:'a <a href="http://frenetic-lang.github.io/api//core_kernel/#Std_internal.Hashtbl.Hashable.t">Std_internal.Hashtbl.Hashable.t</a> -&gt;
+<pre class="odoccode"><span class="VALgeneral"><span class="keyword">val</span> general</span> : <code class="type">?hashable:'a <a href="http://127.0.0.1:8000/core_kernel/#Std_internal.Hashtbl.Hashable.t">Std_internal.Hashtbl.Hashable.t</a> -&gt;
 ?cache_size_bound:int -&gt; ('a -&gt; 'b) -&gt; 'a -&gt; 'b</code></pre><div class="info">Returns memoized version of any function with a single argument. The
 default caching policy is to remember everything for the lifetime
 of the returned closure, but one may specify an upper bound on

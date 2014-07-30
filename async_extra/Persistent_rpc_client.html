@@ -1,22 +1,22 @@
 <div class="ocaml_top"><div class="ocaml_summary"><div class="info">An actively maintained rpc connection that eagerly and repeatedly attempts to
 reconnect whenever the connection is lost, until a new connection is established.</div></div>
 <div class="ocaml_content"><pre class="odoccode"><span class="TYPEt"><span class="keyword">type</span> t</span></pre>
-<div class="ocaml_module" name="Event"><pre class="odoccode"><span class="keyword">module</span> <a href="http://frenetic-lang.github.io/api//async_extra/#Persistent_rpc_client.Event" class="ocaml_internal">Event</a> : <code class="type"><code class="code">sig</code> .. <code class="code">end</code></code></pre><div class="ocaml_summary"/><div class="ocaml_content">
+<div class="ocaml_module" name="Event"><pre class="odoccode"><span class="keyword">module</span> <a href="http://127.0.0.1:8000/async_extra/#Persistent_rpc_client.Event" class="ocaml_internal">Event</a> : <code class="type"><code class="code">sig</code> .. <code class="code">end</code></code></pre><div class="ocaml_summary"/><div class="ocaml_content">
 <pre class="odoccode"><span class="TYPEt"><span class="keyword">type</span> t</span> = <code class="type">[ `Attempting_to_connect
 | `Connected
 | `Disconnected
-| `Failed_to_connect of <a href="http://frenetic-lang.github.io/api//core/#Std.Error.t">Core.Std.Error.t</a>
-| `Obtained_address of <a href="http://frenetic-lang.github.io/api//core/#Std.Host_and_port.t">Core.Std.Host_and_port.t</a> ]</code></pre>
-<pre class="odoccode"><span class="VALt_of_sexp"><span class="keyword">val</span> t_of_sexp</span> : <code class="type"><a href="http://frenetic-lang.github.io/api//sexplib/#Sexp.t">Sexplib.Sexp.t</a> -&gt; <a href="http://frenetic-lang.github.io/api//async_extra/#Persistent_rpc_client.Event.t" class="ocaml_internal">t</a></code></pre>
-<pre class="odoccode"><span class="VAL__t_of_sexp__"><span class="keyword">val</span> __t_of_sexp__</span> : <code class="type"><a href="http://frenetic-lang.github.io/api//sexplib/#Sexp.t">Sexplib.Sexp.t</a> -&gt; <a href="http://frenetic-lang.github.io/api//async_extra/#Persistent_rpc_client.Event.t" class="ocaml_internal">t</a></code></pre>
-<pre class="odoccode"><span class="VALsexp_of_t"><span class="keyword">val</span> sexp_of_t</span> : <code class="type"><a href="http://frenetic-lang.github.io/api//async_extra/#Persistent_rpc_client.Event.t" class="ocaml_internal">t</a> -&gt; <a href="http://frenetic-lang.github.io/api//sexplib/#Sexp.t">Sexplib.Sexp.t</a></code></pre></div></div>
+| `Failed_to_connect of <a href="http://127.0.0.1:8000/core/#Std.Error.t">Core.Std.Error.t</a>
+| `Obtained_address of <a href="http://127.0.0.1:8000/core/#Std.Host_and_port.t">Core.Std.Host_and_port.t</a> ]</code></pre>
+<pre class="odoccode"><span class="VALt_of_sexp"><span class="keyword">val</span> t_of_sexp</span> : <code class="type"><a href="http://127.0.0.1:8000/sexplib/#Sexp.t">Sexplib.Sexp.t</a> -&gt; <a href="http://127.0.0.1:8000/async_extra/#Persistent_rpc_client.Event.t" class="ocaml_internal">t</a></code></pre>
+<pre class="odoccode"><span class="VAL__t_of_sexp__"><span class="keyword">val</span> __t_of_sexp__</span> : <code class="type"><a href="http://127.0.0.1:8000/sexplib/#Sexp.t">Sexplib.Sexp.t</a> -&gt; <a href="http://127.0.0.1:8000/async_extra/#Persistent_rpc_client.Event.t" class="ocaml_internal">t</a></code></pre>
+<pre class="odoccode"><span class="VALsexp_of_t"><span class="keyword">val</span> sexp_of_t</span> : <code class="type"><a href="http://127.0.0.1:8000/async_extra/#Persistent_rpc_client.Event.t" class="ocaml_internal">t</a> -&gt; <a href="http://127.0.0.1:8000/sexplib/#Sexp.t">Sexplib.Sexp.t</a></code></pre></div></div>
 <pre class="odoccode"><span class="VALcreate"><span class="keyword">val</span> create</span> : <code class="type">server_name:string -&gt;
-?log:<a href="http://frenetic-lang.github.io/api//async_extra/#Log.t">Log.t</a> -&gt;
-?on_event:(<a href="http://frenetic-lang.github.io/api//async_extra/#Persistent_rpc_client.Event.t" class="ocaml_internal">Event.t</a> -&gt; unit) -&gt;
-?implementations:'a <a href="http://frenetic-lang.github.io/api//async_extra/#Rpc.Connection.Client_implementations.t">Rpc.Connection.Client_implementations.t</a> -&gt;
+?log:<a href="http://127.0.0.1:8000/async_extra/#Log.t">Log.t</a> -&gt;
+?on_event:(<a href="http://127.0.0.1:8000/async_extra/#Persistent_rpc_client.Event.t" class="ocaml_internal">Event.t</a> -&gt; unit) -&gt;
+?implementations:'a <a href="http://127.0.0.1:8000/async_extra/#Rpc.Connection.Client_implementations.t">Rpc.Connection.Client_implementations.t</a> -&gt;
 ?max_message_size:int -&gt;
-?handshake_timeout:<a href="http://frenetic-lang.github.io/api//core/#Std.Time.Span.t">Core.Std.Time.Span.t</a> -&gt;
-(unit -&gt; <a href="http://frenetic-lang.github.io/api//core/#Std.Host_and_port.t">Core.Std.Host_and_port.t</a> <a href="http://frenetic-lang.github.io/api//core/#Std.Or_error.t">Core.Std.Or_error.t</a> <a href="http://frenetic-lang.github.io/api//async_extra/#Import.Deferred.t">Import.Deferred.t</a>) -&gt; <a href="http://frenetic-lang.github.io/api//async_extra/#Persistent_rpc_client.t" class="ocaml_internal">t</a></code></pre><div class="info"><code class="code">create ~server_name ~log get_address</code> returns a persistent rpc connection to a server
+?handshake_timeout:<a href="http://127.0.0.1:8000/core/#Std.Time.Span.t">Core.Std.Time.Span.t</a> -&gt;
+(unit -&gt; <a href="http://127.0.0.1:8000/core/#Std.Host_and_port.t">Core.Std.Host_and_port.t</a> <a href="http://127.0.0.1:8000/core/#Std.Or_error.t">Core.Std.Or_error.t</a> <a href="http://127.0.0.1:8000/async_extra/#Import.Deferred.t">Import.Deferred.t</a>) -&gt; <a href="http://127.0.0.1:8000/async_extra/#Persistent_rpc_client.t" class="ocaml_internal">t</a></code></pre><div class="info"><code class="code">create ~server_name ~log get_address</code> returns a persistent rpc connection to a server
 whose host and port are obtained via <code class="code">get_address</code> every time we try to connect. For
 example, <code class="code">get_address</code> might look up a server's host and port in catalog at a
 particular path to which multiple redundant copies of a service are publishing their
@@ -28,7 +28,7 @@ the server we are connecting to.</p><p><code class="code">`Failed_to_connect err
 they are distinct from the most recent event of the same type that has taken place
 since the most recent <code class="code">`Attempting_to_connect</code> event.</p><p>The <code class="code">implementations</code>, <code class="code">max_message_size</code>, and <code class="code">handshake_timeout</code> arguments are just
 as for <code class="code">Rpc.Connection.create</code>.</p></div>
-<pre class="odoccode"><span class="VALconnected"><span class="keyword">val</span> connected</span> : <code class="type"><a href="http://frenetic-lang.github.io/api//async_extra/#Persistent_rpc_client.t" class="ocaml_internal">t</a> -&gt; <a href="http://frenetic-lang.github.io/api//async_extra/#Rpc.Connection.t">Rpc.Connection.t</a> <a href="http://frenetic-lang.github.io/api//async_extra/#Import.Deferred.t">Import.Deferred.t</a></code></pre><div class="info"><code class="code">connected</code> returns the first available rpc connection from the time it is called.
+<pre class="odoccode"><span class="VALconnected"><span class="keyword">val</span> connected</span> : <code class="type"><a href="http://127.0.0.1:8000/async_extra/#Persistent_rpc_client.t" class="ocaml_internal">t</a> -&gt; <a href="http://127.0.0.1:8000/async_extra/#Rpc.Connection.t">Rpc.Connection.t</a> <a href="http://127.0.0.1:8000/async_extra/#Import.Deferred.t">Import.Deferred.t</a></code></pre><div class="info"><code class="code">connected</code> returns the first available rpc connection from the time it is called.
 When currently connected, the returned deferred is already determined.</div>
-<pre class="odoccode"><span class="VALcurrent_connection"><span class="keyword">val</span> current_connection</span> : <code class="type"><a href="http://frenetic-lang.github.io/api//async_extra/#Persistent_rpc_client.t" class="ocaml_internal">t</a> -&gt; <a href="http://frenetic-lang.github.io/api//async_extra/#Rpc.Connection.t">Rpc.Connection.t</a> option</code></pre><div class="info">The current rpc connection, if any.</div>
+<pre class="odoccode"><span class="VALcurrent_connection"><span class="keyword">val</span> current_connection</span> : <code class="type"><a href="http://127.0.0.1:8000/async_extra/#Persistent_rpc_client.t" class="ocaml_internal">t</a> -&gt; <a href="http://127.0.0.1:8000/async_extra/#Rpc.Connection.t">Rpc.Connection.t</a> option</code></pre><div class="info">The current rpc connection, if any.</div>
 </div></div>

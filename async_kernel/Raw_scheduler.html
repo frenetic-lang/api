@@ -1,532 +1,532 @@
 <div class="ocaml_top"><div class="ocaml_summary"/>
 <div class="ocaml_content">
 
-<div class="ocaml_module" name="Monitor" path="http://frenetic-lang.github.io/api//async_kernel/#Raw_monitor"><pre class="odoccode"><span class="keyword">module</span> <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_scheduler.Monitor" class="ocaml_internal">Monitor</a> : <code class="type"><code class="code"><a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_monitor">Raw_monitor</a></code></code></pre><div class="ocaml_summary"/></div>
+<div class="ocaml_module" name="Monitor" path="http://127.0.0.1:8000/async_kernel/#Raw_monitor"><pre class="odoccode"><span class="keyword">module</span> <a href="http://127.0.0.1:8000/async_kernel/#Raw_scheduler.Monitor" class="ocaml_internal">Monitor</a> : <code class="type"><code class="code"><a href="http://127.0.0.1:8000/async_kernel/#Raw_monitor">Raw_monitor</a></code></code></pre><div class="ocaml_summary"/></div>
 <pre class="odoccode"><span class="VALdebug"><span class="keyword">val</span> debug</span> : <code class="type">bool</code></pre>
-<div class="ocaml_module" name="Job" path="http://frenetic-lang.github.io/api//async_kernel/#Jobs.Job"><pre class="odoccode"><span class="keyword">module</span> <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_scheduler.Job" class="ocaml_internal">Job</a> : <code class="type"><code class="code"><a href="http://frenetic-lang.github.io/api//async_kernel/#Jobs.Job">Jobs.Job</a></code></code></pre><div class="ocaml_summary"/></div>
-<div class="ocaml_module" name="T"><pre class="odoccode"><span class="keyword">module</span> <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_scheduler.T" class="ocaml_internal">T</a> : <code class="type"><code class="code">sig</code> .. <code class="code">end</code></code></pre><div class="ocaml_summary"/><div class="ocaml_content">
+<div class="ocaml_module" name="Job" path="http://127.0.0.1:8000/async_kernel/#Jobs.Job"><pre class="odoccode"><span class="keyword">module</span> <a href="http://127.0.0.1:8000/async_kernel/#Raw_scheduler.Job" class="ocaml_internal">Job</a> : <code class="type"><code class="code"><a href="http://127.0.0.1:8000/async_kernel/#Jobs.Job">Jobs.Job</a></code></code></pre><div class="ocaml_summary"/></div>
+<div class="ocaml_module" name="T"><pre class="odoccode"><span class="keyword">module</span> <a href="http://127.0.0.1:8000/async_kernel/#Raw_scheduler.T" class="ocaml_internal">T</a> : <code class="type"><code class="code">sig</code> .. <code class="code">end</code></code></pre><div class="ocaml_summary"/><div class="ocaml_content">
 <pre class="odoccode"><code><span class="TYPEt"><span class="keyword">type</span> t</span> = {</code></pre><table class="typetable">
-		    <tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="keyword">mutable</span> <span class="TYPEELTt.check_access">check_access</span> : <code class="type">(unit -&gt; unit) option</code>;</code></td></tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="TYPEELTt.jobs">jobs</span> : <code class="type"><a href="http://frenetic-lang.github.io/api//async_kernel/#Jobs.t">Jobs.t</a></code>;</code></td></tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="keyword">mutable</span> <span class="TYPEELTt.main_execution_context">main_execution_context</span> : <code class="type"><a href="http://frenetic-lang.github.io/api//async_kernel/#Execution_context.t">Execution_context.t</a></code>;</code></td></tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="keyword">mutable</span> <span class="TYPEELTt.cycle_count">cycle_count</span> : <code class="type">int</code>;</code></td></tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="keyword">mutable</span> <span class="TYPEELTt.cycle_start">cycle_start</span> : <code class="type"><a href="http://frenetic-lang.github.io/api//core/#Std.Time.t">Core.Std.Time.t</a></code>;</code></td></tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="keyword">mutable</span> <span class="TYPEELTt.run_every_cycle_start">run_every_cycle_start</span> : <code class="type">(unit -&gt; unit) list</code>;</code></td></tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="keyword">mutable</span> <span class="TYPEELTt.last_cycle_time">last_cycle_time</span> : <code class="type"><a href="http://frenetic-lang.github.io/api//core/#Std.Time.Span.t">Core.Std.Time.Span.t</a></code>;</code></td></tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="keyword">mutable</span> <span class="TYPEELTt.last_cycle_num_jobs">last_cycle_num_jobs</span> : <code class="type">int</code>;</code></td></tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="TYPEELTt.events">events</span> : <code class="type"><a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_scheduler.Job.t" class="ocaml_internal">Job.t</a> <a href="http://frenetic-lang.github.io/api//core/#Std.Timing_wheel.t">Core.Std.Timing_wheel.t</a></code>;</code></td></tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="TYPEELTt.external_actions">external_actions</span> : <code class="type">(unit -&gt; unit) <a href="http://frenetic-lang.github.io/api//core/#Std.Thread_safe_queue.t">Core.Std.Thread_safe_queue.t</a> <a href="http://frenetic-lang.github.io/api//core/#Std.sexp_opaque">Core.Std.sexp_opaque</a></code>;</code></td></tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="keyword">mutable</span> <span class="TYPEELTt.thread_safe_external_action_hook">thread_safe_external_action_hook</span> : <code class="type">unit -&gt; unit</code>;</code></td></tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="keyword">mutable</span> <span class="TYPEELTt.check_invariants">check_invariants</span> : <code class="type">bool</code>;</code></td></tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="keyword">mutable</span> <span class="TYPEELTt.max_num_jobs_per_priority_per_cycle">max_num_jobs_per_priority_per_cycle</span> : <code class="type"><a href="http://frenetic-lang.github.io/api//async_kernel/#Import.Max_num_jobs_per_priority_per_cycle.t">Import.Max_num_jobs_per_priority_per_cycle.t</a></code>;</code></td></tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="keyword">mutable</span> <span class="TYPEELTt.record_backtraces">record_backtraces</span> : <code class="type">bool</code>;</code></td></tr><tr><td>}</td></tr></table>
+		    <tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="keyword">mutable</span> <span class="TYPEELTt.check_access">check_access</span> : <code class="type">(unit -&gt; unit) option</code>;</code></td></tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="TYPEELTt.jobs">jobs</span> : <code class="type"><a href="http://127.0.0.1:8000/async_kernel/#Jobs.t">Jobs.t</a></code>;</code></td></tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="keyword">mutable</span> <span class="TYPEELTt.main_execution_context">main_execution_context</span> : <code class="type"><a href="http://127.0.0.1:8000/async_kernel/#Execution_context.t">Execution_context.t</a></code>;</code></td></tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="keyword">mutable</span> <span class="TYPEELTt.cycle_count">cycle_count</span> : <code class="type">int</code>;</code></td></tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="keyword">mutable</span> <span class="TYPEELTt.cycle_start">cycle_start</span> : <code class="type"><a href="http://127.0.0.1:8000/core/#Std.Time.t">Core.Std.Time.t</a></code>;</code></td></tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="keyword">mutable</span> <span class="TYPEELTt.run_every_cycle_start">run_every_cycle_start</span> : <code class="type">(unit -&gt; unit) list</code>;</code></td></tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="keyword">mutable</span> <span class="TYPEELTt.last_cycle_time">last_cycle_time</span> : <code class="type"><a href="http://127.0.0.1:8000/core/#Std.Time.Span.t">Core.Std.Time.Span.t</a></code>;</code></td></tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="keyword">mutable</span> <span class="TYPEELTt.last_cycle_num_jobs">last_cycle_num_jobs</span> : <code class="type">int</code>;</code></td></tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="TYPEELTt.events">events</span> : <code class="type"><a href="http://127.0.0.1:8000/async_kernel/#Raw_scheduler.Job.t" class="ocaml_internal">Job.t</a> <a href="http://127.0.0.1:8000/core/#Std.Timing_wheel.t">Core.Std.Timing_wheel.t</a></code>;</code></td></tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="TYPEELTt.external_actions">external_actions</span> : <code class="type">(unit -&gt; unit) <a href="http://127.0.0.1:8000/core/#Std.Thread_safe_queue.t">Core.Std.Thread_safe_queue.t</a> <a href="http://127.0.0.1:8000/core/#Std.sexp_opaque">Core.Std.sexp_opaque</a></code>;</code></td></tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="keyword">mutable</span> <span class="TYPEELTt.thread_safe_external_action_hook">thread_safe_external_action_hook</span> : <code class="type">unit -&gt; unit</code>;</code></td></tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="keyword">mutable</span> <span class="TYPEELTt.check_invariants">check_invariants</span> : <code class="type">bool</code>;</code></td></tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="keyword">mutable</span> <span class="TYPEELTt.max_num_jobs_per_priority_per_cycle">max_num_jobs_per_priority_per_cycle</span> : <code class="type"><a href="http://127.0.0.1:8000/async_kernel/#Import.Max_num_jobs_per_priority_per_cycle.t">Import.Max_num_jobs_per_priority_per_cycle.t</a></code>;</code></td></tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="keyword">mutable</span> <span class="TYPEELTt.record_backtraces">record_backtraces</span> : <code class="type">bool</code>;</code></td></tr><tr><td>}</td></tr></table>
 
-<pre class="odoccode"><span class="VALsexp_of_t"><span class="keyword">val</span> sexp_of_t</span> : <code class="type"><a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a> -&gt; <a href="http://frenetic-lang.github.io/api//sexplib/#Sexp.t">Sexplib.Sexp.t</a></code></pre>
+<pre class="odoccode"><span class="VALsexp_of_t"><span class="keyword">val</span> sexp_of_t</span> : <code class="type"><a href="http://127.0.0.1:8000/async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a> -&gt; <a href="http://127.0.0.1:8000/sexplib/#Sexp.t">Sexplib.Sexp.t</a></code></pre>
 
-<pre class="odoccode"><span class="VALrecord_backtraces"><span class="keyword">val</span> record_backtraces</span> : <code class="type"><a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a> -&gt; bool</code></pre>
+<pre class="odoccode"><span class="VALrecord_backtraces"><span class="keyword">val</span> record_backtraces</span> : <code class="type"><a href="http://127.0.0.1:8000/async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a> -&gt; bool</code></pre>
 
-<pre class="odoccode"><span class="VALset_record_backtraces"><span class="keyword">val</span> set_record_backtraces</span> : <code class="type"><a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a> -&gt; bool -&gt; unit</code></pre>
+<pre class="odoccode"><span class="VALset_record_backtraces"><span class="keyword">val</span> set_record_backtraces</span> : <code class="type"><a href="http://127.0.0.1:8000/async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a> -&gt; bool -&gt; unit</code></pre>
 
-<pre class="odoccode"><span class="VALmax_num_jobs_per_priority_per_cycle"><span class="keyword">val</span> max_num_jobs_per_priority_per_cycle</span> : <code class="type"><a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a> -&gt; <a href="http://frenetic-lang.github.io/api//async_kernel/#Import.Max_num_jobs_per_priority_per_cycle.t">Import.Max_num_jobs_per_priority_per_cycle.t</a></code></pre>
+<pre class="odoccode"><span class="VALmax_num_jobs_per_priority_per_cycle"><span class="keyword">val</span> max_num_jobs_per_priority_per_cycle</span> : <code class="type"><a href="http://127.0.0.1:8000/async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a> -&gt; <a href="http://127.0.0.1:8000/async_kernel/#Import.Max_num_jobs_per_priority_per_cycle.t">Import.Max_num_jobs_per_priority_per_cycle.t</a></code></pre>
 
-<pre class="odoccode"><span class="VALset_max_num_jobs_per_priority_per_cycle"><span class="keyword">val</span> set_max_num_jobs_per_priority_per_cycle</span> : <code class="type"><a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a> -&gt; <a href="http://frenetic-lang.github.io/api//async_kernel/#Import.Max_num_jobs_per_priority_per_cycle.t">Import.Max_num_jobs_per_priority_per_cycle.t</a> -&gt; unit</code></pre>
+<pre class="odoccode"><span class="VALset_max_num_jobs_per_priority_per_cycle"><span class="keyword">val</span> set_max_num_jobs_per_priority_per_cycle</span> : <code class="type"><a href="http://127.0.0.1:8000/async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a> -&gt; <a href="http://127.0.0.1:8000/async_kernel/#Import.Max_num_jobs_per_priority_per_cycle.t">Import.Max_num_jobs_per_priority_per_cycle.t</a> -&gt; unit</code></pre>
 
-<pre class="odoccode"><span class="VALcheck_invariants"><span class="keyword">val</span> check_invariants</span> : <code class="type"><a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a> -&gt; bool</code></pre>
+<pre class="odoccode"><span class="VALcheck_invariants"><span class="keyword">val</span> check_invariants</span> : <code class="type"><a href="http://127.0.0.1:8000/async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a> -&gt; bool</code></pre>
 
-<pre class="odoccode"><span class="VALset_check_invariants"><span class="keyword">val</span> set_check_invariants</span> : <code class="type"><a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a> -&gt; bool -&gt; unit</code></pre>
+<pre class="odoccode"><span class="VALset_check_invariants"><span class="keyword">val</span> set_check_invariants</span> : <code class="type"><a href="http://127.0.0.1:8000/async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a> -&gt; bool -&gt; unit</code></pre>
 
-<pre class="odoccode"><span class="VALthread_safe_external_action_hook"><span class="keyword">val</span> thread_safe_external_action_hook</span> : <code class="type"><a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a> -&gt; unit -&gt; unit</code></pre>
+<pre class="odoccode"><span class="VALthread_safe_external_action_hook"><span class="keyword">val</span> thread_safe_external_action_hook</span> : <code class="type"><a href="http://127.0.0.1:8000/async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a> -&gt; unit -&gt; unit</code></pre>
 
-<pre class="odoccode"><span class="VALset_thread_safe_external_action_hook"><span class="keyword">val</span> set_thread_safe_external_action_hook</span> : <code class="type"><a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a> -&gt; (unit -&gt; unit) -&gt; unit</code></pre>
+<pre class="odoccode"><span class="VALset_thread_safe_external_action_hook"><span class="keyword">val</span> set_thread_safe_external_action_hook</span> : <code class="type"><a href="http://127.0.0.1:8000/async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a> -&gt; (unit -&gt; unit) -&gt; unit</code></pre>
 
-<pre class="odoccode"><span class="VALexternal_actions"><span class="keyword">val</span> external_actions</span> : <code class="type"><a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a> -&gt; (unit -&gt; unit) <a href="http://frenetic-lang.github.io/api//core/#Std.Thread_safe_queue.t">Core.Std.Thread_safe_queue.t</a> <a href="http://frenetic-lang.github.io/api//core/#Std.sexp_opaque">Core.Std.sexp_opaque</a></code></pre>
+<pre class="odoccode"><span class="VALexternal_actions"><span class="keyword">val</span> external_actions</span> : <code class="type"><a href="http://127.0.0.1:8000/async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a> -&gt; (unit -&gt; unit) <a href="http://127.0.0.1:8000/core/#Std.Thread_safe_queue.t">Core.Std.Thread_safe_queue.t</a> <a href="http://127.0.0.1:8000/core/#Std.sexp_opaque">Core.Std.sexp_opaque</a></code></pre>
 
-<pre class="odoccode"><span class="VALevents"><span class="keyword">val</span> events</span> : <code class="type"><a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a> -&gt; <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_scheduler.Job.t" class="ocaml_internal">Job.t</a> <a href="http://frenetic-lang.github.io/api//core/#Std.Timing_wheel.t">Core.Std.Timing_wheel.t</a></code></pre>
+<pre class="odoccode"><span class="VALevents"><span class="keyword">val</span> events</span> : <code class="type"><a href="http://127.0.0.1:8000/async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a> -&gt; <a href="http://127.0.0.1:8000/async_kernel/#Raw_scheduler.Job.t" class="ocaml_internal">Job.t</a> <a href="http://127.0.0.1:8000/core/#Std.Timing_wheel.t">Core.Std.Timing_wheel.t</a></code></pre>
 
-<pre class="odoccode"><span class="VALlast_cycle_num_jobs"><span class="keyword">val</span> last_cycle_num_jobs</span> : <code class="type"><a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a> -&gt; int</code></pre>
+<pre class="odoccode"><span class="VALlast_cycle_num_jobs"><span class="keyword">val</span> last_cycle_num_jobs</span> : <code class="type"><a href="http://127.0.0.1:8000/async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a> -&gt; int</code></pre>
 
-<pre class="odoccode"><span class="VALset_last_cycle_num_jobs"><span class="keyword">val</span> set_last_cycle_num_jobs</span> : <code class="type"><a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a> -&gt; int -&gt; unit</code></pre>
+<pre class="odoccode"><span class="VALset_last_cycle_num_jobs"><span class="keyword">val</span> set_last_cycle_num_jobs</span> : <code class="type"><a href="http://127.0.0.1:8000/async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a> -&gt; int -&gt; unit</code></pre>
 
-<pre class="odoccode"><span class="VALlast_cycle_time"><span class="keyword">val</span> last_cycle_time</span> : <code class="type"><a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a> -&gt; <a href="http://frenetic-lang.github.io/api//core/#Std.Time.Span.t">Core.Std.Time.Span.t</a></code></pre>
+<pre class="odoccode"><span class="VALlast_cycle_time"><span class="keyword">val</span> last_cycle_time</span> : <code class="type"><a href="http://127.0.0.1:8000/async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a> -&gt; <a href="http://127.0.0.1:8000/core/#Std.Time.Span.t">Core.Std.Time.Span.t</a></code></pre>
 
-<pre class="odoccode"><span class="VALset_last_cycle_time"><span class="keyword">val</span> set_last_cycle_time</span> : <code class="type"><a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a> -&gt; <a href="http://frenetic-lang.github.io/api//core/#Std.Time.Span.t">Core.Std.Time.Span.t</a> -&gt; unit</code></pre>
+<pre class="odoccode"><span class="VALset_last_cycle_time"><span class="keyword">val</span> set_last_cycle_time</span> : <code class="type"><a href="http://127.0.0.1:8000/async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a> -&gt; <a href="http://127.0.0.1:8000/core/#Std.Time.Span.t">Core.Std.Time.Span.t</a> -&gt; unit</code></pre>
 
-<pre class="odoccode"><span class="VALrun_every_cycle_start"><span class="keyword">val</span> run_every_cycle_start</span> : <code class="type"><a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a> -&gt; (unit -&gt; unit) list</code></pre>
+<pre class="odoccode"><span class="VALrun_every_cycle_start"><span class="keyword">val</span> run_every_cycle_start</span> : <code class="type"><a href="http://127.0.0.1:8000/async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a> -&gt; (unit -&gt; unit) list</code></pre>
 
-<pre class="odoccode"><span class="VALset_run_every_cycle_start"><span class="keyword">val</span> set_run_every_cycle_start</span> : <code class="type"><a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a> -&gt; (unit -&gt; unit) list -&gt; unit</code></pre>
+<pre class="odoccode"><span class="VALset_run_every_cycle_start"><span class="keyword">val</span> set_run_every_cycle_start</span> : <code class="type"><a href="http://127.0.0.1:8000/async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a> -&gt; (unit -&gt; unit) list -&gt; unit</code></pre>
 
-<pre class="odoccode"><span class="VALcycle_start"><span class="keyword">val</span> cycle_start</span> : <code class="type"><a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a> -&gt; <a href="http://frenetic-lang.github.io/api//core/#Std.Time.t">Core.Std.Time.t</a></code></pre>
+<pre class="odoccode"><span class="VALcycle_start"><span class="keyword">val</span> cycle_start</span> : <code class="type"><a href="http://127.0.0.1:8000/async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a> -&gt; <a href="http://127.0.0.1:8000/core/#Std.Time.t">Core.Std.Time.t</a></code></pre>
 
-<pre class="odoccode"><span class="VALset_cycle_start"><span class="keyword">val</span> set_cycle_start</span> : <code class="type"><a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a> -&gt; <a href="http://frenetic-lang.github.io/api//core/#Std.Time.t">Core.Std.Time.t</a> -&gt; unit</code></pre>
+<pre class="odoccode"><span class="VALset_cycle_start"><span class="keyword">val</span> set_cycle_start</span> : <code class="type"><a href="http://127.0.0.1:8000/async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a> -&gt; <a href="http://127.0.0.1:8000/core/#Std.Time.t">Core.Std.Time.t</a> -&gt; unit</code></pre>
 
-<pre class="odoccode"><span class="VALcycle_count"><span class="keyword">val</span> cycle_count</span> : <code class="type"><a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a> -&gt; int</code></pre>
+<pre class="odoccode"><span class="VALcycle_count"><span class="keyword">val</span> cycle_count</span> : <code class="type"><a href="http://127.0.0.1:8000/async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a> -&gt; int</code></pre>
 
-<pre class="odoccode"><span class="VALset_cycle_count"><span class="keyword">val</span> set_cycle_count</span> : <code class="type"><a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a> -&gt; int -&gt; unit</code></pre>
+<pre class="odoccode"><span class="VALset_cycle_count"><span class="keyword">val</span> set_cycle_count</span> : <code class="type"><a href="http://127.0.0.1:8000/async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a> -&gt; int -&gt; unit</code></pre>
 
-<pre class="odoccode"><span class="VALmain_execution_context"><span class="keyword">val</span> main_execution_context</span> : <code class="type"><a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a> -&gt; <a href="http://frenetic-lang.github.io/api//async_kernel/#Execution_context.t">Execution_context.t</a></code></pre>
+<pre class="odoccode"><span class="VALmain_execution_context"><span class="keyword">val</span> main_execution_context</span> : <code class="type"><a href="http://127.0.0.1:8000/async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a> -&gt; <a href="http://127.0.0.1:8000/async_kernel/#Execution_context.t">Execution_context.t</a></code></pre>
 
-<pre class="odoccode"><span class="VALset_main_execution_context"><span class="keyword">val</span> set_main_execution_context</span> : <code class="type"><a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a> -&gt; <a href="http://frenetic-lang.github.io/api//async_kernel/#Execution_context.t">Execution_context.t</a> -&gt; unit</code></pre>
+<pre class="odoccode"><span class="VALset_main_execution_context"><span class="keyword">val</span> set_main_execution_context</span> : <code class="type"><a href="http://127.0.0.1:8000/async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a> -&gt; <a href="http://127.0.0.1:8000/async_kernel/#Execution_context.t">Execution_context.t</a> -&gt; unit</code></pre>
 
-<pre class="odoccode"><span class="VALjobs"><span class="keyword">val</span> jobs</span> : <code class="type"><a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a> -&gt; <a href="http://frenetic-lang.github.io/api//async_kernel/#Jobs.t">Jobs.t</a></code></pre>
+<pre class="odoccode"><span class="VALjobs"><span class="keyword">val</span> jobs</span> : <code class="type"><a href="http://127.0.0.1:8000/async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a> -&gt; <a href="http://127.0.0.1:8000/async_kernel/#Jobs.t">Jobs.t</a></code></pre>
 
-<pre class="odoccode"><span class="VALcheck_access"><span class="keyword">val</span> check_access</span> : <code class="type"><a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a> -&gt; (unit -&gt; unit) option</code></pre>
+<pre class="odoccode"><span class="VALcheck_access"><span class="keyword">val</span> check_access</span> : <code class="type"><a href="http://127.0.0.1:8000/async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a> -&gt; (unit -&gt; unit) option</code></pre>
 
-<pre class="odoccode"><span class="VALset_check_access"><span class="keyword">val</span> set_check_access</span> : <code class="type"><a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a> -&gt; (unit -&gt; unit) option -&gt; unit</code></pre>
+<pre class="odoccode"><span class="VALset_check_access"><span class="keyword">val</span> set_check_access</span> : <code class="type"><a href="http://127.0.0.1:8000/async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a> -&gt; (unit -&gt; unit) option -&gt; unit</code></pre>
 
-<div class="ocaml_module" name="Fields"><pre class="odoccode"><span class="keyword">module</span> <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_scheduler.T.Fields" class="ocaml_internal">Fields</a> : <code class="type"><code class="code">sig</code> .. <code class="code">end</code></code></pre><div class="ocaml_summary"/><div class="ocaml_content">
+<div class="ocaml_module" name="Fields"><pre class="odoccode"><span class="keyword">module</span> <a href="http://127.0.0.1:8000/async_kernel/#Raw_scheduler.T.Fields" class="ocaml_internal">Fields</a> : <code class="type"><code class="code">sig</code> .. <code class="code">end</code></code></pre><div class="ocaml_summary"/><div class="ocaml_content">
 <pre class="odoccode"><span class="VALnames"><span class="keyword">val</span> names</span> : <code class="type">string list</code></pre>
 
-<pre class="odoccode"><span class="VALrecord_backtraces"><span class="keyword">val</span> record_backtraces</span> : <code class="type">([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a>, bool) <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a></code></pre>
+<pre class="odoccode"><span class="VALrecord_backtraces"><span class="keyword">val</span> record_backtraces</span> : <code class="type">([&lt; `Read | `Set_and_create ], <a href="http://127.0.0.1:8000/async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a>, bool) <a href="http://127.0.0.1:8000/fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a></code></pre>
 
-<pre class="odoccode"><span class="VALmax_num_jobs_per_priority_per_cycle"><span class="keyword">val</span> max_num_jobs_per_priority_per_cycle</span> : <code class="type">([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a>,
- <a href="http://frenetic-lang.github.io/api//async_kernel/#Import.Max_num_jobs_per_priority_per_cycle.t">Import.Max_num_jobs_per_priority_per_cycle.t</a>)
-<a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a></code></pre>
+<pre class="odoccode"><span class="VALmax_num_jobs_per_priority_per_cycle"><span class="keyword">val</span> max_num_jobs_per_priority_per_cycle</span> : <code class="type">([&lt; `Read | `Set_and_create ], <a href="http://127.0.0.1:8000/async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a>,
+ <a href="http://127.0.0.1:8000/async_kernel/#Import.Max_num_jobs_per_priority_per_cycle.t">Import.Max_num_jobs_per_priority_per_cycle.t</a>)
+<a href="http://127.0.0.1:8000/fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a></code></pre>
 
-<pre class="odoccode"><span class="VALcheck_invariants"><span class="keyword">val</span> check_invariants</span> : <code class="type">([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a>, bool) <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a></code></pre>
+<pre class="odoccode"><span class="VALcheck_invariants"><span class="keyword">val</span> check_invariants</span> : <code class="type">([&lt; `Read | `Set_and_create ], <a href="http://127.0.0.1:8000/async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a>, bool) <a href="http://127.0.0.1:8000/fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a></code></pre>
 
-<pre class="odoccode"><span class="VALthread_safe_external_action_hook"><span class="keyword">val</span> thread_safe_external_action_hook</span> : <code class="type">([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a>, unit -&gt; unit) <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a></code></pre>
+<pre class="odoccode"><span class="VALthread_safe_external_action_hook"><span class="keyword">val</span> thread_safe_external_action_hook</span> : <code class="type">([&lt; `Read | `Set_and_create ], <a href="http://127.0.0.1:8000/async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a>, unit -&gt; unit) <a href="http://127.0.0.1:8000/fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a></code></pre>
 
-<pre class="odoccode"><span class="VALexternal_actions"><span class="keyword">val</span> external_actions</span> : <code class="type">([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a>,
- (unit -&gt; unit) <a href="http://frenetic-lang.github.io/api//core/#Std.Thread_safe_queue.t">Core.Std.Thread_safe_queue.t</a> <a href="http://frenetic-lang.github.io/api//core/#Std.sexp_opaque">Core.Std.sexp_opaque</a>)
-<a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a></code></pre>
+<pre class="odoccode"><span class="VALexternal_actions"><span class="keyword">val</span> external_actions</span> : <code class="type">([&lt; `Read | `Set_and_create ], <a href="http://127.0.0.1:8000/async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a>,
+ (unit -&gt; unit) <a href="http://127.0.0.1:8000/core/#Std.Thread_safe_queue.t">Core.Std.Thread_safe_queue.t</a> <a href="http://127.0.0.1:8000/core/#Std.sexp_opaque">Core.Std.sexp_opaque</a>)
+<a href="http://127.0.0.1:8000/fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a></code></pre>
 
-<pre class="odoccode"><span class="VALevents"><span class="keyword">val</span> events</span> : <code class="type">([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a>, <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_scheduler.Job.t" class="ocaml_internal">Job.t</a> <a href="http://frenetic-lang.github.io/api//core/#Std.Timing_wheel.t">Core.Std.Timing_wheel.t</a>)
-<a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a></code></pre>
+<pre class="odoccode"><span class="VALevents"><span class="keyword">val</span> events</span> : <code class="type">([&lt; `Read | `Set_and_create ], <a href="http://127.0.0.1:8000/async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a>, <a href="http://127.0.0.1:8000/async_kernel/#Raw_scheduler.Job.t" class="ocaml_internal">Job.t</a> <a href="http://127.0.0.1:8000/core/#Std.Timing_wheel.t">Core.Std.Timing_wheel.t</a>)
+<a href="http://127.0.0.1:8000/fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a></code></pre>
 
-<pre class="odoccode"><span class="VALlast_cycle_num_jobs"><span class="keyword">val</span> last_cycle_num_jobs</span> : <code class="type">([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a>, int) <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a></code></pre>
+<pre class="odoccode"><span class="VALlast_cycle_num_jobs"><span class="keyword">val</span> last_cycle_num_jobs</span> : <code class="type">([&lt; `Read | `Set_and_create ], <a href="http://127.0.0.1:8000/async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a>, int) <a href="http://127.0.0.1:8000/fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a></code></pre>
 
-<pre class="odoccode"><span class="VALlast_cycle_time"><span class="keyword">val</span> last_cycle_time</span> : <code class="type">([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a>, <a href="http://frenetic-lang.github.io/api//core/#Std.Time.Span.t">Core.Std.Time.Span.t</a>)
-<a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a></code></pre>
+<pre class="odoccode"><span class="VALlast_cycle_time"><span class="keyword">val</span> last_cycle_time</span> : <code class="type">([&lt; `Read | `Set_and_create ], <a href="http://127.0.0.1:8000/async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a>, <a href="http://127.0.0.1:8000/core/#Std.Time.Span.t">Core.Std.Time.Span.t</a>)
+<a href="http://127.0.0.1:8000/fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a></code></pre>
 
-<pre class="odoccode"><span class="VALrun_every_cycle_start"><span class="keyword">val</span> run_every_cycle_start</span> : <code class="type">([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a>, (unit -&gt; unit) list)
-<a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a></code></pre>
+<pre class="odoccode"><span class="VALrun_every_cycle_start"><span class="keyword">val</span> run_every_cycle_start</span> : <code class="type">([&lt; `Read | `Set_and_create ], <a href="http://127.0.0.1:8000/async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a>, (unit -&gt; unit) list)
+<a href="http://127.0.0.1:8000/fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a></code></pre>
 
-<pre class="odoccode"><span class="VALcycle_start"><span class="keyword">val</span> cycle_start</span> : <code class="type">([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a>, <a href="http://frenetic-lang.github.io/api//core/#Std.Time.t">Core.Std.Time.t</a>)
-<a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a></code></pre>
+<pre class="odoccode"><span class="VALcycle_start"><span class="keyword">val</span> cycle_start</span> : <code class="type">([&lt; `Read | `Set_and_create ], <a href="http://127.0.0.1:8000/async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a>, <a href="http://127.0.0.1:8000/core/#Std.Time.t">Core.Std.Time.t</a>)
+<a href="http://127.0.0.1:8000/fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a></code></pre>
 
-<pre class="odoccode"><span class="VALcycle_count"><span class="keyword">val</span> cycle_count</span> : <code class="type">([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a>, int) <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a></code></pre>
+<pre class="odoccode"><span class="VALcycle_count"><span class="keyword">val</span> cycle_count</span> : <code class="type">([&lt; `Read | `Set_and_create ], <a href="http://127.0.0.1:8000/async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a>, int) <a href="http://127.0.0.1:8000/fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a></code></pre>
 
-<pre class="odoccode"><span class="VALmain_execution_context"><span class="keyword">val</span> main_execution_context</span> : <code class="type">([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a>, <a href="http://frenetic-lang.github.io/api//async_kernel/#Execution_context.t">Execution_context.t</a>)
-<a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a></code></pre>
+<pre class="odoccode"><span class="VALmain_execution_context"><span class="keyword">val</span> main_execution_context</span> : <code class="type">([&lt; `Read | `Set_and_create ], <a href="http://127.0.0.1:8000/async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a>, <a href="http://127.0.0.1:8000/async_kernel/#Execution_context.t">Execution_context.t</a>)
+<a href="http://127.0.0.1:8000/fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a></code></pre>
 
-<pre class="odoccode"><span class="VALjobs"><span class="keyword">val</span> jobs</span> : <code class="type">([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a>, <a href="http://frenetic-lang.github.io/api//async_kernel/#Jobs.t">Jobs.t</a>) <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a></code></pre>
+<pre class="odoccode"><span class="VALjobs"><span class="keyword">val</span> jobs</span> : <code class="type">([&lt; `Read | `Set_and_create ], <a href="http://127.0.0.1:8000/async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a>, <a href="http://127.0.0.1:8000/async_kernel/#Jobs.t">Jobs.t</a>) <a href="http://127.0.0.1:8000/fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a></code></pre>
 
-<pre class="odoccode"><span class="VALcheck_access"><span class="keyword">val</span> check_access</span> : <code class="type">([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a>, (unit -&gt; unit) option)
-<a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a></code></pre>
+<pre class="odoccode"><span class="VALcheck_access"><span class="keyword">val</span> check_access</span> : <code class="type">([&lt; `Read | `Set_and_create ], <a href="http://127.0.0.1:8000/async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a>, (unit -&gt; unit) option)
+<a href="http://127.0.0.1:8000/fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a></code></pre>
 
-<pre class="odoccode"><span class="VALmake_creator"><span class="keyword">val</span> make_creator</span> : <code class="type">check_access:(([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a>, (unit -&gt; unit) option)
-              <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt;
+<pre class="odoccode"><span class="VALmake_creator"><span class="keyword">val</span> make_creator</span> : <code class="type">check_access:(([&lt; `Read | `Set_and_create ], <a href="http://127.0.0.1:8000/async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a>, (unit -&gt; unit) option)
+              <a href="http://127.0.0.1:8000/fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt;
               'a -&gt; ('b -&gt; (unit -&gt; unit) option) * 'c) -&gt;
-jobs:(([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a>, <a href="http://frenetic-lang.github.io/api//async_kernel/#Jobs.t">Jobs.t</a>) <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt;
-      'c -&gt; ('b -&gt; <a href="http://frenetic-lang.github.io/api//async_kernel/#Jobs.t">Jobs.t</a>) * 'd) -&gt;
-main_execution_context:(([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a>,
-                         <a href="http://frenetic-lang.github.io/api//async_kernel/#Execution_context.t">Execution_context.t</a>)
-                        <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt;
-                        'd -&gt; ('b -&gt; <a href="http://frenetic-lang.github.io/api//async_kernel/#Execution_context.t">Execution_context.t</a>) * 'e) -&gt;
-cycle_count:(([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a>, int)
-             <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; 'e -&gt; ('b -&gt; int) * 'f) -&gt;
-cycle_start:(([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a>, <a href="http://frenetic-lang.github.io/api//core/#Std.Time.t">Core.Std.Time.t</a>)
-             <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt;
-             'f -&gt; ('b -&gt; <a href="http://frenetic-lang.github.io/api//core/#Std.Time.t">Core.Std.Time.t</a>) * 'g) -&gt;
-run_every_cycle_start:(([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a>, (unit -&gt; unit) list)
-                       <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt;
+jobs:(([&lt; `Read | `Set_and_create ], <a href="http://127.0.0.1:8000/async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a>, <a href="http://127.0.0.1:8000/async_kernel/#Jobs.t">Jobs.t</a>) <a href="http://127.0.0.1:8000/fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt;
+      'c -&gt; ('b -&gt; <a href="http://127.0.0.1:8000/async_kernel/#Jobs.t">Jobs.t</a>) * 'd) -&gt;
+main_execution_context:(([&lt; `Read | `Set_and_create ], <a href="http://127.0.0.1:8000/async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a>,
+                         <a href="http://127.0.0.1:8000/async_kernel/#Execution_context.t">Execution_context.t</a>)
+                        <a href="http://127.0.0.1:8000/fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt;
+                        'd -&gt; ('b -&gt; <a href="http://127.0.0.1:8000/async_kernel/#Execution_context.t">Execution_context.t</a>) * 'e) -&gt;
+cycle_count:(([&lt; `Read | `Set_and_create ], <a href="http://127.0.0.1:8000/async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a>, int)
+             <a href="http://127.0.0.1:8000/fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; 'e -&gt; ('b -&gt; int) * 'f) -&gt;
+cycle_start:(([&lt; `Read | `Set_and_create ], <a href="http://127.0.0.1:8000/async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a>, <a href="http://127.0.0.1:8000/core/#Std.Time.t">Core.Std.Time.t</a>)
+             <a href="http://127.0.0.1:8000/fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt;
+             'f -&gt; ('b -&gt; <a href="http://127.0.0.1:8000/core/#Std.Time.t">Core.Std.Time.t</a>) * 'g) -&gt;
+run_every_cycle_start:(([&lt; `Read | `Set_and_create ], <a href="http://127.0.0.1:8000/async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a>, (unit -&gt; unit) list)
+                       <a href="http://127.0.0.1:8000/fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt;
                        'g -&gt; ('b -&gt; (unit -&gt; unit) list) * 'h) -&gt;
-last_cycle_time:(([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a>, <a href="http://frenetic-lang.github.io/api//core/#Std.Time.Span.t">Core.Std.Time.Span.t</a>)
-                 <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt;
-                 'h -&gt; ('b -&gt; <a href="http://frenetic-lang.github.io/api//core/#Std.Time.Span.t">Core.Std.Time.Span.t</a>) * 'i) -&gt;
-last_cycle_num_jobs:(([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a>, int)
-                     <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; 'i -&gt; ('b -&gt; int) * 'j) -&gt;
-events:(([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a>, <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_scheduler.Job.t" class="ocaml_internal">Job.t</a> <a href="http://frenetic-lang.github.io/api//core/#Std.Timing_wheel.t">Core.Std.Timing_wheel.t</a>)
-        <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt;
-        'j -&gt; ('b -&gt; <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_scheduler.Job.t" class="ocaml_internal">Job.t</a> <a href="http://frenetic-lang.github.io/api//core/#Std.Timing_wheel.t">Core.Std.Timing_wheel.t</a>) * 'k) -&gt;
-external_actions:(([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a>,
-                   (unit -&gt; unit) <a href="http://frenetic-lang.github.io/api//core/#Std.Thread_safe_queue.t">Core.Std.Thread_safe_queue.t</a>
-                   <a href="http://frenetic-lang.github.io/api//core/#Std.sexp_opaque">Core.Std.sexp_opaque</a>)
-                  <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt;
+last_cycle_time:(([&lt; `Read | `Set_and_create ], <a href="http://127.0.0.1:8000/async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a>, <a href="http://127.0.0.1:8000/core/#Std.Time.Span.t">Core.Std.Time.Span.t</a>)
+                 <a href="http://127.0.0.1:8000/fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt;
+                 'h -&gt; ('b -&gt; <a href="http://127.0.0.1:8000/core/#Std.Time.Span.t">Core.Std.Time.Span.t</a>) * 'i) -&gt;
+last_cycle_num_jobs:(([&lt; `Read | `Set_and_create ], <a href="http://127.0.0.1:8000/async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a>, int)
+                     <a href="http://127.0.0.1:8000/fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; 'i -&gt; ('b -&gt; int) * 'j) -&gt;
+events:(([&lt; `Read | `Set_and_create ], <a href="http://127.0.0.1:8000/async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a>, <a href="http://127.0.0.1:8000/async_kernel/#Raw_scheduler.Job.t" class="ocaml_internal">Job.t</a> <a href="http://127.0.0.1:8000/core/#Std.Timing_wheel.t">Core.Std.Timing_wheel.t</a>)
+        <a href="http://127.0.0.1:8000/fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt;
+        'j -&gt; ('b -&gt; <a href="http://127.0.0.1:8000/async_kernel/#Raw_scheduler.Job.t" class="ocaml_internal">Job.t</a> <a href="http://127.0.0.1:8000/core/#Std.Timing_wheel.t">Core.Std.Timing_wheel.t</a>) * 'k) -&gt;
+external_actions:(([&lt; `Read | `Set_and_create ], <a href="http://127.0.0.1:8000/async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a>,
+                   (unit -&gt; unit) <a href="http://127.0.0.1:8000/core/#Std.Thread_safe_queue.t">Core.Std.Thread_safe_queue.t</a>
+                   <a href="http://127.0.0.1:8000/core/#Std.sexp_opaque">Core.Std.sexp_opaque</a>)
+                  <a href="http://127.0.0.1:8000/fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt;
                   'k -&gt;
                   ('b -&gt;
-                   (unit -&gt; unit) <a href="http://frenetic-lang.github.io/api//core/#Std.Thread_safe_queue.t">Core.Std.Thread_safe_queue.t</a>
-                   <a href="http://frenetic-lang.github.io/api//core/#Std.sexp_opaque">Core.Std.sexp_opaque</a>) *
+                   (unit -&gt; unit) <a href="http://127.0.0.1:8000/core/#Std.Thread_safe_queue.t">Core.Std.Thread_safe_queue.t</a>
+                   <a href="http://127.0.0.1:8000/core/#Std.sexp_opaque">Core.Std.sexp_opaque</a>) *
                   'l) -&gt;
-thread_safe_external_action_hook:(([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a>,
+thread_safe_external_action_hook:(([&lt; `Read | `Set_and_create ], <a href="http://127.0.0.1:8000/async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a>,
                                    unit -&gt; unit)
-                                  <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt;
+                                  <a href="http://127.0.0.1:8000/fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt;
                                   'l -&gt; ('b -&gt; unit -&gt; unit) * 'm) -&gt;
-check_invariants:(([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a>, bool)
-                  <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; 'm -&gt; ('b -&gt; bool) * 'n) -&gt;
-max_num_jobs_per_priority_per_cycle:(([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a>,
-                                      <a href="http://frenetic-lang.github.io/api//async_kernel/#Import.Max_num_jobs_per_priority_per_cycle.t">Import.Max_num_jobs_per_priority_per_cycle.t</a>)
-                                     <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt;
+check_invariants:(([&lt; `Read | `Set_and_create ], <a href="http://127.0.0.1:8000/async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a>, bool)
+                  <a href="http://127.0.0.1:8000/fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; 'm -&gt; ('b -&gt; bool) * 'n) -&gt;
+max_num_jobs_per_priority_per_cycle:(([&lt; `Read | `Set_and_create ], <a href="http://127.0.0.1:8000/async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a>,
+                                      <a href="http://127.0.0.1:8000/async_kernel/#Import.Max_num_jobs_per_priority_per_cycle.t">Import.Max_num_jobs_per_priority_per_cycle.t</a>)
+                                     <a href="http://127.0.0.1:8000/fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt;
                                      'n -&gt;
                                      ('b -&gt;
-                                      <a href="http://frenetic-lang.github.io/api//async_kernel/#Import.Max_num_jobs_per_priority_per_cycle.t">Import.Max_num_jobs_per_priority_per_cycle.t</a>) *
+                                      <a href="http://127.0.0.1:8000/async_kernel/#Import.Max_num_jobs_per_priority_per_cycle.t">Import.Max_num_jobs_per_priority_per_cycle.t</a>) *
                                      'o) -&gt;
-record_backtraces:(([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a>, bool)
-                   <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; 'o -&gt; ('b -&gt; bool) * 'p) -&gt;
-'a -&gt; ('b -&gt; <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a>) * 'p</code></pre>
+record_backtraces:(([&lt; `Read | `Set_and_create ], <a href="http://127.0.0.1:8000/async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a>, bool)
+                   <a href="http://127.0.0.1:8000/fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; 'o -&gt; ('b -&gt; bool) * 'p) -&gt;
+'a -&gt; ('b -&gt; <a href="http://127.0.0.1:8000/async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a>) * 'p</code></pre>
 
 <pre class="odoccode"><span class="VALcreate"><span class="keyword">val</span> create</span> : <code class="type">check_access:(unit -&gt; unit) option -&gt;
-jobs:<a href="http://frenetic-lang.github.io/api//async_kernel/#Jobs.t">Jobs.t</a> -&gt;
-main_execution_context:<a href="http://frenetic-lang.github.io/api//async_kernel/#Execution_context.t">Execution_context.t</a> -&gt;
+jobs:<a href="http://127.0.0.1:8000/async_kernel/#Jobs.t">Jobs.t</a> -&gt;
+main_execution_context:<a href="http://127.0.0.1:8000/async_kernel/#Execution_context.t">Execution_context.t</a> -&gt;
 cycle_count:int -&gt;
-cycle_start:<a href="http://frenetic-lang.github.io/api//core/#Std.Time.t">Core.Std.Time.t</a> -&gt;
+cycle_start:<a href="http://127.0.0.1:8000/core/#Std.Time.t">Core.Std.Time.t</a> -&gt;
 run_every_cycle_start:(unit -&gt; unit) list -&gt;
-last_cycle_time:<a href="http://frenetic-lang.github.io/api//core/#Std.Time.Span.t">Core.Std.Time.Span.t</a> -&gt;
+last_cycle_time:<a href="http://127.0.0.1:8000/core/#Std.Time.Span.t">Core.Std.Time.Span.t</a> -&gt;
 last_cycle_num_jobs:int -&gt;
-events:<a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_scheduler.Job.t" class="ocaml_internal">Job.t</a> <a href="http://frenetic-lang.github.io/api//core/#Std.Timing_wheel.t">Core.Std.Timing_wheel.t</a> -&gt;
-external_actions:(unit -&gt; unit) <a href="http://frenetic-lang.github.io/api//core/#Std.Thread_safe_queue.t">Core.Std.Thread_safe_queue.t</a>
-                 <a href="http://frenetic-lang.github.io/api//core/#Std.sexp_opaque">Core.Std.sexp_opaque</a> -&gt;
+events:<a href="http://127.0.0.1:8000/async_kernel/#Raw_scheduler.Job.t" class="ocaml_internal">Job.t</a> <a href="http://127.0.0.1:8000/core/#Std.Timing_wheel.t">Core.Std.Timing_wheel.t</a> -&gt;
+external_actions:(unit -&gt; unit) <a href="http://127.0.0.1:8000/core/#Std.Thread_safe_queue.t">Core.Std.Thread_safe_queue.t</a>
+                 <a href="http://127.0.0.1:8000/core/#Std.sexp_opaque">Core.Std.sexp_opaque</a> -&gt;
 thread_safe_external_action_hook:(unit -&gt; unit) -&gt;
 check_invariants:bool -&gt;
-max_num_jobs_per_priority_per_cycle:<a href="http://frenetic-lang.github.io/api//async_kernel/#Import.Max_num_jobs_per_priority_per_cycle.t">Import.Max_num_jobs_per_priority_per_cycle.t</a> -&gt;
-record_backtraces:bool -&gt; <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a></code></pre>
+max_num_jobs_per_priority_per_cycle:<a href="http://127.0.0.1:8000/async_kernel/#Import.Max_num_jobs_per_priority_per_cycle.t">Import.Max_num_jobs_per_priority_per_cycle.t</a> -&gt;
+record_backtraces:bool -&gt; <a href="http://127.0.0.1:8000/async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a></code></pre>
 
-<pre class="odoccode"><span class="VALmap"><span class="keyword">val</span> map</span> : <code class="type">check_access:(([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a>, (unit -&gt; unit) option)
-              <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; (unit -&gt; unit) option) -&gt;
-jobs:(([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a>, <a href="http://frenetic-lang.github.io/api//async_kernel/#Jobs.t">Jobs.t</a>) <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt;
-      <a href="http://frenetic-lang.github.io/api//async_kernel/#Jobs.t">Jobs.t</a>) -&gt;
-main_execution_context:(([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a>,
-                         <a href="http://frenetic-lang.github.io/api//async_kernel/#Execution_context.t">Execution_context.t</a>)
-                        <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; <a href="http://frenetic-lang.github.io/api//async_kernel/#Execution_context.t">Execution_context.t</a>) -&gt;
-cycle_count:(([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a>, int)
-             <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; int) -&gt;
-cycle_start:(([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a>, <a href="http://frenetic-lang.github.io/api//core/#Std.Time.t">Core.Std.Time.t</a>)
-             <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; <a href="http://frenetic-lang.github.io/api//core/#Std.Time.t">Core.Std.Time.t</a>) -&gt;
-run_every_cycle_start:(([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a>, (unit -&gt; unit) list)
-                       <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; (unit -&gt; unit) list) -&gt;
-last_cycle_time:(([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a>, <a href="http://frenetic-lang.github.io/api//core/#Std.Time.Span.t">Core.Std.Time.Span.t</a>)
-                 <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; <a href="http://frenetic-lang.github.io/api//core/#Std.Time.Span.t">Core.Std.Time.Span.t</a>) -&gt;
-last_cycle_num_jobs:(([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a>, int)
-                     <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; int) -&gt;
-events:(([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a>, <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_scheduler.Job.t" class="ocaml_internal">Job.t</a> <a href="http://frenetic-lang.github.io/api//core/#Std.Timing_wheel.t">Core.Std.Timing_wheel.t</a>)
-        <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_scheduler.Job.t" class="ocaml_internal">Job.t</a> <a href="http://frenetic-lang.github.io/api//core/#Std.Timing_wheel.t">Core.Std.Timing_wheel.t</a>) -&gt;
-external_actions:(([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a>,
-                   (unit -&gt; unit) <a href="http://frenetic-lang.github.io/api//core/#Std.Thread_safe_queue.t">Core.Std.Thread_safe_queue.t</a>
-                   <a href="http://frenetic-lang.github.io/api//core/#Std.sexp_opaque">Core.Std.sexp_opaque</a>)
-                  <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt;
-                  (unit -&gt; unit) <a href="http://frenetic-lang.github.io/api//core/#Std.Thread_safe_queue.t">Core.Std.Thread_safe_queue.t</a>
-                  <a href="http://frenetic-lang.github.io/api//core/#Std.sexp_opaque">Core.Std.sexp_opaque</a>) -&gt;
-thread_safe_external_action_hook:(([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a>,
+<pre class="odoccode"><span class="VALmap"><span class="keyword">val</span> map</span> : <code class="type">check_access:(([&lt; `Read | `Set_and_create ], <a href="http://127.0.0.1:8000/async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a>, (unit -&gt; unit) option)
+              <a href="http://127.0.0.1:8000/fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; (unit -&gt; unit) option) -&gt;
+jobs:(([&lt; `Read | `Set_and_create ], <a href="http://127.0.0.1:8000/async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a>, <a href="http://127.0.0.1:8000/async_kernel/#Jobs.t">Jobs.t</a>) <a href="http://127.0.0.1:8000/fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt;
+      <a href="http://127.0.0.1:8000/async_kernel/#Jobs.t">Jobs.t</a>) -&gt;
+main_execution_context:(([&lt; `Read | `Set_and_create ], <a href="http://127.0.0.1:8000/async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a>,
+                         <a href="http://127.0.0.1:8000/async_kernel/#Execution_context.t">Execution_context.t</a>)
+                        <a href="http://127.0.0.1:8000/fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; <a href="http://127.0.0.1:8000/async_kernel/#Execution_context.t">Execution_context.t</a>) -&gt;
+cycle_count:(([&lt; `Read | `Set_and_create ], <a href="http://127.0.0.1:8000/async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a>, int)
+             <a href="http://127.0.0.1:8000/fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; int) -&gt;
+cycle_start:(([&lt; `Read | `Set_and_create ], <a href="http://127.0.0.1:8000/async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a>, <a href="http://127.0.0.1:8000/core/#Std.Time.t">Core.Std.Time.t</a>)
+             <a href="http://127.0.0.1:8000/fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; <a href="http://127.0.0.1:8000/core/#Std.Time.t">Core.Std.Time.t</a>) -&gt;
+run_every_cycle_start:(([&lt; `Read | `Set_and_create ], <a href="http://127.0.0.1:8000/async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a>, (unit -&gt; unit) list)
+                       <a href="http://127.0.0.1:8000/fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; (unit -&gt; unit) list) -&gt;
+last_cycle_time:(([&lt; `Read | `Set_and_create ], <a href="http://127.0.0.1:8000/async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a>, <a href="http://127.0.0.1:8000/core/#Std.Time.Span.t">Core.Std.Time.Span.t</a>)
+                 <a href="http://127.0.0.1:8000/fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; <a href="http://127.0.0.1:8000/core/#Std.Time.Span.t">Core.Std.Time.Span.t</a>) -&gt;
+last_cycle_num_jobs:(([&lt; `Read | `Set_and_create ], <a href="http://127.0.0.1:8000/async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a>, int)
+                     <a href="http://127.0.0.1:8000/fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; int) -&gt;
+events:(([&lt; `Read | `Set_and_create ], <a href="http://127.0.0.1:8000/async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a>, <a href="http://127.0.0.1:8000/async_kernel/#Raw_scheduler.Job.t" class="ocaml_internal">Job.t</a> <a href="http://127.0.0.1:8000/core/#Std.Timing_wheel.t">Core.Std.Timing_wheel.t</a>)
+        <a href="http://127.0.0.1:8000/fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; <a href="http://127.0.0.1:8000/async_kernel/#Raw_scheduler.Job.t" class="ocaml_internal">Job.t</a> <a href="http://127.0.0.1:8000/core/#Std.Timing_wheel.t">Core.Std.Timing_wheel.t</a>) -&gt;
+external_actions:(([&lt; `Read | `Set_and_create ], <a href="http://127.0.0.1:8000/async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a>,
+                   (unit -&gt; unit) <a href="http://127.0.0.1:8000/core/#Std.Thread_safe_queue.t">Core.Std.Thread_safe_queue.t</a>
+                   <a href="http://127.0.0.1:8000/core/#Std.sexp_opaque">Core.Std.sexp_opaque</a>)
+                  <a href="http://127.0.0.1:8000/fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt;
+                  (unit -&gt; unit) <a href="http://127.0.0.1:8000/core/#Std.Thread_safe_queue.t">Core.Std.Thread_safe_queue.t</a>
+                  <a href="http://127.0.0.1:8000/core/#Std.sexp_opaque">Core.Std.sexp_opaque</a>) -&gt;
+thread_safe_external_action_hook:(([&lt; `Read | `Set_and_create ], <a href="http://127.0.0.1:8000/async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a>,
                                    unit -&gt; unit)
-                                  <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; unit -&gt; unit) -&gt;
-check_invariants:(([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a>, bool)
-                  <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; bool) -&gt;
-max_num_jobs_per_priority_per_cycle:(([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a>,
-                                      <a href="http://frenetic-lang.github.io/api//async_kernel/#Import.Max_num_jobs_per_priority_per_cycle.t">Import.Max_num_jobs_per_priority_per_cycle.t</a>)
-                                     <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt;
-                                     <a href="http://frenetic-lang.github.io/api//async_kernel/#Import.Max_num_jobs_per_priority_per_cycle.t">Import.Max_num_jobs_per_priority_per_cycle.t</a>) -&gt;
-record_backtraces:(([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a>, bool)
-                   <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; bool) -&gt;
-<a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a></code></pre>
+                                  <a href="http://127.0.0.1:8000/fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; unit -&gt; unit) -&gt;
+check_invariants:(([&lt; `Read | `Set_and_create ], <a href="http://127.0.0.1:8000/async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a>, bool)
+                  <a href="http://127.0.0.1:8000/fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; bool) -&gt;
+max_num_jobs_per_priority_per_cycle:(([&lt; `Read | `Set_and_create ], <a href="http://127.0.0.1:8000/async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a>,
+                                      <a href="http://127.0.0.1:8000/async_kernel/#Import.Max_num_jobs_per_priority_per_cycle.t">Import.Max_num_jobs_per_priority_per_cycle.t</a>)
+                                     <a href="http://127.0.0.1:8000/fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt;
+                                     <a href="http://127.0.0.1:8000/async_kernel/#Import.Max_num_jobs_per_priority_per_cycle.t">Import.Max_num_jobs_per_priority_per_cycle.t</a>) -&gt;
+record_backtraces:(([&lt; `Read | `Set_and_create ], <a href="http://127.0.0.1:8000/async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a>, bool)
+                   <a href="http://127.0.0.1:8000/fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; bool) -&gt;
+<a href="http://127.0.0.1:8000/async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a></code></pre>
 
-<pre class="odoccode"><span class="VALiter"><span class="keyword">val</span> iter</span> : <code class="type">check_access:(([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a>, (unit -&gt; unit) option)
-              <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; 'a) -&gt;
-jobs:(([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a>, <a href="http://frenetic-lang.github.io/api//async_kernel/#Jobs.t">Jobs.t</a>) <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt;
+<pre class="odoccode"><span class="VALiter"><span class="keyword">val</span> iter</span> : <code class="type">check_access:(([&lt; `Read | `Set_and_create ], <a href="http://127.0.0.1:8000/async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a>, (unit -&gt; unit) option)
+              <a href="http://127.0.0.1:8000/fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; 'a) -&gt;
+jobs:(([&lt; `Read | `Set_and_create ], <a href="http://127.0.0.1:8000/async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a>, <a href="http://127.0.0.1:8000/async_kernel/#Jobs.t">Jobs.t</a>) <a href="http://127.0.0.1:8000/fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt;
       'b) -&gt;
-main_execution_context:(([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a>,
-                         <a href="http://frenetic-lang.github.io/api//async_kernel/#Execution_context.t">Execution_context.t</a>)
-                        <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; 'c) -&gt;
-cycle_count:(([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a>, int)
-             <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; 'd) -&gt;
-cycle_start:(([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a>, <a href="http://frenetic-lang.github.io/api//core/#Std.Time.t">Core.Std.Time.t</a>)
-             <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; 'e) -&gt;
-run_every_cycle_start:(([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a>, (unit -&gt; unit) list)
-                       <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; 'f) -&gt;
-last_cycle_time:(([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a>, <a href="http://frenetic-lang.github.io/api//core/#Std.Time.Span.t">Core.Std.Time.Span.t</a>)
-                 <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; 'g) -&gt;
-last_cycle_num_jobs:(([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a>, int)
-                     <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; 'h) -&gt;
-events:(([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a>, <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_scheduler.Job.t" class="ocaml_internal">Job.t</a> <a href="http://frenetic-lang.github.io/api//core/#Std.Timing_wheel.t">Core.Std.Timing_wheel.t</a>)
-        <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; 'i) -&gt;
-external_actions:(([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a>,
-                   (unit -&gt; unit) <a href="http://frenetic-lang.github.io/api//core/#Std.Thread_safe_queue.t">Core.Std.Thread_safe_queue.t</a>
-                   <a href="http://frenetic-lang.github.io/api//core/#Std.sexp_opaque">Core.Std.sexp_opaque</a>)
-                  <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; 'j) -&gt;
-thread_safe_external_action_hook:(([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a>,
+main_execution_context:(([&lt; `Read | `Set_and_create ], <a href="http://127.0.0.1:8000/async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a>,
+                         <a href="http://127.0.0.1:8000/async_kernel/#Execution_context.t">Execution_context.t</a>)
+                        <a href="http://127.0.0.1:8000/fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; 'c) -&gt;
+cycle_count:(([&lt; `Read | `Set_and_create ], <a href="http://127.0.0.1:8000/async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a>, int)
+             <a href="http://127.0.0.1:8000/fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; 'd) -&gt;
+cycle_start:(([&lt; `Read | `Set_and_create ], <a href="http://127.0.0.1:8000/async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a>, <a href="http://127.0.0.1:8000/core/#Std.Time.t">Core.Std.Time.t</a>)
+             <a href="http://127.0.0.1:8000/fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; 'e) -&gt;
+run_every_cycle_start:(([&lt; `Read | `Set_and_create ], <a href="http://127.0.0.1:8000/async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a>, (unit -&gt; unit) list)
+                       <a href="http://127.0.0.1:8000/fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; 'f) -&gt;
+last_cycle_time:(([&lt; `Read | `Set_and_create ], <a href="http://127.0.0.1:8000/async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a>, <a href="http://127.0.0.1:8000/core/#Std.Time.Span.t">Core.Std.Time.Span.t</a>)
+                 <a href="http://127.0.0.1:8000/fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; 'g) -&gt;
+last_cycle_num_jobs:(([&lt; `Read | `Set_and_create ], <a href="http://127.0.0.1:8000/async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a>, int)
+                     <a href="http://127.0.0.1:8000/fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; 'h) -&gt;
+events:(([&lt; `Read | `Set_and_create ], <a href="http://127.0.0.1:8000/async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a>, <a href="http://127.0.0.1:8000/async_kernel/#Raw_scheduler.Job.t" class="ocaml_internal">Job.t</a> <a href="http://127.0.0.1:8000/core/#Std.Timing_wheel.t">Core.Std.Timing_wheel.t</a>)
+        <a href="http://127.0.0.1:8000/fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; 'i) -&gt;
+external_actions:(([&lt; `Read | `Set_and_create ], <a href="http://127.0.0.1:8000/async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a>,
+                   (unit -&gt; unit) <a href="http://127.0.0.1:8000/core/#Std.Thread_safe_queue.t">Core.Std.Thread_safe_queue.t</a>
+                   <a href="http://127.0.0.1:8000/core/#Std.sexp_opaque">Core.Std.sexp_opaque</a>)
+                  <a href="http://127.0.0.1:8000/fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; 'j) -&gt;
+thread_safe_external_action_hook:(([&lt; `Read | `Set_and_create ], <a href="http://127.0.0.1:8000/async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a>,
                                    unit -&gt; unit)
-                                  <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; 'k) -&gt;
-check_invariants:(([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a>, bool)
-                  <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; 'l) -&gt;
-max_num_jobs_per_priority_per_cycle:(([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a>,
-                                      <a href="http://frenetic-lang.github.io/api//async_kernel/#Import.Max_num_jobs_per_priority_per_cycle.t">Import.Max_num_jobs_per_priority_per_cycle.t</a>)
-                                     <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; 'm) -&gt;
-record_backtraces:(([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a>, bool)
-                   <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; 'n) -&gt;
+                                  <a href="http://127.0.0.1:8000/fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; 'k) -&gt;
+check_invariants:(([&lt; `Read | `Set_and_create ], <a href="http://127.0.0.1:8000/async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a>, bool)
+                  <a href="http://127.0.0.1:8000/fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; 'l) -&gt;
+max_num_jobs_per_priority_per_cycle:(([&lt; `Read | `Set_and_create ], <a href="http://127.0.0.1:8000/async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a>,
+                                      <a href="http://127.0.0.1:8000/async_kernel/#Import.Max_num_jobs_per_priority_per_cycle.t">Import.Max_num_jobs_per_priority_per_cycle.t</a>)
+                                     <a href="http://127.0.0.1:8000/fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; 'm) -&gt;
+record_backtraces:(([&lt; `Read | `Set_and_create ], <a href="http://127.0.0.1:8000/async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a>, bool)
+                   <a href="http://127.0.0.1:8000/fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; 'n) -&gt;
 'n</code></pre>
 
 <pre class="odoccode"><span class="VALfold"><span class="keyword">val</span> fold</span> : <code class="type">init:'a -&gt;
 check_access:('a -&gt;
-              ([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a>, (unit -&gt; unit) option)
-              <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; 'b) -&gt;
+              ([&lt; `Read | `Set_and_create ], <a href="http://127.0.0.1:8000/async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a>, (unit -&gt; unit) option)
+              <a href="http://127.0.0.1:8000/fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; 'b) -&gt;
 jobs:('b -&gt;
-      ([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a>, <a href="http://frenetic-lang.github.io/api//async_kernel/#Jobs.t">Jobs.t</a>) <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt;
+      ([&lt; `Read | `Set_and_create ], <a href="http://127.0.0.1:8000/async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a>, <a href="http://127.0.0.1:8000/async_kernel/#Jobs.t">Jobs.t</a>) <a href="http://127.0.0.1:8000/fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt;
       'c) -&gt;
 main_execution_context:('c -&gt;
-                        ([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a>,
-                         <a href="http://frenetic-lang.github.io/api//async_kernel/#Execution_context.t">Execution_context.t</a>)
-                        <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; 'd) -&gt;
+                        ([&lt; `Read | `Set_and_create ], <a href="http://127.0.0.1:8000/async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a>,
+                         <a href="http://127.0.0.1:8000/async_kernel/#Execution_context.t">Execution_context.t</a>)
+                        <a href="http://127.0.0.1:8000/fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; 'd) -&gt;
 cycle_count:('d -&gt;
-             ([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a>, int)
-             <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; 'e) -&gt;
+             ([&lt; `Read | `Set_and_create ], <a href="http://127.0.0.1:8000/async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a>, int)
+             <a href="http://127.0.0.1:8000/fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; 'e) -&gt;
 cycle_start:('e -&gt;
-             ([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a>, <a href="http://frenetic-lang.github.io/api//core/#Std.Time.t">Core.Std.Time.t</a>)
-             <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; 'f) -&gt;
+             ([&lt; `Read | `Set_and_create ], <a href="http://127.0.0.1:8000/async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a>, <a href="http://127.0.0.1:8000/core/#Std.Time.t">Core.Std.Time.t</a>)
+             <a href="http://127.0.0.1:8000/fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; 'f) -&gt;
 run_every_cycle_start:('f -&gt;
-                       ([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a>, (unit -&gt; unit) list)
-                       <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; 'g) -&gt;
+                       ([&lt; `Read | `Set_and_create ], <a href="http://127.0.0.1:8000/async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a>, (unit -&gt; unit) list)
+                       <a href="http://127.0.0.1:8000/fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; 'g) -&gt;
 last_cycle_time:('g -&gt;
-                 ([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a>, <a href="http://frenetic-lang.github.io/api//core/#Std.Time.Span.t">Core.Std.Time.Span.t</a>)
-                 <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; 'h) -&gt;
+                 ([&lt; `Read | `Set_and_create ], <a href="http://127.0.0.1:8000/async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a>, <a href="http://127.0.0.1:8000/core/#Std.Time.Span.t">Core.Std.Time.Span.t</a>)
+                 <a href="http://127.0.0.1:8000/fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; 'h) -&gt;
 last_cycle_num_jobs:('h -&gt;
-                     ([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a>, int)
-                     <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; 'i) -&gt;
+                     ([&lt; `Read | `Set_and_create ], <a href="http://127.0.0.1:8000/async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a>, int)
+                     <a href="http://127.0.0.1:8000/fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; 'i) -&gt;
 events:('i -&gt;
-        ([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a>, <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_scheduler.Job.t" class="ocaml_internal">Job.t</a> <a href="http://frenetic-lang.github.io/api//core/#Std.Timing_wheel.t">Core.Std.Timing_wheel.t</a>)
-        <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; 'j) -&gt;
+        ([&lt; `Read | `Set_and_create ], <a href="http://127.0.0.1:8000/async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a>, <a href="http://127.0.0.1:8000/async_kernel/#Raw_scheduler.Job.t" class="ocaml_internal">Job.t</a> <a href="http://127.0.0.1:8000/core/#Std.Timing_wheel.t">Core.Std.Timing_wheel.t</a>)
+        <a href="http://127.0.0.1:8000/fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; 'j) -&gt;
 external_actions:('j -&gt;
-                  ([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a>,
-                   (unit -&gt; unit) <a href="http://frenetic-lang.github.io/api//core/#Std.Thread_safe_queue.t">Core.Std.Thread_safe_queue.t</a>
-                   <a href="http://frenetic-lang.github.io/api//core/#Std.sexp_opaque">Core.Std.sexp_opaque</a>)
-                  <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; 'k) -&gt;
+                  ([&lt; `Read | `Set_and_create ], <a href="http://127.0.0.1:8000/async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a>,
+                   (unit -&gt; unit) <a href="http://127.0.0.1:8000/core/#Std.Thread_safe_queue.t">Core.Std.Thread_safe_queue.t</a>
+                   <a href="http://127.0.0.1:8000/core/#Std.sexp_opaque">Core.Std.sexp_opaque</a>)
+                  <a href="http://127.0.0.1:8000/fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; 'k) -&gt;
 thread_safe_external_action_hook:('k -&gt;
-                                  ([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a>,
+                                  ([&lt; `Read | `Set_and_create ], <a href="http://127.0.0.1:8000/async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a>,
                                    unit -&gt; unit)
-                                  <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; 'l) -&gt;
+                                  <a href="http://127.0.0.1:8000/fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; 'l) -&gt;
 check_invariants:('l -&gt;
-                  ([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a>, bool)
-                  <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; 'm) -&gt;
+                  ([&lt; `Read | `Set_and_create ], <a href="http://127.0.0.1:8000/async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a>, bool)
+                  <a href="http://127.0.0.1:8000/fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; 'm) -&gt;
 max_num_jobs_per_priority_per_cycle:('m -&gt;
-                                     ([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a>,
-                                      <a href="http://frenetic-lang.github.io/api//async_kernel/#Import.Max_num_jobs_per_priority_per_cycle.t">Import.Max_num_jobs_per_priority_per_cycle.t</a>)
-                                     <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; 'n) -&gt;
+                                     ([&lt; `Read | `Set_and_create ], <a href="http://127.0.0.1:8000/async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a>,
+                                      <a href="http://127.0.0.1:8000/async_kernel/#Import.Max_num_jobs_per_priority_per_cycle.t">Import.Max_num_jobs_per_priority_per_cycle.t</a>)
+                                     <a href="http://127.0.0.1:8000/fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; 'n) -&gt;
 record_backtraces:('n -&gt;
-                   ([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a>, bool)
-                   <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; 'o) -&gt;
+                   ([&lt; `Read | `Set_and_create ], <a href="http://127.0.0.1:8000/async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a>, bool)
+                   <a href="http://127.0.0.1:8000/fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; 'o) -&gt;
 'o</code></pre>
 
-<pre class="odoccode"><span class="VALmap_poly"><span class="keyword">val</span> map_poly</span> : <code class="type">([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a>, 'a) <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.user">Fieldslib.Field.user</a> -&gt; 'a list</code></pre>
+<pre class="odoccode"><span class="VALmap_poly"><span class="keyword">val</span> map_poly</span> : <code class="type">([&lt; `Read | `Set_and_create ], <a href="http://127.0.0.1:8000/async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a>, 'a) <a href="http://127.0.0.1:8000/fieldslib/#Field.user">Fieldslib.Field.user</a> -&gt; 'a list</code></pre>
 
-<pre class="odoccode"><span class="VALfor_all"><span class="keyword">val</span> for_all</span> : <code class="type">check_access:(([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a>, (unit -&gt; unit) option)
-              <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; bool) -&gt;
-jobs:(([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a>, <a href="http://frenetic-lang.github.io/api//async_kernel/#Jobs.t">Jobs.t</a>) <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt;
+<pre class="odoccode"><span class="VALfor_all"><span class="keyword">val</span> for_all</span> : <code class="type">check_access:(([&lt; `Read | `Set_and_create ], <a href="http://127.0.0.1:8000/async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a>, (unit -&gt; unit) option)
+              <a href="http://127.0.0.1:8000/fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; bool) -&gt;
+jobs:(([&lt; `Read | `Set_and_create ], <a href="http://127.0.0.1:8000/async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a>, <a href="http://127.0.0.1:8000/async_kernel/#Jobs.t">Jobs.t</a>) <a href="http://127.0.0.1:8000/fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt;
       bool) -&gt;
-main_execution_context:(([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a>,
-                         <a href="http://frenetic-lang.github.io/api//async_kernel/#Execution_context.t">Execution_context.t</a>)
-                        <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; bool) -&gt;
-cycle_count:(([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a>, int)
-             <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; bool) -&gt;
-cycle_start:(([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a>, <a href="http://frenetic-lang.github.io/api//core/#Std.Time.t">Core.Std.Time.t</a>)
-             <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; bool) -&gt;
-run_every_cycle_start:(([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a>, (unit -&gt; unit) list)
-                       <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; bool) -&gt;
-last_cycle_time:(([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a>, <a href="http://frenetic-lang.github.io/api//core/#Std.Time.Span.t">Core.Std.Time.Span.t</a>)
-                 <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; bool) -&gt;
-last_cycle_num_jobs:(([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a>, int)
-                     <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; bool) -&gt;
-events:(([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a>, <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_scheduler.Job.t" class="ocaml_internal">Job.t</a> <a href="http://frenetic-lang.github.io/api//core/#Std.Timing_wheel.t">Core.Std.Timing_wheel.t</a>)
-        <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; bool) -&gt;
-external_actions:(([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a>,
-                   (unit -&gt; unit) <a href="http://frenetic-lang.github.io/api//core/#Std.Thread_safe_queue.t">Core.Std.Thread_safe_queue.t</a>
-                   <a href="http://frenetic-lang.github.io/api//core/#Std.sexp_opaque">Core.Std.sexp_opaque</a>)
-                  <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; bool) -&gt;
-thread_safe_external_action_hook:(([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a>,
+main_execution_context:(([&lt; `Read | `Set_and_create ], <a href="http://127.0.0.1:8000/async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a>,
+                         <a href="http://127.0.0.1:8000/async_kernel/#Execution_context.t">Execution_context.t</a>)
+                        <a href="http://127.0.0.1:8000/fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; bool) -&gt;
+cycle_count:(([&lt; `Read | `Set_and_create ], <a href="http://127.0.0.1:8000/async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a>, int)
+             <a href="http://127.0.0.1:8000/fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; bool) -&gt;
+cycle_start:(([&lt; `Read | `Set_and_create ], <a href="http://127.0.0.1:8000/async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a>, <a href="http://127.0.0.1:8000/core/#Std.Time.t">Core.Std.Time.t</a>)
+             <a href="http://127.0.0.1:8000/fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; bool) -&gt;
+run_every_cycle_start:(([&lt; `Read | `Set_and_create ], <a href="http://127.0.0.1:8000/async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a>, (unit -&gt; unit) list)
+                       <a href="http://127.0.0.1:8000/fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; bool) -&gt;
+last_cycle_time:(([&lt; `Read | `Set_and_create ], <a href="http://127.0.0.1:8000/async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a>, <a href="http://127.0.0.1:8000/core/#Std.Time.Span.t">Core.Std.Time.Span.t</a>)
+                 <a href="http://127.0.0.1:8000/fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; bool) -&gt;
+last_cycle_num_jobs:(([&lt; `Read | `Set_and_create ], <a href="http://127.0.0.1:8000/async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a>, int)
+                     <a href="http://127.0.0.1:8000/fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; bool) -&gt;
+events:(([&lt; `Read | `Set_and_create ], <a href="http://127.0.0.1:8000/async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a>, <a href="http://127.0.0.1:8000/async_kernel/#Raw_scheduler.Job.t" class="ocaml_internal">Job.t</a> <a href="http://127.0.0.1:8000/core/#Std.Timing_wheel.t">Core.Std.Timing_wheel.t</a>)
+        <a href="http://127.0.0.1:8000/fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; bool) -&gt;
+external_actions:(([&lt; `Read | `Set_and_create ], <a href="http://127.0.0.1:8000/async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a>,
+                   (unit -&gt; unit) <a href="http://127.0.0.1:8000/core/#Std.Thread_safe_queue.t">Core.Std.Thread_safe_queue.t</a>
+                   <a href="http://127.0.0.1:8000/core/#Std.sexp_opaque">Core.Std.sexp_opaque</a>)
+                  <a href="http://127.0.0.1:8000/fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; bool) -&gt;
+thread_safe_external_action_hook:(([&lt; `Read | `Set_and_create ], <a href="http://127.0.0.1:8000/async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a>,
                                    unit -&gt; unit)
-                                  <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; bool) -&gt;
-check_invariants:(([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a>, bool)
-                  <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; bool) -&gt;
-max_num_jobs_per_priority_per_cycle:(([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a>,
-                                      <a href="http://frenetic-lang.github.io/api//async_kernel/#Import.Max_num_jobs_per_priority_per_cycle.t">Import.Max_num_jobs_per_priority_per_cycle.t</a>)
-                                     <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; bool) -&gt;
-record_backtraces:(([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a>, bool)
-                   <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; bool) -&gt;
+                                  <a href="http://127.0.0.1:8000/fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; bool) -&gt;
+check_invariants:(([&lt; `Read | `Set_and_create ], <a href="http://127.0.0.1:8000/async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a>, bool)
+                  <a href="http://127.0.0.1:8000/fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; bool) -&gt;
+max_num_jobs_per_priority_per_cycle:(([&lt; `Read | `Set_and_create ], <a href="http://127.0.0.1:8000/async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a>,
+                                      <a href="http://127.0.0.1:8000/async_kernel/#Import.Max_num_jobs_per_priority_per_cycle.t">Import.Max_num_jobs_per_priority_per_cycle.t</a>)
+                                     <a href="http://127.0.0.1:8000/fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; bool) -&gt;
+record_backtraces:(([&lt; `Read | `Set_and_create ], <a href="http://127.0.0.1:8000/async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a>, bool)
+                   <a href="http://127.0.0.1:8000/fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; bool) -&gt;
 bool</code></pre>
 
-<pre class="odoccode"><span class="VALexists"><span class="keyword">val</span> exists</span> : <code class="type">check_access:(([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a>, (unit -&gt; unit) option)
-              <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; bool) -&gt;
-jobs:(([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a>, <a href="http://frenetic-lang.github.io/api//async_kernel/#Jobs.t">Jobs.t</a>) <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt;
+<pre class="odoccode"><span class="VALexists"><span class="keyword">val</span> exists</span> : <code class="type">check_access:(([&lt; `Read | `Set_and_create ], <a href="http://127.0.0.1:8000/async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a>, (unit -&gt; unit) option)
+              <a href="http://127.0.0.1:8000/fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; bool) -&gt;
+jobs:(([&lt; `Read | `Set_and_create ], <a href="http://127.0.0.1:8000/async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a>, <a href="http://127.0.0.1:8000/async_kernel/#Jobs.t">Jobs.t</a>) <a href="http://127.0.0.1:8000/fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt;
       bool) -&gt;
-main_execution_context:(([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a>,
-                         <a href="http://frenetic-lang.github.io/api//async_kernel/#Execution_context.t">Execution_context.t</a>)
-                        <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; bool) -&gt;
-cycle_count:(([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a>, int)
-             <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; bool) -&gt;
-cycle_start:(([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a>, <a href="http://frenetic-lang.github.io/api//core/#Std.Time.t">Core.Std.Time.t</a>)
-             <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; bool) -&gt;
-run_every_cycle_start:(([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a>, (unit -&gt; unit) list)
-                       <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; bool) -&gt;
-last_cycle_time:(([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a>, <a href="http://frenetic-lang.github.io/api//core/#Std.Time.Span.t">Core.Std.Time.Span.t</a>)
-                 <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; bool) -&gt;
-last_cycle_num_jobs:(([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a>, int)
-                     <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; bool) -&gt;
-events:(([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a>, <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_scheduler.Job.t" class="ocaml_internal">Job.t</a> <a href="http://frenetic-lang.github.io/api//core/#Std.Timing_wheel.t">Core.Std.Timing_wheel.t</a>)
-        <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; bool) -&gt;
-external_actions:(([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a>,
-                   (unit -&gt; unit) <a href="http://frenetic-lang.github.io/api//core/#Std.Thread_safe_queue.t">Core.Std.Thread_safe_queue.t</a>
-                   <a href="http://frenetic-lang.github.io/api//core/#Std.sexp_opaque">Core.Std.sexp_opaque</a>)
-                  <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; bool) -&gt;
-thread_safe_external_action_hook:(([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a>,
+main_execution_context:(([&lt; `Read | `Set_and_create ], <a href="http://127.0.0.1:8000/async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a>,
+                         <a href="http://127.0.0.1:8000/async_kernel/#Execution_context.t">Execution_context.t</a>)
+                        <a href="http://127.0.0.1:8000/fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; bool) -&gt;
+cycle_count:(([&lt; `Read | `Set_and_create ], <a href="http://127.0.0.1:8000/async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a>, int)
+             <a href="http://127.0.0.1:8000/fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; bool) -&gt;
+cycle_start:(([&lt; `Read | `Set_and_create ], <a href="http://127.0.0.1:8000/async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a>, <a href="http://127.0.0.1:8000/core/#Std.Time.t">Core.Std.Time.t</a>)
+             <a href="http://127.0.0.1:8000/fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; bool) -&gt;
+run_every_cycle_start:(([&lt; `Read | `Set_and_create ], <a href="http://127.0.0.1:8000/async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a>, (unit -&gt; unit) list)
+                       <a href="http://127.0.0.1:8000/fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; bool) -&gt;
+last_cycle_time:(([&lt; `Read | `Set_and_create ], <a href="http://127.0.0.1:8000/async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a>, <a href="http://127.0.0.1:8000/core/#Std.Time.Span.t">Core.Std.Time.Span.t</a>)
+                 <a href="http://127.0.0.1:8000/fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; bool) -&gt;
+last_cycle_num_jobs:(([&lt; `Read | `Set_and_create ], <a href="http://127.0.0.1:8000/async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a>, int)
+                     <a href="http://127.0.0.1:8000/fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; bool) -&gt;
+events:(([&lt; `Read | `Set_and_create ], <a href="http://127.0.0.1:8000/async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a>, <a href="http://127.0.0.1:8000/async_kernel/#Raw_scheduler.Job.t" class="ocaml_internal">Job.t</a> <a href="http://127.0.0.1:8000/core/#Std.Timing_wheel.t">Core.Std.Timing_wheel.t</a>)
+        <a href="http://127.0.0.1:8000/fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; bool) -&gt;
+external_actions:(([&lt; `Read | `Set_and_create ], <a href="http://127.0.0.1:8000/async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a>,
+                   (unit -&gt; unit) <a href="http://127.0.0.1:8000/core/#Std.Thread_safe_queue.t">Core.Std.Thread_safe_queue.t</a>
+                   <a href="http://127.0.0.1:8000/core/#Std.sexp_opaque">Core.Std.sexp_opaque</a>)
+                  <a href="http://127.0.0.1:8000/fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; bool) -&gt;
+thread_safe_external_action_hook:(([&lt; `Read | `Set_and_create ], <a href="http://127.0.0.1:8000/async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a>,
                                    unit -&gt; unit)
-                                  <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; bool) -&gt;
-check_invariants:(([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a>, bool)
-                  <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; bool) -&gt;
-max_num_jobs_per_priority_per_cycle:(([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a>,
-                                      <a href="http://frenetic-lang.github.io/api//async_kernel/#Import.Max_num_jobs_per_priority_per_cycle.t">Import.Max_num_jobs_per_priority_per_cycle.t</a>)
-                                     <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; bool) -&gt;
-record_backtraces:(([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a>, bool)
-                   <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; bool) -&gt;
+                                  <a href="http://127.0.0.1:8000/fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; bool) -&gt;
+check_invariants:(([&lt; `Read | `Set_and_create ], <a href="http://127.0.0.1:8000/async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a>, bool)
+                  <a href="http://127.0.0.1:8000/fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; bool) -&gt;
+max_num_jobs_per_priority_per_cycle:(([&lt; `Read | `Set_and_create ], <a href="http://127.0.0.1:8000/async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a>,
+                                      <a href="http://127.0.0.1:8000/async_kernel/#Import.Max_num_jobs_per_priority_per_cycle.t">Import.Max_num_jobs_per_priority_per_cycle.t</a>)
+                                     <a href="http://127.0.0.1:8000/fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; bool) -&gt;
+record_backtraces:(([&lt; `Read | `Set_and_create ], <a href="http://127.0.0.1:8000/async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a>, bool)
+                   <a href="http://127.0.0.1:8000/fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; bool) -&gt;
 bool</code></pre>
 
-<pre class="odoccode"><span class="VALto_list"><span class="keyword">val</span> to_list</span> : <code class="type">check_access:(([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a>, (unit -&gt; unit) option)
-              <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; 'a) -&gt;
-jobs:(([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a>, <a href="http://frenetic-lang.github.io/api//async_kernel/#Jobs.t">Jobs.t</a>) <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt;
+<pre class="odoccode"><span class="VALto_list"><span class="keyword">val</span> to_list</span> : <code class="type">check_access:(([&lt; `Read | `Set_and_create ], <a href="http://127.0.0.1:8000/async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a>, (unit -&gt; unit) option)
+              <a href="http://127.0.0.1:8000/fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; 'a) -&gt;
+jobs:(([&lt; `Read | `Set_and_create ], <a href="http://127.0.0.1:8000/async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a>, <a href="http://127.0.0.1:8000/async_kernel/#Jobs.t">Jobs.t</a>) <a href="http://127.0.0.1:8000/fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt;
       'a) -&gt;
-main_execution_context:(([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a>,
-                         <a href="http://frenetic-lang.github.io/api//async_kernel/#Execution_context.t">Execution_context.t</a>)
-                        <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; 'a) -&gt;
-cycle_count:(([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a>, int)
-             <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; 'a) -&gt;
-cycle_start:(([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a>, <a href="http://frenetic-lang.github.io/api//core/#Std.Time.t">Core.Std.Time.t</a>)
-             <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; 'a) -&gt;
-run_every_cycle_start:(([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a>, (unit -&gt; unit) list)
-                       <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; 'a) -&gt;
-last_cycle_time:(([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a>, <a href="http://frenetic-lang.github.io/api//core/#Std.Time.Span.t">Core.Std.Time.Span.t</a>)
-                 <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; 'a) -&gt;
-last_cycle_num_jobs:(([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a>, int)
-                     <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; 'a) -&gt;
-events:(([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a>, <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_scheduler.Job.t" class="ocaml_internal">Job.t</a> <a href="http://frenetic-lang.github.io/api//core/#Std.Timing_wheel.t">Core.Std.Timing_wheel.t</a>)
-        <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; 'a) -&gt;
-external_actions:(([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a>,
-                   (unit -&gt; unit) <a href="http://frenetic-lang.github.io/api//core/#Std.Thread_safe_queue.t">Core.Std.Thread_safe_queue.t</a>
-                   <a href="http://frenetic-lang.github.io/api//core/#Std.sexp_opaque">Core.Std.sexp_opaque</a>)
-                  <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; 'a) -&gt;
-thread_safe_external_action_hook:(([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a>,
+main_execution_context:(([&lt; `Read | `Set_and_create ], <a href="http://127.0.0.1:8000/async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a>,
+                         <a href="http://127.0.0.1:8000/async_kernel/#Execution_context.t">Execution_context.t</a>)
+                        <a href="http://127.0.0.1:8000/fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; 'a) -&gt;
+cycle_count:(([&lt; `Read | `Set_and_create ], <a href="http://127.0.0.1:8000/async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a>, int)
+             <a href="http://127.0.0.1:8000/fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; 'a) -&gt;
+cycle_start:(([&lt; `Read | `Set_and_create ], <a href="http://127.0.0.1:8000/async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a>, <a href="http://127.0.0.1:8000/core/#Std.Time.t">Core.Std.Time.t</a>)
+             <a href="http://127.0.0.1:8000/fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; 'a) -&gt;
+run_every_cycle_start:(([&lt; `Read | `Set_and_create ], <a href="http://127.0.0.1:8000/async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a>, (unit -&gt; unit) list)
+                       <a href="http://127.0.0.1:8000/fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; 'a) -&gt;
+last_cycle_time:(([&lt; `Read | `Set_and_create ], <a href="http://127.0.0.1:8000/async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a>, <a href="http://127.0.0.1:8000/core/#Std.Time.Span.t">Core.Std.Time.Span.t</a>)
+                 <a href="http://127.0.0.1:8000/fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; 'a) -&gt;
+last_cycle_num_jobs:(([&lt; `Read | `Set_and_create ], <a href="http://127.0.0.1:8000/async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a>, int)
+                     <a href="http://127.0.0.1:8000/fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; 'a) -&gt;
+events:(([&lt; `Read | `Set_and_create ], <a href="http://127.0.0.1:8000/async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a>, <a href="http://127.0.0.1:8000/async_kernel/#Raw_scheduler.Job.t" class="ocaml_internal">Job.t</a> <a href="http://127.0.0.1:8000/core/#Std.Timing_wheel.t">Core.Std.Timing_wheel.t</a>)
+        <a href="http://127.0.0.1:8000/fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; 'a) -&gt;
+external_actions:(([&lt; `Read | `Set_and_create ], <a href="http://127.0.0.1:8000/async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a>,
+                   (unit -&gt; unit) <a href="http://127.0.0.1:8000/core/#Std.Thread_safe_queue.t">Core.Std.Thread_safe_queue.t</a>
+                   <a href="http://127.0.0.1:8000/core/#Std.sexp_opaque">Core.Std.sexp_opaque</a>)
+                  <a href="http://127.0.0.1:8000/fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; 'a) -&gt;
+thread_safe_external_action_hook:(([&lt; `Read | `Set_and_create ], <a href="http://127.0.0.1:8000/async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a>,
                                    unit -&gt; unit)
-                                  <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; 'a) -&gt;
-check_invariants:(([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a>, bool)
-                  <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; 'a) -&gt;
-max_num_jobs_per_priority_per_cycle:(([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a>,
-                                      <a href="http://frenetic-lang.github.io/api//async_kernel/#Import.Max_num_jobs_per_priority_per_cycle.t">Import.Max_num_jobs_per_priority_per_cycle.t</a>)
-                                     <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; 'a) -&gt;
-record_backtraces:(([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a>, bool)
-                   <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; 'a) -&gt;
+                                  <a href="http://127.0.0.1:8000/fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; 'a) -&gt;
+check_invariants:(([&lt; `Read | `Set_and_create ], <a href="http://127.0.0.1:8000/async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a>, bool)
+                  <a href="http://127.0.0.1:8000/fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; 'a) -&gt;
+max_num_jobs_per_priority_per_cycle:(([&lt; `Read | `Set_and_create ], <a href="http://127.0.0.1:8000/async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a>,
+                                      <a href="http://127.0.0.1:8000/async_kernel/#Import.Max_num_jobs_per_priority_per_cycle.t">Import.Max_num_jobs_per_priority_per_cycle.t</a>)
+                                     <a href="http://127.0.0.1:8000/fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; 'a) -&gt;
+record_backtraces:(([&lt; `Read | `Set_and_create ], <a href="http://127.0.0.1:8000/async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a>, bool)
+                   <a href="http://127.0.0.1:8000/fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; 'a) -&gt;
 'a list</code></pre>
 
-<div class="ocaml_module" name="Direct"><pre class="odoccode"><span class="keyword">module</span> <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_scheduler.T.Fields.Direct" class="ocaml_internal">Direct</a> : <code class="type"><code class="code">sig</code> .. <code class="code">end</code></code></pre><div class="ocaml_summary"/><div class="ocaml_content">
-<pre class="odoccode"><span class="VALiter"><span class="keyword">val</span> iter</span> : <code class="type"><a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a> -&gt;
-check_access:(([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a>, (unit -&gt; unit) option)
-              <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a> -&gt; (unit -&gt; unit) option -&gt; 'a) -&gt;
-jobs:(([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a>, <a href="http://frenetic-lang.github.io/api//async_kernel/#Jobs.t">Jobs.t</a>) <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt;
-      <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a> -&gt; <a href="http://frenetic-lang.github.io/api//async_kernel/#Jobs.t">Jobs.t</a> -&gt; 'b) -&gt;
-main_execution_context:(([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a>,
-                         <a href="http://frenetic-lang.github.io/api//async_kernel/#Execution_context.t">Execution_context.t</a>)
-                        <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt;
-                        <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a> -&gt; <a href="http://frenetic-lang.github.io/api//async_kernel/#Execution_context.t">Execution_context.t</a> -&gt; 'c) -&gt;
-cycle_count:(([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a>, int)
-             <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a> -&gt; int -&gt; 'd) -&gt;
-cycle_start:(([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a>, <a href="http://frenetic-lang.github.io/api//core/#Std.Time.t">Core.Std.Time.t</a>)
-             <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a> -&gt; <a href="http://frenetic-lang.github.io/api//core/#Std.Time.t">Core.Std.Time.t</a> -&gt; 'e) -&gt;
-run_every_cycle_start:(([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a>, (unit -&gt; unit) list)
-                       <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt;
-                       <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a> -&gt; (unit -&gt; unit) list -&gt; 'f) -&gt;
-last_cycle_time:(([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a>, <a href="http://frenetic-lang.github.io/api//core/#Std.Time.Span.t">Core.Std.Time.Span.t</a>)
-                 <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt;
-                 <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a> -&gt; <a href="http://frenetic-lang.github.io/api//core/#Std.Time.Span.t">Core.Std.Time.Span.t</a> -&gt; 'g) -&gt;
-last_cycle_num_jobs:(([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a>, int)
-                     <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a> -&gt; int -&gt; 'h) -&gt;
-events:(([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a>, <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_scheduler.Job.t" class="ocaml_internal">Job.t</a> <a href="http://frenetic-lang.github.io/api//core/#Std.Timing_wheel.t">Core.Std.Timing_wheel.t</a>)
-        <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt;
-        <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a> -&gt; <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_scheduler.Job.t" class="ocaml_internal">Job.t</a> <a href="http://frenetic-lang.github.io/api//core/#Std.Timing_wheel.t">Core.Std.Timing_wheel.t</a> -&gt; 'i) -&gt;
-external_actions:(([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a>,
-                   (unit -&gt; unit) <a href="http://frenetic-lang.github.io/api//core/#Std.Thread_safe_queue.t">Core.Std.Thread_safe_queue.t</a>
-                   <a href="http://frenetic-lang.github.io/api//core/#Std.sexp_opaque">Core.Std.sexp_opaque</a>)
-                  <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt;
-                  <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a> -&gt;
-                  (unit -&gt; unit) <a href="http://frenetic-lang.github.io/api//core/#Std.Thread_safe_queue.t">Core.Std.Thread_safe_queue.t</a>
-                  <a href="http://frenetic-lang.github.io/api//core/#Std.sexp_opaque">Core.Std.sexp_opaque</a> -&gt; 'j) -&gt;
-thread_safe_external_action_hook:(([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a>,
+<div class="ocaml_module" name="Direct"><pre class="odoccode"><span class="keyword">module</span> <a href="http://127.0.0.1:8000/async_kernel/#Raw_scheduler.T.Fields.Direct" class="ocaml_internal">Direct</a> : <code class="type"><code class="code">sig</code> .. <code class="code">end</code></code></pre><div class="ocaml_summary"/><div class="ocaml_content">
+<pre class="odoccode"><span class="VALiter"><span class="keyword">val</span> iter</span> : <code class="type"><a href="http://127.0.0.1:8000/async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a> -&gt;
+check_access:(([&lt; `Read | `Set_and_create ], <a href="http://127.0.0.1:8000/async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a>, (unit -&gt; unit) option)
+              <a href="http://127.0.0.1:8000/fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; <a href="http://127.0.0.1:8000/async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a> -&gt; (unit -&gt; unit) option -&gt; 'a) -&gt;
+jobs:(([&lt; `Read | `Set_and_create ], <a href="http://127.0.0.1:8000/async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a>, <a href="http://127.0.0.1:8000/async_kernel/#Jobs.t">Jobs.t</a>) <a href="http://127.0.0.1:8000/fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt;
+      <a href="http://127.0.0.1:8000/async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a> -&gt; <a href="http://127.0.0.1:8000/async_kernel/#Jobs.t">Jobs.t</a> -&gt; 'b) -&gt;
+main_execution_context:(([&lt; `Read | `Set_and_create ], <a href="http://127.0.0.1:8000/async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a>,
+                         <a href="http://127.0.0.1:8000/async_kernel/#Execution_context.t">Execution_context.t</a>)
+                        <a href="http://127.0.0.1:8000/fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt;
+                        <a href="http://127.0.0.1:8000/async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a> -&gt; <a href="http://127.0.0.1:8000/async_kernel/#Execution_context.t">Execution_context.t</a> -&gt; 'c) -&gt;
+cycle_count:(([&lt; `Read | `Set_and_create ], <a href="http://127.0.0.1:8000/async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a>, int)
+             <a href="http://127.0.0.1:8000/fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; <a href="http://127.0.0.1:8000/async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a> -&gt; int -&gt; 'd) -&gt;
+cycle_start:(([&lt; `Read | `Set_and_create ], <a href="http://127.0.0.1:8000/async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a>, <a href="http://127.0.0.1:8000/core/#Std.Time.t">Core.Std.Time.t</a>)
+             <a href="http://127.0.0.1:8000/fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; <a href="http://127.0.0.1:8000/async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a> -&gt; <a href="http://127.0.0.1:8000/core/#Std.Time.t">Core.Std.Time.t</a> -&gt; 'e) -&gt;
+run_every_cycle_start:(([&lt; `Read | `Set_and_create ], <a href="http://127.0.0.1:8000/async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a>, (unit -&gt; unit) list)
+                       <a href="http://127.0.0.1:8000/fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt;
+                       <a href="http://127.0.0.1:8000/async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a> -&gt; (unit -&gt; unit) list -&gt; 'f) -&gt;
+last_cycle_time:(([&lt; `Read | `Set_and_create ], <a href="http://127.0.0.1:8000/async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a>, <a href="http://127.0.0.1:8000/core/#Std.Time.Span.t">Core.Std.Time.Span.t</a>)
+                 <a href="http://127.0.0.1:8000/fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt;
+                 <a href="http://127.0.0.1:8000/async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a> -&gt; <a href="http://127.0.0.1:8000/core/#Std.Time.Span.t">Core.Std.Time.Span.t</a> -&gt; 'g) -&gt;
+last_cycle_num_jobs:(([&lt; `Read | `Set_and_create ], <a href="http://127.0.0.1:8000/async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a>, int)
+                     <a href="http://127.0.0.1:8000/fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; <a href="http://127.0.0.1:8000/async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a> -&gt; int -&gt; 'h) -&gt;
+events:(([&lt; `Read | `Set_and_create ], <a href="http://127.0.0.1:8000/async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a>, <a href="http://127.0.0.1:8000/async_kernel/#Raw_scheduler.Job.t" class="ocaml_internal">Job.t</a> <a href="http://127.0.0.1:8000/core/#Std.Timing_wheel.t">Core.Std.Timing_wheel.t</a>)
+        <a href="http://127.0.0.1:8000/fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt;
+        <a href="http://127.0.0.1:8000/async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a> -&gt; <a href="http://127.0.0.1:8000/async_kernel/#Raw_scheduler.Job.t" class="ocaml_internal">Job.t</a> <a href="http://127.0.0.1:8000/core/#Std.Timing_wheel.t">Core.Std.Timing_wheel.t</a> -&gt; 'i) -&gt;
+external_actions:(([&lt; `Read | `Set_and_create ], <a href="http://127.0.0.1:8000/async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a>,
+                   (unit -&gt; unit) <a href="http://127.0.0.1:8000/core/#Std.Thread_safe_queue.t">Core.Std.Thread_safe_queue.t</a>
+                   <a href="http://127.0.0.1:8000/core/#Std.sexp_opaque">Core.Std.sexp_opaque</a>)
+                  <a href="http://127.0.0.1:8000/fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt;
+                  <a href="http://127.0.0.1:8000/async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a> -&gt;
+                  (unit -&gt; unit) <a href="http://127.0.0.1:8000/core/#Std.Thread_safe_queue.t">Core.Std.Thread_safe_queue.t</a>
+                  <a href="http://127.0.0.1:8000/core/#Std.sexp_opaque">Core.Std.sexp_opaque</a> -&gt; 'j) -&gt;
+thread_safe_external_action_hook:(([&lt; `Read | `Set_and_create ], <a href="http://127.0.0.1:8000/async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a>,
                                    unit -&gt; unit)
-                                  <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt;
-                                  <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a> -&gt; (unit -&gt; unit) -&gt; 'k) -&gt;
-check_invariants:(([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a>, bool)
-                  <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a> -&gt; bool -&gt; 'l) -&gt;
-max_num_jobs_per_priority_per_cycle:(([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a>,
-                                      <a href="http://frenetic-lang.github.io/api//async_kernel/#Import.Max_num_jobs_per_priority_per_cycle.t">Import.Max_num_jobs_per_priority_per_cycle.t</a>)
-                                     <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt;
-                                     <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a> -&gt;
-                                     <a href="http://frenetic-lang.github.io/api//async_kernel/#Import.Max_num_jobs_per_priority_per_cycle.t">Import.Max_num_jobs_per_priority_per_cycle.t</a> -&gt;
+                                  <a href="http://127.0.0.1:8000/fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt;
+                                  <a href="http://127.0.0.1:8000/async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a> -&gt; (unit -&gt; unit) -&gt; 'k) -&gt;
+check_invariants:(([&lt; `Read | `Set_and_create ], <a href="http://127.0.0.1:8000/async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a>, bool)
+                  <a href="http://127.0.0.1:8000/fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; <a href="http://127.0.0.1:8000/async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a> -&gt; bool -&gt; 'l) -&gt;
+max_num_jobs_per_priority_per_cycle:(([&lt; `Read | `Set_and_create ], <a href="http://127.0.0.1:8000/async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a>,
+                                      <a href="http://127.0.0.1:8000/async_kernel/#Import.Max_num_jobs_per_priority_per_cycle.t">Import.Max_num_jobs_per_priority_per_cycle.t</a>)
+                                     <a href="http://127.0.0.1:8000/fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt;
+                                     <a href="http://127.0.0.1:8000/async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a> -&gt;
+                                     <a href="http://127.0.0.1:8000/async_kernel/#Import.Max_num_jobs_per_priority_per_cycle.t">Import.Max_num_jobs_per_priority_per_cycle.t</a> -&gt;
                                      'm) -&gt;
-record_backtraces:(([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a>, bool)
-                   <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a> -&gt; bool -&gt; 'n) -&gt;
+record_backtraces:(([&lt; `Read | `Set_and_create ], <a href="http://127.0.0.1:8000/async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a>, bool)
+                   <a href="http://127.0.0.1:8000/fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; <a href="http://127.0.0.1:8000/async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a> -&gt; bool -&gt; 'n) -&gt;
 'n</code></pre>
 
-<pre class="odoccode"><span class="VALfold"><span class="keyword">val</span> fold</span> : <code class="type"><a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a> -&gt;
+<pre class="odoccode"><span class="VALfold"><span class="keyword">val</span> fold</span> : <code class="type"><a href="http://127.0.0.1:8000/async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a> -&gt;
 init:'a -&gt;
 check_access:('a -&gt;
-              ([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a>, (unit -&gt; unit) option)
-              <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a> -&gt; (unit -&gt; unit) option -&gt; 'b) -&gt;
+              ([&lt; `Read | `Set_and_create ], <a href="http://127.0.0.1:8000/async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a>, (unit -&gt; unit) option)
+              <a href="http://127.0.0.1:8000/fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; <a href="http://127.0.0.1:8000/async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a> -&gt; (unit -&gt; unit) option -&gt; 'b) -&gt;
 jobs:('b -&gt;
-      ([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a>, <a href="http://frenetic-lang.github.io/api//async_kernel/#Jobs.t">Jobs.t</a>) <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt;
-      <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a> -&gt; <a href="http://frenetic-lang.github.io/api//async_kernel/#Jobs.t">Jobs.t</a> -&gt; 'c) -&gt;
+      ([&lt; `Read | `Set_and_create ], <a href="http://127.0.0.1:8000/async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a>, <a href="http://127.0.0.1:8000/async_kernel/#Jobs.t">Jobs.t</a>) <a href="http://127.0.0.1:8000/fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt;
+      <a href="http://127.0.0.1:8000/async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a> -&gt; <a href="http://127.0.0.1:8000/async_kernel/#Jobs.t">Jobs.t</a> -&gt; 'c) -&gt;
 main_execution_context:('c -&gt;
-                        ([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a>,
-                         <a href="http://frenetic-lang.github.io/api//async_kernel/#Execution_context.t">Execution_context.t</a>)
-                        <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt;
-                        <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a> -&gt; <a href="http://frenetic-lang.github.io/api//async_kernel/#Execution_context.t">Execution_context.t</a> -&gt; 'd) -&gt;
+                        ([&lt; `Read | `Set_and_create ], <a href="http://127.0.0.1:8000/async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a>,
+                         <a href="http://127.0.0.1:8000/async_kernel/#Execution_context.t">Execution_context.t</a>)
+                        <a href="http://127.0.0.1:8000/fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt;
+                        <a href="http://127.0.0.1:8000/async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a> -&gt; <a href="http://127.0.0.1:8000/async_kernel/#Execution_context.t">Execution_context.t</a> -&gt; 'd) -&gt;
 cycle_count:('d -&gt;
-             ([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a>, int)
-             <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a> -&gt; int -&gt; 'e) -&gt;
+             ([&lt; `Read | `Set_and_create ], <a href="http://127.0.0.1:8000/async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a>, int)
+             <a href="http://127.0.0.1:8000/fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; <a href="http://127.0.0.1:8000/async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a> -&gt; int -&gt; 'e) -&gt;
 cycle_start:('e -&gt;
-             ([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a>, <a href="http://frenetic-lang.github.io/api//core/#Std.Time.t">Core.Std.Time.t</a>)
-             <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a> -&gt; <a href="http://frenetic-lang.github.io/api//core/#Std.Time.t">Core.Std.Time.t</a> -&gt; 'f) -&gt;
+             ([&lt; `Read | `Set_and_create ], <a href="http://127.0.0.1:8000/async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a>, <a href="http://127.0.0.1:8000/core/#Std.Time.t">Core.Std.Time.t</a>)
+             <a href="http://127.0.0.1:8000/fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; <a href="http://127.0.0.1:8000/async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a> -&gt; <a href="http://127.0.0.1:8000/core/#Std.Time.t">Core.Std.Time.t</a> -&gt; 'f) -&gt;
 run_every_cycle_start:('f -&gt;
-                       ([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a>, (unit -&gt; unit) list)
-                       <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt;
-                       <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a> -&gt; (unit -&gt; unit) list -&gt; 'g) -&gt;
+                       ([&lt; `Read | `Set_and_create ], <a href="http://127.0.0.1:8000/async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a>, (unit -&gt; unit) list)
+                       <a href="http://127.0.0.1:8000/fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt;
+                       <a href="http://127.0.0.1:8000/async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a> -&gt; (unit -&gt; unit) list -&gt; 'g) -&gt;
 last_cycle_time:('g -&gt;
-                 ([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a>, <a href="http://frenetic-lang.github.io/api//core/#Std.Time.Span.t">Core.Std.Time.Span.t</a>)
-                 <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt;
-                 <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a> -&gt; <a href="http://frenetic-lang.github.io/api//core/#Std.Time.Span.t">Core.Std.Time.Span.t</a> -&gt; 'h) -&gt;
+                 ([&lt; `Read | `Set_and_create ], <a href="http://127.0.0.1:8000/async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a>, <a href="http://127.0.0.1:8000/core/#Std.Time.Span.t">Core.Std.Time.Span.t</a>)
+                 <a href="http://127.0.0.1:8000/fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt;
+                 <a href="http://127.0.0.1:8000/async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a> -&gt; <a href="http://127.0.0.1:8000/core/#Std.Time.Span.t">Core.Std.Time.Span.t</a> -&gt; 'h) -&gt;
 last_cycle_num_jobs:('h -&gt;
-                     ([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a>, int)
-                     <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a> -&gt; int -&gt; 'i) -&gt;
+                     ([&lt; `Read | `Set_and_create ], <a href="http://127.0.0.1:8000/async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a>, int)
+                     <a href="http://127.0.0.1:8000/fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; <a href="http://127.0.0.1:8000/async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a> -&gt; int -&gt; 'i) -&gt;
 events:('i -&gt;
-        ([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a>, <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_scheduler.Job.t" class="ocaml_internal">Job.t</a> <a href="http://frenetic-lang.github.io/api//core/#Std.Timing_wheel.t">Core.Std.Timing_wheel.t</a>)
-        <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt;
-        <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a> -&gt; <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_scheduler.Job.t" class="ocaml_internal">Job.t</a> <a href="http://frenetic-lang.github.io/api//core/#Std.Timing_wheel.t">Core.Std.Timing_wheel.t</a> -&gt; 'j) -&gt;
+        ([&lt; `Read | `Set_and_create ], <a href="http://127.0.0.1:8000/async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a>, <a href="http://127.0.0.1:8000/async_kernel/#Raw_scheduler.Job.t" class="ocaml_internal">Job.t</a> <a href="http://127.0.0.1:8000/core/#Std.Timing_wheel.t">Core.Std.Timing_wheel.t</a>)
+        <a href="http://127.0.0.1:8000/fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt;
+        <a href="http://127.0.0.1:8000/async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a> -&gt; <a href="http://127.0.0.1:8000/async_kernel/#Raw_scheduler.Job.t" class="ocaml_internal">Job.t</a> <a href="http://127.0.0.1:8000/core/#Std.Timing_wheel.t">Core.Std.Timing_wheel.t</a> -&gt; 'j) -&gt;
 external_actions:('j -&gt;
-                  ([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a>,
-                   (unit -&gt; unit) <a href="http://frenetic-lang.github.io/api//core/#Std.Thread_safe_queue.t">Core.Std.Thread_safe_queue.t</a>
-                   <a href="http://frenetic-lang.github.io/api//core/#Std.sexp_opaque">Core.Std.sexp_opaque</a>)
-                  <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt;
-                  <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a> -&gt;
-                  (unit -&gt; unit) <a href="http://frenetic-lang.github.io/api//core/#Std.Thread_safe_queue.t">Core.Std.Thread_safe_queue.t</a>
-                  <a href="http://frenetic-lang.github.io/api//core/#Std.sexp_opaque">Core.Std.sexp_opaque</a> -&gt; 'k) -&gt;
+                  ([&lt; `Read | `Set_and_create ], <a href="http://127.0.0.1:8000/async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a>,
+                   (unit -&gt; unit) <a href="http://127.0.0.1:8000/core/#Std.Thread_safe_queue.t">Core.Std.Thread_safe_queue.t</a>
+                   <a href="http://127.0.0.1:8000/core/#Std.sexp_opaque">Core.Std.sexp_opaque</a>)
+                  <a href="http://127.0.0.1:8000/fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt;
+                  <a href="http://127.0.0.1:8000/async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a> -&gt;
+                  (unit -&gt; unit) <a href="http://127.0.0.1:8000/core/#Std.Thread_safe_queue.t">Core.Std.Thread_safe_queue.t</a>
+                  <a href="http://127.0.0.1:8000/core/#Std.sexp_opaque">Core.Std.sexp_opaque</a> -&gt; 'k) -&gt;
 thread_safe_external_action_hook:('k -&gt;
-                                  ([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a>,
+                                  ([&lt; `Read | `Set_and_create ], <a href="http://127.0.0.1:8000/async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a>,
                                    unit -&gt; unit)
-                                  <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt;
-                                  <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a> -&gt; (unit -&gt; unit) -&gt; 'l) -&gt;
+                                  <a href="http://127.0.0.1:8000/fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt;
+                                  <a href="http://127.0.0.1:8000/async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a> -&gt; (unit -&gt; unit) -&gt; 'l) -&gt;
 check_invariants:('l -&gt;
-                  ([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a>, bool)
-                  <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a> -&gt; bool -&gt; 'm) -&gt;
+                  ([&lt; `Read | `Set_and_create ], <a href="http://127.0.0.1:8000/async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a>, bool)
+                  <a href="http://127.0.0.1:8000/fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; <a href="http://127.0.0.1:8000/async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a> -&gt; bool -&gt; 'm) -&gt;
 max_num_jobs_per_priority_per_cycle:('m -&gt;
-                                     ([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a>,
-                                      <a href="http://frenetic-lang.github.io/api//async_kernel/#Import.Max_num_jobs_per_priority_per_cycle.t">Import.Max_num_jobs_per_priority_per_cycle.t</a>)
-                                     <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt;
-                                     <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a> -&gt;
-                                     <a href="http://frenetic-lang.github.io/api//async_kernel/#Import.Max_num_jobs_per_priority_per_cycle.t">Import.Max_num_jobs_per_priority_per_cycle.t</a> -&gt;
+                                     ([&lt; `Read | `Set_and_create ], <a href="http://127.0.0.1:8000/async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a>,
+                                      <a href="http://127.0.0.1:8000/async_kernel/#Import.Max_num_jobs_per_priority_per_cycle.t">Import.Max_num_jobs_per_priority_per_cycle.t</a>)
+                                     <a href="http://127.0.0.1:8000/fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt;
+                                     <a href="http://127.0.0.1:8000/async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a> -&gt;
+                                     <a href="http://127.0.0.1:8000/async_kernel/#Import.Max_num_jobs_per_priority_per_cycle.t">Import.Max_num_jobs_per_priority_per_cycle.t</a> -&gt;
                                      'n) -&gt;
 record_backtraces:('n -&gt;
-                   ([&lt; `Read | `Set_and_create ], <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a>, bool)
-                   <a href="http://frenetic-lang.github.io/api//fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a> -&gt; bool -&gt; 'o) -&gt;
+                   ([&lt; `Read | `Set_and_create ], <a href="http://127.0.0.1:8000/async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a>, bool)
+                   <a href="http://127.0.0.1:8000/fieldslib/#Field.t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; <a href="http://127.0.0.1:8000/async_kernel/#Raw_scheduler.T.t" class="ocaml_internal">t</a> -&gt; bool -&gt; 'o) -&gt;
 'o</code></pre>
 </div></div></div></div></div></div>
-<div class="ocaml_include" path="http://frenetic-lang.github.io/api//async_kernel/#Raw_scheduler.T" items="[&quot;Fields&quot;]" types="[&quot;t&quot;]"><pre class="ocaml_include_handle"><span class="keyword">include</span> <code class="type"><code class="code"><a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_scheduler.T" class="ocaml_internal">T</a></code></code></pre><div class="ocaml_summary"/></div>
-<pre class="odoccode"><span class="VALinvariant"><span class="keyword">val</span> invariant</span> : <code class="type"><a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_scheduler.t" class="ocaml_internal">t</a> -&gt; unit</code></pre>
-<pre class="odoccode"><span class="VALcreate"><span class="keyword">val</span> create</span> : <code class="type">unit -&gt; <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_scheduler.t" class="ocaml_internal">t</a></code></pre>
-<pre class="odoccode"><span class="VALis_dead"><span class="keyword">val</span> is_dead</span> : <code class="type"><a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_scheduler.t" class="ocaml_internal">t</a> -&gt; bool</code></pre>
-<pre class="odoccode"><span class="VALset_check_access"><span class="keyword">val</span> set_check_access</span> : <code class="type"><a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_scheduler.t" class="ocaml_internal">t</a> -&gt; (unit -&gt; unit) option -&gt; unit</code></pre>
-<pre class="odoccode"><span class="VALt_ref"><span class="keyword">val</span> t_ref</span> : <code class="type"><a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_scheduler.t" class="ocaml_internal">t</a> ref</code></pre>
-<pre class="odoccode"><span class="VALcheck_access"><span class="keyword">val</span> check_access</span> : <code class="type"><a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_scheduler.t" class="ocaml_internal">t</a> -&gt; unit</code></pre>
-<pre class="odoccode"><span class="VALt"><span class="keyword">val</span> t</span> : <code class="type">unit -&gt; <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_scheduler.t" class="ocaml_internal">t</a></code></pre>
-<pre class="odoccode"><span class="VALcurrent_execution_context"><span class="keyword">val</span> current_execution_context</span> : <code class="type"><a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_scheduler.t" class="ocaml_internal">t</a> -&gt; <a href="http://frenetic-lang.github.io/api//async_kernel/#Execution_context.t">Execution_context.t</a></code></pre>
-<pre class="odoccode"><span class="VALset_execution_context"><span class="keyword">val</span> set_execution_context</span> : <code class="type"><a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_scheduler.t" class="ocaml_internal">t</a> -&gt; <a href="http://frenetic-lang.github.io/api//async_kernel/#Execution_context.t">Execution_context.t</a> -&gt; unit</code></pre>
-<pre class="odoccode"><span class="VALwith_execution_context"><span class="keyword">val</span> with_execution_context</span> : <code class="type"><a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_scheduler.t" class="ocaml_internal">t</a> -&gt; <a href="http://frenetic-lang.github.io/api//async_kernel/#Execution_context.t">Execution_context.t</a> -&gt; f:(unit -&gt; 'a) -&gt; 'a</code></pre>
-<pre class="odoccode"><span class="VALcreate_job"><span class="keyword">val</span> create_job</span> : <code class="type"><a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_scheduler.t" class="ocaml_internal">t</a> -&gt; <a href="http://frenetic-lang.github.io/api//async_kernel/#Execution_context.t">Execution_context.t</a> -&gt; ('a -&gt; unit) -&gt; 'a -&gt; <a href="http://frenetic-lang.github.io/api//async_kernel/#Jobs.Job.t">Jobs.Job.t</a></code></pre>
-<pre class="odoccode"><span class="VALenqueue"><span class="keyword">val</span> enqueue</span> : <code class="type"><a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_scheduler.t" class="ocaml_internal">t</a> -&gt; <a href="http://frenetic-lang.github.io/api//async_kernel/#Execution_context.t">Execution_context.t</a> -&gt; ('a -&gt; unit) -&gt; 'a -&gt; unit</code></pre>
-<pre class="odoccode"><span class="VALenqueue_job"><span class="keyword">val</span> enqueue_job</span> : <code class="type"><a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_scheduler.t" class="ocaml_internal">t</a> -&gt; <a href="http://frenetic-lang.github.io/api//async_kernel/#Jobs.Job.t">Jobs.Job.t</a> -&gt; free_job:bool -&gt; unit</code></pre>
-<pre class="odoccode"><span class="VALglobal_kill_index"><span class="keyword">val</span> global_kill_index</span> : <code class="type"><a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_scheduler.t" class="ocaml_internal">t</a> -&gt; <a href="http://frenetic-lang.github.io/api//async_kernel/#Kill_index.t">Kill_index.t</a></code></pre>
-<pre class="odoccode"><span class="VALmonitor_is_alive"><span class="keyword">val</span> monitor_is_alive</span> : <code class="type"><a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_scheduler.t" class="ocaml_internal">t</a> -&gt; <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_monitor.t">Raw_monitor.t</a> -&gt; bool</code></pre>
-<pre class="odoccode"><span class="VALkill_monitor"><span class="keyword">val</span> kill_monitor</span> : <code class="type"><a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_scheduler.t" class="ocaml_internal">t</a> -&gt; <a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_scheduler.Monitor.t" class="ocaml_internal">Monitor.t</a> -&gt; unit</code></pre>
-<pre class="odoccode"><span class="VALgot_uncaught_exn"><span class="keyword">val</span> got_uncaught_exn</span> : <code class="type"><a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_scheduler.t" class="ocaml_internal">t</a> -&gt; <a href="http://frenetic-lang.github.io/api//core/#Std.Error.t">Core.Std.Error.t</a> -&gt; unit</code></pre>
-<pre class="odoccode"><span class="VALnum_jobs_run"><span class="keyword">val</span> num_jobs_run</span> : <code class="type"><a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_scheduler.t" class="ocaml_internal">t</a> -&gt; int</code></pre>
-<pre class="odoccode"><span class="VALstabilize"><span class="keyword">val</span> stabilize</span> : <code class="type"><a href="http://frenetic-lang.github.io/api//async_kernel/#Raw_scheduler.t" class="ocaml_internal">t</a> -&gt; (unit, exn) <a href="http://frenetic-lang.github.io/api//core/#Std.Result.t">Core.Std.Result.t</a></code></pre>
+<div class="ocaml_include" path="http://127.0.0.1:8000/async_kernel/#Raw_scheduler.T" items="[&quot;Fields&quot;]" types="[&quot;t&quot;]"><pre class="ocaml_include_handle"><span class="keyword">include</span> <code class="type"><code class="code"><a href="http://127.0.0.1:8000/async_kernel/#Raw_scheduler.T" class="ocaml_internal">T</a></code></code></pre><div class="ocaml_summary"/></div>
+<pre class="odoccode"><span class="VALinvariant"><span class="keyword">val</span> invariant</span> : <code class="type"><a href="http://127.0.0.1:8000/async_kernel/#Raw_scheduler.t" class="ocaml_internal">t</a> -&gt; unit</code></pre>
+<pre class="odoccode"><span class="VALcreate"><span class="keyword">val</span> create</span> : <code class="type">unit -&gt; <a href="http://127.0.0.1:8000/async_kernel/#Raw_scheduler.t" class="ocaml_internal">t</a></code></pre>
+<pre class="odoccode"><span class="VALis_dead"><span class="keyword">val</span> is_dead</span> : <code class="type"><a href="http://127.0.0.1:8000/async_kernel/#Raw_scheduler.t" class="ocaml_internal">t</a> -&gt; bool</code></pre>
+<pre class="odoccode"><span class="VALset_check_access"><span class="keyword">val</span> set_check_access</span> : <code class="type"><a href="http://127.0.0.1:8000/async_kernel/#Raw_scheduler.t" class="ocaml_internal">t</a> -&gt; (unit -&gt; unit) option -&gt; unit</code></pre>
+<pre class="odoccode"><span class="VALt_ref"><span class="keyword">val</span> t_ref</span> : <code class="type"><a href="http://127.0.0.1:8000/async_kernel/#Raw_scheduler.t" class="ocaml_internal">t</a> ref</code></pre>
+<pre class="odoccode"><span class="VALcheck_access"><span class="keyword">val</span> check_access</span> : <code class="type"><a href="http://127.0.0.1:8000/async_kernel/#Raw_scheduler.t" class="ocaml_internal">t</a> -&gt; unit</code></pre>
+<pre class="odoccode"><span class="VALt"><span class="keyword">val</span> t</span> : <code class="type">unit -&gt; <a href="http://127.0.0.1:8000/async_kernel/#Raw_scheduler.t" class="ocaml_internal">t</a></code></pre>
+<pre class="odoccode"><span class="VALcurrent_execution_context"><span class="keyword">val</span> current_execution_context</span> : <code class="type"><a href="http://127.0.0.1:8000/async_kernel/#Raw_scheduler.t" class="ocaml_internal">t</a> -&gt; <a href="http://127.0.0.1:8000/async_kernel/#Execution_context.t">Execution_context.t</a></code></pre>
+<pre class="odoccode"><span class="VALset_execution_context"><span class="keyword">val</span> set_execution_context</span> : <code class="type"><a href="http://127.0.0.1:8000/async_kernel/#Raw_scheduler.t" class="ocaml_internal">t</a> -&gt; <a href="http://127.0.0.1:8000/async_kernel/#Execution_context.t">Execution_context.t</a> -&gt; unit</code></pre>
+<pre class="odoccode"><span class="VALwith_execution_context"><span class="keyword">val</span> with_execution_context</span> : <code class="type"><a href="http://127.0.0.1:8000/async_kernel/#Raw_scheduler.t" class="ocaml_internal">t</a> -&gt; <a href="http://127.0.0.1:8000/async_kernel/#Execution_context.t">Execution_context.t</a> -&gt; f:(unit -&gt; 'a) -&gt; 'a</code></pre>
+<pre class="odoccode"><span class="VALcreate_job"><span class="keyword">val</span> create_job</span> : <code class="type"><a href="http://127.0.0.1:8000/async_kernel/#Raw_scheduler.t" class="ocaml_internal">t</a> -&gt; <a href="http://127.0.0.1:8000/async_kernel/#Execution_context.t">Execution_context.t</a> -&gt; ('a -&gt; unit) -&gt; 'a -&gt; <a href="http://127.0.0.1:8000/async_kernel/#Jobs.Job.t">Jobs.Job.t</a></code></pre>
+<pre class="odoccode"><span class="VALenqueue"><span class="keyword">val</span> enqueue</span> : <code class="type"><a href="http://127.0.0.1:8000/async_kernel/#Raw_scheduler.t" class="ocaml_internal">t</a> -&gt; <a href="http://127.0.0.1:8000/async_kernel/#Execution_context.t">Execution_context.t</a> -&gt; ('a -&gt; unit) -&gt; 'a -&gt; unit</code></pre>
+<pre class="odoccode"><span class="VALenqueue_job"><span class="keyword">val</span> enqueue_job</span> : <code class="type"><a href="http://127.0.0.1:8000/async_kernel/#Raw_scheduler.t" class="ocaml_internal">t</a> -&gt; <a href="http://127.0.0.1:8000/async_kernel/#Jobs.Job.t">Jobs.Job.t</a> -&gt; free_job:bool -&gt; unit</code></pre>
+<pre class="odoccode"><span class="VALglobal_kill_index"><span class="keyword">val</span> global_kill_index</span> : <code class="type"><a href="http://127.0.0.1:8000/async_kernel/#Raw_scheduler.t" class="ocaml_internal">t</a> -&gt; <a href="http://127.0.0.1:8000/async_kernel/#Kill_index.t">Kill_index.t</a></code></pre>
+<pre class="odoccode"><span class="VALmonitor_is_alive"><span class="keyword">val</span> monitor_is_alive</span> : <code class="type"><a href="http://127.0.0.1:8000/async_kernel/#Raw_scheduler.t" class="ocaml_internal">t</a> -&gt; <a href="http://127.0.0.1:8000/async_kernel/#Raw_monitor.t">Raw_monitor.t</a> -&gt; bool</code></pre>
+<pre class="odoccode"><span class="VALkill_monitor"><span class="keyword">val</span> kill_monitor</span> : <code class="type"><a href="http://127.0.0.1:8000/async_kernel/#Raw_scheduler.t" class="ocaml_internal">t</a> -&gt; <a href="http://127.0.0.1:8000/async_kernel/#Raw_scheduler.Monitor.t" class="ocaml_internal">Monitor.t</a> -&gt; unit</code></pre>
+<pre class="odoccode"><span class="VALgot_uncaught_exn"><span class="keyword">val</span> got_uncaught_exn</span> : <code class="type"><a href="http://127.0.0.1:8000/async_kernel/#Raw_scheduler.t" class="ocaml_internal">t</a> -&gt; <a href="http://127.0.0.1:8000/core/#Std.Error.t">Core.Std.Error.t</a> -&gt; unit</code></pre>
+<pre class="odoccode"><span class="VALnum_jobs_run"><span class="keyword">val</span> num_jobs_run</span> : <code class="type"><a href="http://127.0.0.1:8000/async_kernel/#Raw_scheduler.t" class="ocaml_internal">t</a> -&gt; int</code></pre>
+<pre class="odoccode"><span class="VALstabilize"><span class="keyword">val</span> stabilize</span> : <code class="type"><a href="http://127.0.0.1:8000/async_kernel/#Raw_scheduler.t" class="ocaml_internal">t</a> -&gt; (unit, exn) <a href="http://127.0.0.1:8000/core/#Std.Result.t">Core.Std.Result.t</a></code></pre>
 
 </div></div>

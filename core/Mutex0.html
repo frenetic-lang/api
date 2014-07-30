@@ -9,12 +9,12 @@ exception.</div>
 <pre class="odoccode"><span class="VALcreate"><span class="keyword">val</span> create</span> : <code class="type">unit -&gt; Mutex.t</code></pre>
 <pre class="odoccode"><span class="VALcreate"><span class="keyword">val</span> create</span> : <code class="type">unit -&gt; Mutex.t</code></pre>
 <pre class="odoccode"><span class="VALphys_equal"><span class="keyword">val</span> phys_equal</span> : <code class="type">'a -&gt; 'a -&gt; bool</code></pre>
-<pre class="odoccode"><span class="VALequal"><span class="keyword">val</span> equal</span> : <code class="type"><a href="http://frenetic-lang.github.io/api//core/#Mutex0.t" class="ocaml_internal">t</a> -&gt; <a href="http://frenetic-lang.github.io/api//core/#Mutex0.t" class="ocaml_internal">t</a> -&gt; bool</code></pre>
-<pre class="odoccode"><span class="VALcritical_section"><span class="keyword">val</span> critical_section</span> : <code class="type"><a href="http://frenetic-lang.github.io/api//core/#Mutex0.t" class="ocaml_internal">t</a> -&gt; f:(unit -&gt; 'a) -&gt; 'a</code></pre>
+<pre class="odoccode"><span class="VALequal"><span class="keyword">val</span> equal</span> : <code class="type"><a href="http://127.0.0.1:8000/core/#Mutex0.t" class="ocaml_internal">t</a> -&gt; <a href="http://127.0.0.1:8000/core/#Mutex0.t" class="ocaml_internal">t</a> -&gt; bool</code></pre>
+<pre class="odoccode"><span class="VALcritical_section"><span class="keyword">val</span> critical_section</span> : <code class="type"><a href="http://127.0.0.1:8000/core/#Mutex0.t" class="ocaml_internal">t</a> -&gt; f:(unit -&gt; 'a) -&gt; 'a</code></pre>
 <pre class="odoccode"><span class="VALsynchronize"><span class="keyword">val</span> synchronize</span> : <code class="type">('a -&gt; 'b) -&gt; 'a -&gt; 'b</code></pre>
-<pre class="odoccode"><span class="VALupdate_signal"><span class="keyword">val</span> update_signal</span> : <code class="type"><a href="http://frenetic-lang.github.io/api//core/#Mutex0.t" class="ocaml_internal">t</a> -&gt; Condition.t -&gt; f:(unit -&gt; 'a) -&gt; 'a</code></pre>
-<pre class="odoccode"><span class="VALupdate_broadcast"><span class="keyword">val</span> update_broadcast</span> : <code class="type"><a href="http://frenetic-lang.github.io/api//core/#Mutex0.t" class="ocaml_internal">t</a> -&gt; Condition.t -&gt; f:(unit -&gt; 'a) -&gt; 'a</code></pre>
-<pre class="odoccode"><span class="VALtry_lock"><span class="keyword">val</span> try_lock</span> : <code class="type"><a href="http://frenetic-lang.github.io/api//core/#Mutex0.t" class="ocaml_internal">t</a> -&gt; [&gt; `Acquired | `Already_held_by_me_or_other ]</code></pre>
+<pre class="odoccode"><span class="VALupdate_signal"><span class="keyword">val</span> update_signal</span> : <code class="type"><a href="http://127.0.0.1:8000/core/#Mutex0.t" class="ocaml_internal">t</a> -&gt; Condition.t -&gt; f:(unit -&gt; 'a) -&gt; 'a</code></pre>
+<pre class="odoccode"><span class="VALupdate_broadcast"><span class="keyword">val</span> update_broadcast</span> : <code class="type"><a href="http://127.0.0.1:8000/core/#Mutex0.t" class="ocaml_internal">t</a> -&gt; Condition.t -&gt; f:(unit -&gt; 'a) -&gt; 'a</code></pre>
+<pre class="odoccode"><span class="VALtry_lock"><span class="keyword">val</span> try_lock</span> : <code class="type"><a href="http://127.0.0.1:8000/core/#Mutex0.t" class="ocaml_internal">t</a> -&gt; [&gt; `Acquired | `Already_held_by_me_or_other ]</code></pre>
 
 
 </div></div>

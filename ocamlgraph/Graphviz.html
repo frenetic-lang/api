@@ -12,19 +12,19 @@ define attributes specific to dot and neato respectively.</div>
 <pre class="odoccode"><span class="TYPEcolor"><span class="keyword">type</span> color</span> = <code class="type">int</code></pre>
 <pre class="odoccode"><span class="TYPEcolor_with_transparency"><span class="keyword">type</span> color_with_transparency</span> = <code class="type">int32</code></pre><div class="info">The two least significant bytes encode the transparency information;
 the six most signification are the standard RGB color</div>
-<pre class="odoccode"><span class="VALcolor_to_color_with_transparency"><span class="keyword">val</span> color_to_color_with_transparency</span> : <code class="type"><a href="http://frenetic-lang.github.io/api//ocamlgraph/#Graphviz.color" class="ocaml_internal">color</a> -&gt; <a href="http://frenetic-lang.github.io/api//ocamlgraph/#Graphviz.color_with_transparency" class="ocaml_internal">color_with_transparency</a></code></pre>
+<pre class="odoccode"><span class="VALcolor_to_color_with_transparency"><span class="keyword">val</span> color_to_color_with_transparency</span> : <code class="type"><a href="http://127.0.0.1:8000/ocamlgraph/#Graphviz.color" class="ocaml_internal">color</a> -&gt; <a href="http://127.0.0.1:8000/ocamlgraph/#Graphviz.color_with_transparency" class="ocaml_internal">color_with_transparency</a></code></pre>
 <pre class="odoccode"><span class="TYPEarrow_style"><span class="keyword">type</span> arrow_style</span> = <code class="type">[ `Dot | `Inv | `Invdot | `Invodot | `None | `Normal | `Odot ]</code></pre>
-<div class="ocaml_modtype" name="ATTRIBUTES"><pre class="odoccode"><span class="keyword">module type</span> <a href="http://frenetic-lang.github.io/api//ocamlgraph/#Graphviz:ATTRIBUTES" class="ocaml_internal">ATTRIBUTES</a> = <code class="type"><code class="code">sig</code> .. <code class="code">end</code></code></pre><div class="ocaml_summary"><div class="info">The <code class="code">ATTRIBUTES</code> module type defines the interface for the engines.</div></div><div class="ocaml_content">
+<div class="ocaml_modtype" name="ATTRIBUTES"><pre class="odoccode"><span class="keyword">module type</span> <a href="http://127.0.0.1:8000/ocamlgraph/#Graphviz:ATTRIBUTES" class="ocaml_internal">ATTRIBUTES</a> = <code class="type"><code class="code">sig</code> .. <code class="code">end</code></code></pre><div class="ocaml_summary"><div class="info">The <code class="code">ATTRIBUTES</code> module type defines the interface for the engines.</div></div><div class="ocaml_content">
 <pre class="odoccode"><span class="TYPEgraph"><span class="keyword">type</span> graph</span></pre><div class="info">Attributes of graphs.</div>
 <pre class="odoccode"><span class="TYPEvertex"><span class="keyword">type</span> vertex</span></pre><div class="info">Attributes of vertices.</div>
 <pre class="odoccode"><span class="TYPEedge"><span class="keyword">type</span> edge</span></pre><div class="info">Attributes of edges.</div>
 <pre class="odoccode"><code><span class="TYPEsubgraph"><span class="keyword">type</span> subgraph</span> = {</code></pre><table class="typetable">
-		    <tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="TYPEELTsubgraph.sg_name">sg_name</span> : <code class="type">string</code>;</code></td><td class="typefieldcomment" align="left"><div class="info">Box name.</div></td></tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="TYPEELTsubgraph.sg_attributes">sg_attributes</span> : <code class="type"><a href="http://frenetic-lang.github.io/api//ocamlgraph/#Graphviz:ATTRIBUTES.vertex" class="ocaml_internal">vertex</a> list</code>;</code></td><td class="typefieldcomment" align="left"><div class="info">Box attributes.</div></td></tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="TYPEELTsubgraph.sg_parent">sg_parent</span> : <code class="type">string option</code>;</code></td><td class="typefieldcomment" align="left"><div class="info">Nested subgraphs.</div></td></tr><tr><td>}</td></tr></table><div class="info">Attributes of (optional) boxes around vertices.</div></div></div>
+		    <tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="TYPEELTsubgraph.sg_name">sg_name</span> : <code class="type">string</code>;</code></td><td class="typefieldcomment" align="left"><div class="info">Box name.</div></td></tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="TYPEELTsubgraph.sg_attributes">sg_attributes</span> : <code class="type"><a href="http://127.0.0.1:8000/ocamlgraph/#Graphviz:ATTRIBUTES.vertex" class="ocaml_internal">vertex</a> list</code>;</code></td><td class="typefieldcomment" align="left"><div class="info">Box attributes.</div></td></tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="TYPEELTsubgraph.sg_parent">sg_parent</span> : <code class="type">string option</code>;</code></td><td class="typefieldcomment" align="left"><div class="info">Nested subgraphs.</div></td></tr><tr><td>}</td></tr></table><div class="info">Attributes of (optional) boxes around vertices.</div></div></div>
 <div class="info"><h3 id="3_TITLE">Common attributes</h3></div>
-<div class="ocaml_module" name="CommonAttributes"><pre class="odoccode"><span class="keyword">module</span> <a href="http://frenetic-lang.github.io/api//ocamlgraph/#Graphviz.CommonAttributes" class="ocaml_internal">CommonAttributes</a> : <code class="type"><code class="code">sig</code> .. <code class="code">end</code></code></pre><div class="ocaml_summary"><div class="info">The <code class="code">CommonAttributes</code> module defines attributes for graphs, vertices and
+<div class="ocaml_module" name="CommonAttributes"><pre class="odoccode"><span class="keyword">module</span> <a href="http://127.0.0.1:8000/ocamlgraph/#Graphviz.CommonAttributes" class="ocaml_internal">CommonAttributes</a> : <code class="type"><code class="code">sig</code> .. <code class="code">end</code></code></pre><div class="ocaml_summary"><div class="info">The <code class="code">CommonAttributes</code> module defines attributes for graphs, vertices and
 edges that are available in the two engines, dot and neato.</div></div><div class="ocaml_content">
 <pre class="odoccode"><span class="TYPEgraph"><span class="keyword">type</span> graph</span> = <code class="type">[ `Center of bool
-| `Fontcolor of <a href="http://frenetic-lang.github.io/api//ocamlgraph/#Graphviz.color" class="ocaml_internal">color</a>
+| `Fontcolor of <a href="http://127.0.0.1:8000/ocamlgraph/#Graphviz.color" class="ocaml_internal">color</a>
 | `Fontname of string
 | `Fontsize of int
 | `Label of string
@@ -33,9 +33,9 @@ edges that are available in the two engines, dot and neato.</div></div><div clas
 | `Page of float * float
 | `Pagedir of [ `LeftToRight | `TopToBottom ]
 | `Size of float * float ]</code></pre><div class="info">Attributes of graphs.</div>
-<pre class="odoccode"><span class="TYPEvertex"><span class="keyword">type</span> vertex</span> = <code class="type">[ `Color of <a href="http://frenetic-lang.github.io/api//ocamlgraph/#Graphviz.color" class="ocaml_internal">color</a>
-| `ColorWithTransparency of <a href="http://frenetic-lang.github.io/api//ocamlgraph/#Graphviz.color_with_transparency" class="ocaml_internal">color_with_transparency</a>
-| `Fontcolor of <a href="http://frenetic-lang.github.io/api//ocamlgraph/#Graphviz.color" class="ocaml_internal">color</a>
+<pre class="odoccode"><span class="TYPEvertex"><span class="keyword">type</span> vertex</span> = <code class="type">[ `Color of <a href="http://127.0.0.1:8000/ocamlgraph/#Graphviz.color" class="ocaml_internal">color</a>
+| `ColorWithTransparency of <a href="http://127.0.0.1:8000/ocamlgraph/#Graphviz.color_with_transparency" class="ocaml_internal">color_with_transparency</a>
+| `Fontcolor of <a href="http://127.0.0.1:8000/ocamlgraph/#Graphviz.color" class="ocaml_internal">color</a>
 | `Fontname of string
 | `Fontsize of int
 | `Height of float
@@ -56,27 +56,27 @@ edges that are available in the two engines, dot and neato.</div></div><div clas
 | `Style of
     [ `Bold | `Dashed | `Dotted | `Filled | `Invis | `Rounded | `Solid ]
 | `Width of float ]</code></pre><div class="info">Attributes of vertices.</div>
-<pre class="odoccode"><span class="TYPEedge"><span class="keyword">type</span> edge</span> = <code class="type">[ `Color of <a href="http://frenetic-lang.github.io/api//ocamlgraph/#Graphviz.color" class="ocaml_internal">color</a>
-| `ColorWithTransparency of <a href="http://frenetic-lang.github.io/api//ocamlgraph/#Graphviz.color_with_transparency" class="ocaml_internal">color_with_transparency</a>
+<pre class="odoccode"><span class="TYPEedge"><span class="keyword">type</span> edge</span> = <code class="type">[ `Color of <a href="http://127.0.0.1:8000/ocamlgraph/#Graphviz.color" class="ocaml_internal">color</a>
+| `ColorWithTransparency of <a href="http://127.0.0.1:8000/ocamlgraph/#Graphviz.color_with_transparency" class="ocaml_internal">color_with_transparency</a>
 | `Decorate of bool
 | `Dir of [ `Back | `Both | `Forward | `None ]
-| `Fontcolor of <a href="http://frenetic-lang.github.io/api//ocamlgraph/#Graphviz.color" class="ocaml_internal">color</a>
+| `Fontcolor of <a href="http://127.0.0.1:8000/ocamlgraph/#Graphviz.color" class="ocaml_internal">color</a>
 | `Fontname of string
 | `Fontsize of int
 | `Label of string
-| `Labelfontcolor of <a href="http://frenetic-lang.github.io/api//ocamlgraph/#Graphviz.color" class="ocaml_internal">color</a>
+| `Labelfontcolor of <a href="http://127.0.0.1:8000/ocamlgraph/#Graphviz.color" class="ocaml_internal">color</a>
 | `Labelfontname of string
 | `Labelfontsize of int
 | `Penwidth of float
 | `Style of [ `Bold | `Dashed | `Dotted | `Invis | `Solid ] ]</code></pre><div class="info">Attributes of edges.</div></div></div>
 <div class="info"><h2 id="2_TITLE">Interface with the dot engine</h2></div>
-<div class="ocaml_module" name="DotAttributes"><pre class="odoccode"><span class="keyword">module</span> <a href="http://frenetic-lang.github.io/api//ocamlgraph/#Graphviz.DotAttributes" class="ocaml_internal">DotAttributes</a> : <code class="type"><code class="code">sig</code> .. <code class="code">end</code></code></pre><div class="ocaml_summary"><div class="info"><code class="code">DotAttributes</code> extends <code class="code">CommonAttributes</code> and implements <code class="code">ATTRIBUTES</code>.</div></div><div class="ocaml_content">
-<pre class="odoccode"><span class="TYPEgraph"><span class="keyword">type</span> graph</span> = <code class="type">[ `Bgcolor of <a href="http://frenetic-lang.github.io/api//ocamlgraph/#Graphviz.color" class="ocaml_internal">color</a>
-| `BgcolorWithTransparency of <a href="http://frenetic-lang.github.io/api//ocamlgraph/#Graphviz.color_with_transparency" class="ocaml_internal">color_with_transparency</a>
+<div class="ocaml_module" name="DotAttributes"><pre class="odoccode"><span class="keyword">module</span> <a href="http://127.0.0.1:8000/ocamlgraph/#Graphviz.DotAttributes" class="ocaml_internal">DotAttributes</a> : <code class="type"><code class="code">sig</code> .. <code class="code">end</code></code></pre><div class="ocaml_summary"><div class="info"><code class="code">DotAttributes</code> extends <code class="code">CommonAttributes</code> and implements <code class="code">ATTRIBUTES</code>.</div></div><div class="ocaml_content">
+<pre class="odoccode"><span class="TYPEgraph"><span class="keyword">type</span> graph</span> = <code class="type">[ `Bgcolor of <a href="http://127.0.0.1:8000/ocamlgraph/#Graphviz.color" class="ocaml_internal">color</a>
+| `BgcolorWithTransparency of <a href="http://127.0.0.1:8000/ocamlgraph/#Graphviz.color_with_transparency" class="ocaml_internal">color_with_transparency</a>
 | `Center of bool
 | `Comment of string
 | `Concentrate of bool
-| `Fontcolor of <a href="http://frenetic-lang.github.io/api//ocamlgraph/#Graphviz.color" class="ocaml_internal">color</a>
+| `Fontcolor of <a href="http://127.0.0.1:8000/ocamlgraph/#Graphviz.color" class="ocaml_internal">color</a>
 | `Fontname of string
 | `Fontpath of string
 | `Fontsize of int
@@ -102,14 +102,14 @@ several specific ones. All attributes described in the &quot;dot User's
 Manual, February 4, 2002&quot; are handled, excepted: clusterank, color,
 compound, labeljust, labelloc, ordering, rank, remincross, rotate,
 searchsize and style.</div>
-<pre class="odoccode"><span class="TYPEvertex"><span class="keyword">type</span> vertex</span> = <code class="type">[ `Color of <a href="http://frenetic-lang.github.io/api//ocamlgraph/#Graphviz.color" class="ocaml_internal">color</a>
-| `ColorWithTransparency of <a href="http://frenetic-lang.github.io/api//ocamlgraph/#Graphviz.color_with_transparency" class="ocaml_internal">color_with_transparency</a>
+<pre class="odoccode"><span class="TYPEvertex"><span class="keyword">type</span> vertex</span> = <code class="type">[ `Color of <a href="http://127.0.0.1:8000/ocamlgraph/#Graphviz.color" class="ocaml_internal">color</a>
+| `ColorWithTransparency of <a href="http://127.0.0.1:8000/ocamlgraph/#Graphviz.color_with_transparency" class="ocaml_internal">color_with_transparency</a>
 | `Comment of string
 | `Distortion of float
-| `Fillcolor of <a href="http://frenetic-lang.github.io/api//ocamlgraph/#Graphviz.color" class="ocaml_internal">color</a>
-| `FillcolorWithTransparency of <a href="http://frenetic-lang.github.io/api//ocamlgraph/#Graphviz.color_with_transparency" class="ocaml_internal">color_with_transparency</a>
+| `Fillcolor of <a href="http://127.0.0.1:8000/ocamlgraph/#Graphviz.color" class="ocaml_internal">color</a>
+| `FillcolorWithTransparency of <a href="http://127.0.0.1:8000/ocamlgraph/#Graphviz.color_with_transparency" class="ocaml_internal">color_with_transparency</a>
 | `Fixedsize of bool
-| `Fontcolor of <a href="http://frenetic-lang.github.io/api//ocamlgraph/#Graphviz.color" class="ocaml_internal">color</a>
+| `Fontcolor of <a href="http://127.0.0.1:8000/ocamlgraph/#Graphviz.color" class="ocaml_internal">color</a>
 | `Fontname of string
 | `Fontsize of int
 | `Height of float
@@ -136,16 +136,16 @@ searchsize and style.</div>
 several specific ones. All attributes described in the &quot;dot User's
 Manual, February 4, 2002&quot; are handled, excepted: bottomlabel, group,
 shapefile and toplabel.</div>
-<pre class="odoccode"><span class="TYPEedge"><span class="keyword">type</span> edge</span> = <code class="type">[ `Arrowhead of <a href="http://frenetic-lang.github.io/api//ocamlgraph/#Graphviz.arrow_style" class="ocaml_internal">arrow_style</a>
+<pre class="odoccode"><span class="TYPEedge"><span class="keyword">type</span> edge</span> = <code class="type">[ `Arrowhead of <a href="http://127.0.0.1:8000/ocamlgraph/#Graphviz.arrow_style" class="ocaml_internal">arrow_style</a>
 | `Arrowsize of float
-| `Arrowtail of <a href="http://frenetic-lang.github.io/api//ocamlgraph/#Graphviz.arrow_style" class="ocaml_internal">arrow_style</a>
-| `Color of <a href="http://frenetic-lang.github.io/api//ocamlgraph/#Graphviz.color" class="ocaml_internal">color</a>
-| `ColorWithTransparency of <a href="http://frenetic-lang.github.io/api//ocamlgraph/#Graphviz.color_with_transparency" class="ocaml_internal">color_with_transparency</a>
+| `Arrowtail of <a href="http://127.0.0.1:8000/ocamlgraph/#Graphviz.arrow_style" class="ocaml_internal">arrow_style</a>
+| `Color of <a href="http://127.0.0.1:8000/ocamlgraph/#Graphviz.color" class="ocaml_internal">color</a>
+| `ColorWithTransparency of <a href="http://127.0.0.1:8000/ocamlgraph/#Graphviz.color_with_transparency" class="ocaml_internal">color_with_transparency</a>
 | `Comment of string
 | `Constraint of bool
 | `Decorate of bool
 | `Dir of [ `Back | `Both | `Forward | `None ]
-| `Fontcolor of <a href="http://frenetic-lang.github.io/api//ocamlgraph/#Graphviz.color" class="ocaml_internal">color</a>
+| `Fontcolor of <a href="http://127.0.0.1:8000/ocamlgraph/#Graphviz.color" class="ocaml_internal">color</a>
 | `Fontname of string
 | `Fontsize of int
 | `Headlabel of string
@@ -155,7 +155,7 @@ shapefile and toplabel.</div>
 | `Labelangle of float
 | `Labeldistance of float
 | `Labelfloat of bool
-| `Labelfontcolor of <a href="http://frenetic-lang.github.io/api//ocamlgraph/#Graphviz.color" class="ocaml_internal">color</a>
+| `Labelfontcolor of <a href="http://127.0.0.1:8000/ocamlgraph/#Graphviz.color" class="ocaml_internal">color</a>
 | `Labelfontname of string
 | `Labelfontsize of int
 | `Layer of string
@@ -171,29 +171,29 @@ shapefile and toplabel.</div>
 several specific ones. All attributes described in the &quot;dot User's
 Manual, February 4, 2002&quot; are handled, excepted: lhead and ltail.</div>
 <pre class="odoccode"><code><span class="TYPEsubgraph"><span class="keyword">type</span> subgraph</span> = {</code></pre><table class="typetable">
-		    <tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="TYPEELTsubgraph.sg_name">sg_name</span> : <code class="type">string</code>;</code></td></tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="TYPEELTsubgraph.sg_attributes">sg_attributes</span> : <code class="type"><a href="http://frenetic-lang.github.io/api//ocamlgraph/#Graphviz.DotAttributes.vertex" class="ocaml_internal">vertex</a> list</code>;</code></td></tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="TYPEELTsubgraph.sg_parent">sg_parent</span> : <code class="type">string option</code>;</code></td></tr><tr><td>}</td></tr></table><div class="info">Subgraphs have a name and some vertices.</div></div></div>
-<div class="ocaml_modtype" name="GraphWithDotAttrs"><pre class="odoccode"><span class="keyword">module type</span> <a href="http://frenetic-lang.github.io/api//ocamlgraph/#Graphviz:GraphWithDotAttrs" class="ocaml_internal">GraphWithDotAttrs</a> = <code class="type"><code class="code">sig</code> .. <code class="code">end</code></code></pre><div class="ocaml_summary"><div class="info">Graph module with dot attributes</div></div><div class="ocaml_content">
-<div class="ocaml_include" path="http://frenetic-lang.github.io/api//ocamlgraph/#Sig:G" items="[&quot;E&quot;,&quot;V&quot;]" types="[&quot;edge&quot;,&quot;vertex&quot;,&quot;t&quot;]"><pre class="ocaml_include_handle"><span class="keyword">include</span> <code class="type"><code class="code"><a href="http://frenetic-lang.github.io/api//ocamlgraph/#Sig:G">Sig.G</a></code></code></pre><div class="ocaml_summary"/></div>
-<pre class="odoccode"><span class="VALgraph_attributes"><span class="keyword">val</span> graph_attributes</span> : <code class="type"><a href="http://frenetic-lang.github.io/api//ocamlgraph/#Graphviz:GraphWithDotAttrs.t" class="ocaml_internal">t</a> -&gt; <a href="http://frenetic-lang.github.io/api//ocamlgraph/#Graphviz.DotAttributes.graph" class="ocaml_internal">DotAttributes.graph</a> list</code></pre>
+		    <tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="TYPEELTsubgraph.sg_name">sg_name</span> : <code class="type">string</code>;</code></td></tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="TYPEELTsubgraph.sg_attributes">sg_attributes</span> : <code class="type"><a href="http://127.0.0.1:8000/ocamlgraph/#Graphviz.DotAttributes.vertex" class="ocaml_internal">vertex</a> list</code>;</code></td></tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="TYPEELTsubgraph.sg_parent">sg_parent</span> : <code class="type">string option</code>;</code></td></tr><tr><td>}</td></tr></table><div class="info">Subgraphs have a name and some vertices.</div></div></div>
+<div class="ocaml_modtype" name="GraphWithDotAttrs"><pre class="odoccode"><span class="keyword">module type</span> <a href="http://127.0.0.1:8000/ocamlgraph/#Graphviz:GraphWithDotAttrs" class="ocaml_internal">GraphWithDotAttrs</a> = <code class="type"><code class="code">sig</code> .. <code class="code">end</code></code></pre><div class="ocaml_summary"><div class="info">Graph module with dot attributes</div></div><div class="ocaml_content">
+<div class="ocaml_include" path="http://127.0.0.1:8000/ocamlgraph/#Sig:G" items="[&quot;E&quot;,&quot;V&quot;]" types="[&quot;edge&quot;,&quot;vertex&quot;,&quot;t&quot;]"><pre class="ocaml_include_handle"><span class="keyword">include</span> <code class="type"><code class="code"><a href="http://127.0.0.1:8000/ocamlgraph/#Sig:G">Sig.G</a></code></code></pre><div class="ocaml_summary"/></div>
+<pre class="odoccode"><span class="VALgraph_attributes"><span class="keyword">val</span> graph_attributes</span> : <code class="type"><a href="http://127.0.0.1:8000/ocamlgraph/#Graphviz:GraphWithDotAttrs.t" class="ocaml_internal">t</a> -&gt; <a href="http://127.0.0.1:8000/ocamlgraph/#Graphviz.DotAttributes.graph" class="ocaml_internal">DotAttributes.graph</a> list</code></pre>
 <div class="info">Vertex attributes</div>
-<pre class="odoccode"><span class="VALdefault_vertex_attributes"><span class="keyword">val</span> default_vertex_attributes</span> : <code class="type"><a href="http://frenetic-lang.github.io/api//ocamlgraph/#Graphviz:GraphWithDotAttrs.t" class="ocaml_internal">t</a> -&gt; <a href="http://frenetic-lang.github.io/api//ocamlgraph/#Graphviz.DotAttributes.vertex" class="ocaml_internal">DotAttributes.vertex</a> list</code></pre>
-<pre class="odoccode"><span class="VALvertex_name"><span class="keyword">val</span> vertex_name</span> : <code class="type"><a href="http://frenetic-lang.github.io/api//ocamlgraph/#Graphviz:GraphWithDotAttrs.V.t" class="ocaml_internal">V.t</a> -&gt; string</code></pre>
-<pre class="odoccode"><span class="VALvertex_attributes"><span class="keyword">val</span> vertex_attributes</span> : <code class="type"><a href="http://frenetic-lang.github.io/api//ocamlgraph/#Graphviz:GraphWithDotAttrs.V.t" class="ocaml_internal">V.t</a> -&gt; <a href="http://frenetic-lang.github.io/api//ocamlgraph/#Graphviz.DotAttributes.vertex" class="ocaml_internal">DotAttributes.vertex</a> list</code></pre>
+<pre class="odoccode"><span class="VALdefault_vertex_attributes"><span class="keyword">val</span> default_vertex_attributes</span> : <code class="type"><a href="http://127.0.0.1:8000/ocamlgraph/#Graphviz:GraphWithDotAttrs.t" class="ocaml_internal">t</a> -&gt; <a href="http://127.0.0.1:8000/ocamlgraph/#Graphviz.DotAttributes.vertex" class="ocaml_internal">DotAttributes.vertex</a> list</code></pre>
+<pre class="odoccode"><span class="VALvertex_name"><span class="keyword">val</span> vertex_name</span> : <code class="type"><a href="http://127.0.0.1:8000/ocamlgraph/#Graphviz:GraphWithDotAttrs.V.t" class="ocaml_internal">V.t</a> -&gt; string</code></pre>
+<pre class="odoccode"><span class="VALvertex_attributes"><span class="keyword">val</span> vertex_attributes</span> : <code class="type"><a href="http://127.0.0.1:8000/ocamlgraph/#Graphviz:GraphWithDotAttrs.V.t" class="ocaml_internal">V.t</a> -&gt; <a href="http://127.0.0.1:8000/ocamlgraph/#Graphviz.DotAttributes.vertex" class="ocaml_internal">DotAttributes.vertex</a> list</code></pre>
 <div class="info">Edge attributes</div>
-<pre class="odoccode"><span class="VALdefault_edge_attributes"><span class="keyword">val</span> default_edge_attributes</span> : <code class="type"><a href="http://frenetic-lang.github.io/api//ocamlgraph/#Graphviz:GraphWithDotAttrs.t" class="ocaml_internal">t</a> -&gt; <a href="http://frenetic-lang.github.io/api//ocamlgraph/#Graphviz.DotAttributes.edge" class="ocaml_internal">DotAttributes.edge</a> list</code></pre>
-<pre class="odoccode"><span class="VALedge_attributes"><span class="keyword">val</span> edge_attributes</span> : <code class="type"><a href="http://frenetic-lang.github.io/api//ocamlgraph/#Graphviz:GraphWithDotAttrs.E.t" class="ocaml_internal">E.t</a> -&gt; <a href="http://frenetic-lang.github.io/api//ocamlgraph/#Graphviz.DotAttributes.edge" class="ocaml_internal">DotAttributes.edge</a> list</code></pre>
-<pre class="odoccode"><span class="VALget_subgraph"><span class="keyword">val</span> get_subgraph</span> : <code class="type"><a href="http://frenetic-lang.github.io/api//ocamlgraph/#Graphviz:GraphWithDotAttrs.V.t" class="ocaml_internal">V.t</a> -&gt; <a href="http://frenetic-lang.github.io/api//ocamlgraph/#Graphviz.DotAttributes.subgraph" class="ocaml_internal">DotAttributes.subgraph</a> option</code></pre><div class="info">The box (if exists) which the vertex belongs to. Boxes with same
+<pre class="odoccode"><span class="VALdefault_edge_attributes"><span class="keyword">val</span> default_edge_attributes</span> : <code class="type"><a href="http://127.0.0.1:8000/ocamlgraph/#Graphviz:GraphWithDotAttrs.t" class="ocaml_internal">t</a> -&gt; <a href="http://127.0.0.1:8000/ocamlgraph/#Graphviz.DotAttributes.edge" class="ocaml_internal">DotAttributes.edge</a> list</code></pre>
+<pre class="odoccode"><span class="VALedge_attributes"><span class="keyword">val</span> edge_attributes</span> : <code class="type"><a href="http://127.0.0.1:8000/ocamlgraph/#Graphviz:GraphWithDotAttrs.E.t" class="ocaml_internal">E.t</a> -&gt; <a href="http://127.0.0.1:8000/ocamlgraph/#Graphviz.DotAttributes.edge" class="ocaml_internal">DotAttributes.edge</a> list</code></pre>
+<pre class="odoccode"><span class="VALget_subgraph"><span class="keyword">val</span> get_subgraph</span> : <code class="type"><a href="http://127.0.0.1:8000/ocamlgraph/#Graphviz:GraphWithDotAttrs.V.t" class="ocaml_internal">V.t</a> -&gt; <a href="http://127.0.0.1:8000/ocamlgraph/#Graphviz.DotAttributes.subgraph" class="ocaml_internal">DotAttributes.subgraph</a> option</code></pre><div class="info">The box (if exists) which the vertex belongs to. Boxes with same
 names are not distinguished and so they should have the same
 attributes.</div></div></div>
-<div class="ocaml_module" name="Dot"><pre class="odoccode"><span class="keyword">module</span> <a href="http://frenetic-lang.github.io/api//ocamlgraph/#Graphviz.Dot" class="ocaml_internal">Dot</a> : <code class="type"><div class="sig_block"><code class="code">functor (</code><code class="code">X</code><code class="code"> : </code><code class="code">sig</code> .. <code class="code">end</code><code class="code">) -&gt; </code><code class="code">sig</code> .. <code class="code">end</code></div></code></pre><div class="ocaml_summary"/><div class="ocaml_content">
+<div class="ocaml_module" name="Dot"><pre class="odoccode"><span class="keyword">module</span> <a href="http://127.0.0.1:8000/ocamlgraph/#Graphviz.Dot" class="ocaml_internal">Dot</a> : <code class="type"><div class="sig_block"><code class="code">functor (</code><code class="code">X</code><code class="code"> : </code><code class="code">sig</code> .. <code class="code">end</code><code class="code">) -&gt; </code><code class="code">sig</code> .. <code class="code">end</code></div></code></pre><div class="ocaml_summary"/><div class="ocaml_content">
 <pre class="odoccode"><span class="VALfprint_graph"><span class="keyword">val</span> fprint_graph</span> : <code class="type">Format.formatter -&gt; X.t -&gt; unit</code></pre><div class="info"><code class="code">fprint_graph ppf graph</code> pretty prints the graph <code class="code">graph</code> in
 the CGL language on the formatter <code class="code">ppf</code>.</div>
 <pre class="odoccode"><span class="VALoutput_graph"><span class="keyword">val</span> output_graph</span> : <code class="type">out_channel -&gt; X.t -&gt; unit</code></pre><div class="info"><code class="code">output_graph oc graph</code> pretty prints the graph <code class="code">graph</code> in the dot
 language on the channel <code class="code">oc</code>.</div></div></div>
 <div class="info"><h2 id="2_TITLE">The neato engine</h2></div>
-<div class="ocaml_module" name="NeatoAttributes"><pre class="odoccode"><span class="keyword">module</span> <a href="http://frenetic-lang.github.io/api//ocamlgraph/#Graphviz.NeatoAttributes" class="ocaml_internal">NeatoAttributes</a> : <code class="type"><code class="code">sig</code> .. <code class="code">end</code></code></pre><div class="ocaml_summary"/><div class="ocaml_content">
+<div class="ocaml_module" name="NeatoAttributes"><pre class="odoccode"><span class="keyword">module</span> <a href="http://127.0.0.1:8000/ocamlgraph/#Graphviz.NeatoAttributes" class="ocaml_internal">NeatoAttributes</a> : <code class="type"><code class="code">sig</code> .. <code class="code">end</code></code></pre><div class="ocaml_summary"/><div class="ocaml_content">
 <pre class="odoccode"><span class="TYPEgraph"><span class="keyword">type</span> graph</span> = <code class="type">[ `Center of bool
-| `Fontcolor of <a href="http://frenetic-lang.github.io/api//ocamlgraph/#Graphviz.color" class="ocaml_internal">color</a>
+| `Fontcolor of <a href="http://127.0.0.1:8000/ocamlgraph/#Graphviz.color" class="ocaml_internal">color</a>
 | `Fontname of string
 | `Fontsize of int
 | `Label of string
@@ -209,9 +209,9 @@ language on the channel <code class="code">oc</code>.</div></div></div>
 | `Start of int ]</code></pre><div class="info">Attributes of graphs. They include all common graph attributes and
 several specific ones. All attributes described in the &quot;Neato User's
 manual, April 10, 2002&quot; are handled.</div>
-<pre class="odoccode"><span class="TYPEvertex"><span class="keyword">type</span> vertex</span> = <code class="type">[ `Color of <a href="http://frenetic-lang.github.io/api//ocamlgraph/#Graphviz.color" class="ocaml_internal">color</a>
-| `ColorWithTransparency of <a href="http://frenetic-lang.github.io/api//ocamlgraph/#Graphviz.color_with_transparency" class="ocaml_internal">color_with_transparency</a>
-| `Fontcolor of <a href="http://frenetic-lang.github.io/api//ocamlgraph/#Graphviz.color" class="ocaml_internal">color</a>
+<pre class="odoccode"><span class="TYPEvertex"><span class="keyword">type</span> vertex</span> = <code class="type">[ `Color of <a href="http://127.0.0.1:8000/ocamlgraph/#Graphviz.color" class="ocaml_internal">color</a>
+| `ColorWithTransparency of <a href="http://127.0.0.1:8000/ocamlgraph/#Graphviz.color_with_transparency" class="ocaml_internal">color_with_transparency</a>
+| `Fontcolor of <a href="http://127.0.0.1:8000/ocamlgraph/#Graphviz.color" class="ocaml_internal">color</a>
 | `Fontname of string
 | `Fontsize of int
 | `Height of float
@@ -235,16 +235,16 @@ manual, April 10, 2002&quot; are handled.</div>
 | `Width of float ]</code></pre><div class="info">Attributes of nodes. They include all common node attributes and
 several specific ones. All attributes described in the &quot;Neato User's
 manual, April 10, 2002&quot; are handled.</div>
-<pre class="odoccode"><span class="TYPEedge"><span class="keyword">type</span> edge</span> = <code class="type">[ `Color of <a href="http://frenetic-lang.github.io/api//ocamlgraph/#Graphviz.color" class="ocaml_internal">color</a>
-| `ColorWithTransparency of <a href="http://frenetic-lang.github.io/api//ocamlgraph/#Graphviz.color_with_transparency" class="ocaml_internal">color_with_transparency</a>
+<pre class="odoccode"><span class="TYPEedge"><span class="keyword">type</span> edge</span> = <code class="type">[ `Color of <a href="http://127.0.0.1:8000/ocamlgraph/#Graphviz.color" class="ocaml_internal">color</a>
+| `ColorWithTransparency of <a href="http://127.0.0.1:8000/ocamlgraph/#Graphviz.color_with_transparency" class="ocaml_internal">color_with_transparency</a>
 | `Decorate of bool
 | `Dir of [ `Back | `Both | `Forward | `None ]
-| `Fontcolor of <a href="http://frenetic-lang.github.io/api//ocamlgraph/#Graphviz.color" class="ocaml_internal">color</a>
+| `Fontcolor of <a href="http://127.0.0.1:8000/ocamlgraph/#Graphviz.color" class="ocaml_internal">color</a>
 | `Fontname of string
 | `Fontsize of int
 | `Id of string
 | `Label of string
-| `Labelfontcolor of <a href="http://frenetic-lang.github.io/api//ocamlgraph/#Graphviz.color" class="ocaml_internal">color</a>
+| `Labelfontcolor of <a href="http://127.0.0.1:8000/ocamlgraph/#Graphviz.color" class="ocaml_internal">color</a>
 | `Labelfontname of string
 | `Labelfontsize of int
 | `Len of float
@@ -254,8 +254,8 @@ manual, April 10, 2002&quot; are handled.</div>
 several specific ones. All attributes described in the &quot;Neato User's
 manual, April 10, 2002&quot; are handled.</div>
 <pre class="odoccode"><code><span class="TYPEsubgraph"><span class="keyword">type</span> subgraph</span> = {</code></pre><table class="typetable">
-		    <tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="TYPEELTsubgraph.sg_name">sg_name</span> : <code class="type">string</code>;</code></td></tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="TYPEELTsubgraph.sg_attributes">sg_attributes</span> : <code class="type"><a href="http://frenetic-lang.github.io/api//ocamlgraph/#Graphviz.NeatoAttributes.vertex" class="ocaml_internal">vertex</a> list</code>;</code></td></tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="TYPEELTsubgraph.sg_parent">sg_parent</span> : <code class="type">string option</code>;</code></td></tr><tr><td>}</td></tr></table><div class="info">Subgraphs have a name and some vertices.</div></div></div>
-<div class="ocaml_module" name="Neato"><pre class="odoccode"><span class="keyword">module</span> <a href="http://frenetic-lang.github.io/api//ocamlgraph/#Graphviz.Neato" class="ocaml_internal">Neato</a> : <code class="type"><div class="sig_block"><code class="code">functor (</code><code class="code">X</code><code class="code"> : </code><code class="code">sig</code> .. <code class="code">end</code><code class="code">) -&gt; </code><code class="code">sig</code> .. <code class="code">end</code></div></code></pre><div class="ocaml_summary"/><div class="ocaml_content">
+		    <tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="TYPEELTsubgraph.sg_name">sg_name</span> : <code class="type">string</code>;</code></td></tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="TYPEELTsubgraph.sg_attributes">sg_attributes</span> : <code class="type"><a href="http://127.0.0.1:8000/ocamlgraph/#Graphviz.NeatoAttributes.vertex" class="ocaml_internal">vertex</a> list</code>;</code></td></tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="TYPEELTsubgraph.sg_parent">sg_parent</span> : <code class="type">string option</code>;</code></td></tr><tr><td>}</td></tr></table><div class="info">Subgraphs have a name and some vertices.</div></div></div>
+<div class="ocaml_module" name="Neato"><pre class="odoccode"><span class="keyword">module</span> <a href="http://127.0.0.1:8000/ocamlgraph/#Graphviz.Neato" class="ocaml_internal">Neato</a> : <code class="type"><div class="sig_block"><code class="code">functor (</code><code class="code">X</code><code class="code"> : </code><code class="code">sig</code> .. <code class="code">end</code><code class="code">) -&gt; </code><code class="code">sig</code> .. <code class="code">end</code></div></code></pre><div class="ocaml_summary"/><div class="ocaml_content">
 <pre class="odoccode"><span class="VALset_command"><span class="keyword">val</span> set_command</span> : <code class="type">string -&gt; unit</code></pre><div class="info">Several functions provided by this module run the external program
 <i>neato</i>. By default, this command is supposed to be in the default
 path and is invoked by <i>neato</i>. The function
